@@ -1,8 +1,9 @@
 """Entry point."""
 
-
 from controller.player import PlayerController
 
 if __name__ == '__main__':
-    PlayerController()
+    create_player = PlayerController()
+    PlayerController.create_player()
+
 

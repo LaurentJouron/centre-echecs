@@ -3,29 +3,21 @@
 
 class PlayerModel:
     """Entering information of the différent players of the tournament."""
-    def __init__(self, name, firstname, birthday, gender, ranking):
-        self.name = name
-        self.firstname = firstname
+    def __init__(self, last_name, first_name, birthday, gender, ranking):
+        self.last_name = last_name
+        self.first_name = first_name
         self.birthday = birthday
         self.gender = gender
         self.ranking = ranking
 
-    def get_name(self):
-        """Get the name of a participant."""
-        return self.name
-
-    def get_firstname(self):
-        """Get the firstname of a participant."""
-        return self.firstname
-
-    def get_birthday(self):
-        """Get the birthday of a participant."""
-        return self.birthday
-
-    def get_gender(self):
-        """Get the gender of a participant."""
-        return self.gender
+    def get_full_name(self):
+        """Get the information of a participant."""
+        return self.first_name + " " + self.last_name + " " + self.gender + " " + self.birthday
 
     def get_ranking(self):
         """Get the classement of a participant."""
         return self.ranking
+
+    # print(f"Bienvenue {first_name} {name}, vous êtes {gender}, né le {birthday}.")
+    # print(f"Actuellement, vous êtes {ranking}ème au classement national.")
+    # print(f"Nous validons votre inscription et vous souhaitons bonne chance")
