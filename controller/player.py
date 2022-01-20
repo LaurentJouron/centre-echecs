@@ -12,7 +12,6 @@ class PlayerController:
         if name in self:
             print(f"{name} est déjà inscrit.")
             return False
-        # self.appends(name)
         return name
 
     def define_first_name(self):
@@ -20,7 +19,6 @@ class PlayerController:
         first_name = input("Saisissez le prénom du joueur: ")
         if not isinstance(first_name, str):
             raise ValueError("Les prénoms ne doivent contenir que des lettres!")
-        # self.appends(first_name)
         return first_name
 
     def define_birthday(self):
@@ -31,25 +29,25 @@ class PlayerController:
     def define_gender(self):
         """Define the gender of participants."""
         gender = input("H / F: ")
-        return gender
+        if gender == "F" or "f":
+            return "une femme"
+        if gender == "H" or "h":
+            return "un homme"
+        else:
+            return False
 
     def define_ranking(self):
         """Define the gender of participants."""
         ranking = input("Saisissez la place au classement national du joueur: ")
+        if not isinstance(ranking, str):
+            raise ValueError("Le classement ne doit contenir que des chiffres!")
         return ranking
-
-    def remove(self, name):
-        if name in self:
-            self.remove(name)
-            return True
-        return False
 
     name = define_name("name")
     first_name = define_first_name("first_name")
     birthday = define_birthday("birthday")
     gender = define_gender("gender ")
     ranking = define_ranking("ranking")
-
 
     print(f"Bienvenue {first_name} {name}, vous êtes {gender}, né le {birthday}.")
     print(f"Actuellement, vous êtes {ranking}ème au classement national.")
