@@ -18,6 +18,3 @@ class PlayerModel:
         """Get the classement of a participant."""
         return self.ranking
 
-    # print(f"Bienvenue {first_name} {name}, vous êtes {gender}, né le {birthday}.")
-    # print(f"Actuellement, vous êtes {ranking}ème au classement national.")
-    # print(f"Nous validons votre inscription et vous souhaitons bonne chance")
