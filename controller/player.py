@@ -7,7 +7,7 @@ class PlayerController:
     """Control information player you need to organize a tournament."""
 
     def create_player():
-        create_player = PlayerView
+        create_player = PlayerView()
         player = PlayerModel(create_player[0],
                              create_player[1],
                              create_player[2],
