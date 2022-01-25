@@ -66,12 +66,6 @@ class PlayerView:
               f"au classement national.")
         print(f"Nous validons votre inscription "
               f"et vous souhaitons bonne chance.")
-
-
-create_player = ([PlayerView.first_name,
-                  PlayerView.last_name,
-                  PlayerView.gender,
-                  PlayerView.date_of_birth,
-                  PlayerView.ranking])
+        
 
 PlayerView.validation_participation()
