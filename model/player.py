@@ -4,10 +4,11 @@
 class PlayerModel:
     """Entering information of the différent players of the tournament."""
     
-    def __init__(self, last_name, first_name, birthday, gender, ranking):
-        self.last_name = last_name
+    def __init__(self, first_name, last_name, date_of_birth, gender,
+                 ranking):
         self.first_name = first_name
-        self.birthday = birthday
+        self.last_name = last_name
+        self.date_of_birth = date_of_birth
         self.gender = gender
         self.ranking = ranking
     
@@ -16,7 +17,7 @@ class PlayerModel:
         return self.first_name + " " + \
                self.last_name + " " + \
                self.gender + " " + \
-               self.birthday
+               self.date_of_birth
     
     def get_ranking(self):
         """Get the classement of a participant."""

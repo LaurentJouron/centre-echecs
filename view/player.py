@@ -6,6 +6,7 @@ Enter the information of the players who will participate in the tournament.
 class PlayerView:
     """The player information you need to organize a tournament."""
     
+    @staticmethod
     def define_first_name():
         """Define the first-name of participants."""
         while True:
@@ -16,6 +17,7 @@ class PlayerView:
             else:
                 return first_name
     
+    @staticmethod
     def define_last_name():
         """Define the last_name of participants."""
         while True:
@@ -26,20 +28,22 @@ class PlayerView:
             else:
                 return last_name
     
+    @staticmethod
     def define_date_of_birth():
         """Define the birthday of participants."""
         date_of_birth = input("Indiquez sa date de naissance: ")
         return date_of_birth
     
+    @staticmethod
     def define_gender():
         """Define the gender of participants."""
         while True:
             gender = input("Est-ce un homme ou une femme, choisissez H ou F: ")
-            if gender == "F" or "f":
+            if gender == "F":
                 return "une femme"
             elif gender == "f":
                 return "une femme"
-            elif gender == "H" or "h":
+            elif gender == "H":
                 return "un homme"
             elif gender == "h":
                 return "un homme"
@@ -47,8 +51,9 @@ class PlayerView:
                 gender = False
                 if not gender:
                     print(f"Erreur: \n"
-                          f" Saisissez H pour homme ou F pour femme.")
+                          f" Saisissez H pour un homme ou F pour une femme.")
     
+    @staticmethod
     def define_ranking():
         """Define the ranking of participants."""
         while True:
@@ -57,11 +62,22 @@ class PlayerView:
                 print("Information non valide, saisissez un nombre.")
             else:
                 return ranking
+    
+    @staticmethod
+    def new_player():
+        first_name = PlayerView.define_first_name()
+        last_name = PlayerView.define_last_name()
+        date_of_birth = PlayerView.define_date_of_birth()
+        gender = PlayerView.define_gender()
+        ranking = PlayerView.define_ranking()
+        return [first_name, last_name, date_of_birth, gender, ranking]
 
-
-new_player = [PlayerView.define_first_name(),
-              PlayerView.define_last_name(),
-              PlayerView.define_date_of_birth(),
-              PlayerView.define_gender(),
-              PlayerView.define_ranking()]
-print(new_player)
+    @staticmethod
+    def display_player(player):
+        print(f"Bienvenue {player.first_name} {player.last_name},\n"
+              f"vous êtes {player.gender}, né le "
+              f"{player.date_of_birth}.\n"
+              f"Actuellement, vous êtes {player.ranking}ème au classement "
+              f"national.\n"
+              f"Nous validons votre inscription et vous souhaitons bonne "
+              f"chance")
