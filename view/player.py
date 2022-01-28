@@ -77,8 +77,9 @@ class PlayerView:
 
     @staticmethod
     def display_player(player):
-        print(f"\n"
-              f"{player.first_name} {player.last_name} est {player.gender}, "
+        bienvenue = " Confirmation "
+        print(f"\n {bienvenue.center(56,'-')}")
+        print(f"{player.first_name} {player.last_name} est {player.gender}, "
               f"né le {player.date_of_birth}.\n"
               f"Actuellement, {player.ranking} au classement national.\n"
               f"Son inscription est validée.\n"

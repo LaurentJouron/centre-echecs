@@ -1,4 +1,6 @@
 """Information for participants in chess tournaments."""
+from tinydb import TinyDB
+# from tinydb.storages import MemoryStorage
 
 
 class PlayerModel:
@@ -17,8 +19,27 @@ class PlayerModel:
         return self.first_name + " " + \
                self.last_name + " " + \
                self.gender + " " + \
-               self.date_of_birth
+               self.date_of_birth + " " + \
+               self.ranking
     
-    def get_ranking(self):
-        """Get the classement of a participant."""
-        return self.ranking
+    def create_data_base_in_file(self):
+        data_base = TinyDB('data.player.json', indent=4)
+        data_base.insert({"Prénom": PlayerModel.get_full_name(
+            self.first_name),
+            "Nom": PlayerModel.get_full_name(self.last_name),
+            "Date de naissance": PlayerModel.get_full_name(
+                self.date_of_birth),
+            "Genre": PlayerModel.get_full_name(self.gender),
+            "Classement": PlayerModel.get_full_name(
+                self.ranking)})
+    
+    # def create_data_base_in_memory(self):
+    #     data_base = TinyDB(storage=MemoryStorage)
+    #     data_base.insert({"Prénom": PlayerModel.get_full_name(
+    #         self.first_name),
+    #                       "Nom": PlayerModel.get_full_name(self.last_name),
+    #                       "Date de naissance": PlayerModel.get_full_name(
+    #                           self.date_of_birth),
+    #                       "Genre": PlayerModel.get_full_name(self.gender),
+    #                       "Classement": PlayerModel.get_full_name(
+    #                           self.ranking)})
