@@ -1,6 +1,6 @@
-"""
-Enter the information of the players who will participate in the tournament.
-"""
+"""Enter the information of the players who will participate."""
+
+from datetime import datetime
 
 
 class PlayerView:
@@ -32,6 +32,8 @@ class PlayerView:
     def define_date_of_birth():
         """Define the birthday of participants."""
         date_of_birth = input("Indiquez sa date de naissance: ")
+        date_of_birth = datetime.strptime(date_of_birth,
+                                          "%d%m%Y").strftime("%A %d %B %Y")
         return date_of_birth
     
     @staticmethod
@@ -50,8 +52,9 @@ class PlayerView:
             else:
                 gender = False
                 if not gender:
-                    print(f"Erreur: \n"
-                          f" Saisissez H pour un homme ou F pour une femme.")
+                    print(f"Erreur de saisie, sélectionnez: \n"
+                          f"H pour 'homme' \n"
+                          f"F pour une 'femme'.")
     
     @staticmethod
     def define_ranking():
@@ -60,8 +63,10 @@ class PlayerView:
             ranking = input("Indiquez sa place au classement national: ")
             if not ranking.isdigit():
                 print("Information non valide, saisissez un nombre.")
+            if ranking == "1":
+                return f"{ranking}er"
             else:
-                return ranking
+                return f"{ranking}ème"
     
     @staticmethod
     def new_player():
@@ -74,10 +79,11 @@ class PlayerView:
 
     @staticmethod
     def display_player(player):
-        print(f"Bienvenue {player.first_name} {player.last_name},\n"
+        print(f"\n"
+              f"Bienvenue {player.first_name} {player.last_name},\n"
               f"vous êtes {player.gender}, né le "
               f"{player.date_of_birth}.\n"
-              f"Actuellement, vous êtes {player.ranking}ème au classement "
+              f"Actuellement, vous êtes {player.ranking} au classement "
               f"national.\n"
               f"Nous validons votre inscription et vous souhaitons bonne "
-              f"chance")
+              f"chance.")

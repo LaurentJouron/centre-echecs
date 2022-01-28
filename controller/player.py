@@ -1,4 +1,5 @@
-"""Tournament player registration management"""
+"""Tournament player registration management."""
+
 from view.player import PlayerView
 from model.player import PlayerModel
 
