@@ -10,10 +10,10 @@ class PlayerController:
     @staticmethod
     def create_player():
         player_data = PlayerView.new_player()
-        player = PlayerModel(player_data[0],
-                             player_data[1],
-                             player_data[2],
-                             player_data[3],
-                             player_data[4])
+        player = PlayerModel(player_data[0],    # first_name
+                             player_data[1],    # last_name
+                             player_data[2],    # date_of_birth
+                             player_data[3],    # gender
+                             player_data[4])    # ranking
         return PlayerView.display_player(player)
         

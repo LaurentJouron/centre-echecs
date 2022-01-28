@@ -40,14 +40,12 @@ class PlayerView:
     def define_gender():
         """Define the gender of participants."""
         while True:
-            gender = input("Est-ce un homme ou une femme, choisissez H ou F: ")
+            gender = input("Sélectionnez H si c'est un homme ou F pour une "
+                           "femme: ")
+            gender = gender.upper()
             if gender == "F":
                 return "une femme"
-            elif gender == "f":
-                return "une femme"
             elif gender == "H":
-                return "un homme"
-            elif gender == "h":
                 return "un homme"
             else:
                 gender = False
@@ -80,10 +78,8 @@ class PlayerView:
     @staticmethod
     def display_player(player):
         print(f"\n"
-              f"Bienvenue {player.first_name} {player.last_name},\n"
-              f"vous êtes {player.gender}, né le "
-              f"{player.date_of_birth}.\n"
-              f"Actuellement, vous êtes {player.ranking} au classement "
-              f"national.\n"
-              f"Nous validons votre inscription et vous souhaitons bonne "
-              f"chance.")
+              f"{player.first_name} {player.last_name} est {player.gender}, "
+              f"né le {player.date_of_birth}.\n"
+              f"Actuellement, {player.ranking} au classement national.\n"
+              f"Son inscription est validée.\n"
+              f"Bonne chance!")
