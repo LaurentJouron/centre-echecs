@@ -10,10 +10,10 @@ class PlayerView:
     def define_first_name():
         """Define the first-name of participants."""
         while True:
-            first_name = input("Veillez saisir le prénom du joueur: ")
+            first_name = input("Veuillez saisir le prénom du joueur: ")
             first_name = first_name.capitalize()
             if not first_name.isalpha():
-                print("Le prénom n'est pas valide.")
+                print("Prénom invalide.")
             else:
                 return first_name
     
@@ -21,10 +21,10 @@ class PlayerView:
     def define_last_name():
         """Define the last_name of participants."""
         while True:
-            last_name = input("Saisissez son nom de famille: ")
+            last_name = input("Saisissez le nom de famille: ")
             last_name = last_name.capitalize()
             if not last_name.isalpha():
-                print("Le nom n'est pas valide.")
+                print("Nom invalide.")
             else:
                 return last_name
     
@@ -33,15 +33,14 @@ class PlayerView:
         """Define the birthday of participants."""
         date_of_birth = input("Indiquez sa date de naissance: ")
         date_of_birth = datetime.strptime(date_of_birth,
-                                          "%d%m%Y").strftime("%A %d %B %Y")
+                                          "%d%m%Y").strftime("%d/%m/%Y")
         return date_of_birth
     
     @staticmethod
     def define_gender():
         """Define the gender of participants."""
         while True:
-            gender = input("Sélectionnez H si c'est un homme ou F pour une "
-                           "femme: ")
+            gender = input("Sélectionnez H pour homme ou F pour femme: ")
             gender = gender.upper()
             if gender == "F":
                 return "une femme"
@@ -50,9 +49,7 @@ class PlayerView:
             else:
                 gender = False
                 if not gender:
-                    print(f"Erreur de saisie, sélectionnez: \n"
-                          f"H pour 'homme' \n"
-                          f"F pour une 'femme'.")
+                    print(f"Erreur de saisie")
     
     @staticmethod
     def define_ranking():
@@ -60,7 +57,7 @@ class PlayerView:
         while True:
             ranking = input("Indiquez sa place au classement national: ")
             if not ranking.isdigit():
-                print("Information non valide, saisissez un nombre.")
+                return f"Information non valide."
             if ranking == "1":
                 return f"{ranking}er"
             else:
@@ -81,6 +78,7 @@ class PlayerView:
         print(f"\n {bienvenue.center(56,'-')}")
         print(f"{player.first_name} {player.last_name} est {player.gender}, "
               f"né le {player.date_of_birth}.\n"
-              f"Actuellement, {player.ranking} au classement national.\n"
+              f"Il est actuellement, {player.ranking} au classement "
+              f"national.\n"
               f"Son inscription est validée.\n"
               f"Bonne chance!")

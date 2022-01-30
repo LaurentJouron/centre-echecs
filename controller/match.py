@@ -2,4 +2,8 @@
 
 
 class MatchController:
-    pass
+    """Controls the organization of games, scores and ranking in real time."""
+    
+    @staticmethod
+    def generate_parties():
+        pass
