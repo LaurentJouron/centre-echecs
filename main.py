@@ -16,4 +16,3 @@ if __name__ == '__main__':
     """Creation of a new player."""
     create_player = PlayerController()
     PlayerController.create_player()
-

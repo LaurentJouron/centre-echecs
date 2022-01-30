@@ -34,7 +34,7 @@ class TournamentView:
         return end_date
 
     @staticmethod
-    def numer_of_round():
+    def number_of_round():
         """Number of turns."""
         number_round = NUMBER_OF_ROUNDS
         return number_round
@@ -45,7 +45,7 @@ class TournamentView:
         place = TournamentView.tournament_venue()
         start_date = TournamentView.tournament_start_date()
         end_date = TournamentView.tournament_end_date()
-        number_round = TournamentView.numer_of_round()
+        number_round = TournamentView.number_of_round()
         return [name, place, start_date, end_date, number_round]
 
     @staticmethod
