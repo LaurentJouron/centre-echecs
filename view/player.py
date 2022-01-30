@@ -56,8 +56,6 @@ class PlayerView:
         """Define the ranking of participants."""
         while True:
             ranking = input("Indiquez sa place au classement national: ")
-            if not ranking.isdigit():
-                return f"Information non valide."
             if ranking == "1":
                 return f"{ranking}er"
             else:
@@ -65,6 +63,7 @@ class PlayerView:
     
     @staticmethod
     def new_player():
+        """Compilation of information."""
         first_name = PlayerView.define_first_name()
         last_name = PlayerView.define_last_name()
         date_of_birth = PlayerView.define_date_of_birth()
@@ -74,8 +73,8 @@ class PlayerView:
 
     @staticmethod
     def display_player(player):
-        bienvenue = " Confirmation "
-        print(f"\n {bienvenue.center(56,'-')}")
+        confirmation = " Confirmation "
+        print(f"\n {confirmation.center(56,'-')}")
         print(f"{player.first_name} {player.last_name} est {player.gender}, "
               f"né le {player.date_of_birth}.\n"
               f"Il est actuellement, {player.ranking} au classement "
