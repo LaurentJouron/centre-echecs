@@ -5,39 +5,35 @@ from datetime import datetime
 
 class PlayerView:
     """The player information you need to organize a tournament."""
+    def __init__(self):
+        pass
     
-    @staticmethod
-    def define_first_name():
+    def define_first_name(self):
         """Define the first-name of participants."""
         while True:
             first_name = input("Veuillez saisir le prénom du joueur: ")
-            first_name = first_name.capitalize()
             if not first_name.isalpha():
                 print("Prénom invalide.")
             else:
-                return first_name
+                return first_name.capitalize()
     
-    @staticmethod
-    def define_last_name():
+    def define_last_name(self):
         """Define the last_name of participants."""
         while True:
             last_name = input("Saisissez le nom de famille: ")
-            last_name = last_name.capitalize()
             if not last_name.isalpha():
                 print("Nom invalide.")
             else:
                 return last_name
     
-    @staticmethod
-    def define_date_of_birth():
+    def define_date_of_birth(self):
         """Define the birthday of participants."""
         date_of_birth = input("Indiquez sa date de naissance: ")
         date_of_birth = datetime.strptime(date_of_birth,
                                           "%d%m%Y").strftime("%d/%m/%Y")
         return date_of_birth
     
-    @staticmethod
-    def define_gender():
+    def define_gender(self):
         """Define the gender of participants."""
         while True:
             gender = input("Sélectionnez H pour homme ou F pour femme: ")
@@ -51,8 +47,7 @@ class PlayerView:
                 if not gender:
                     print(f"Erreur de saisie")
     
-    @staticmethod
-    def define_ranking():
+    def define_ranking(self):
         """Define the ranking of participants."""
         while True:
             ranking = input("Indiquez sa place au classement national: ")
@@ -61,21 +56,19 @@ class PlayerView:
             else:
                 return f"{ranking}ème"
     
-    @staticmethod
-    def new_player():
+    def get_player_information(self):
         """Compilation of information."""
-        first_name = PlayerView.define_first_name()
-        last_name = PlayerView.define_last_name()
-        date_of_birth = PlayerView.define_date_of_birth()
-        gender = PlayerView.define_gender()
-        ranking = PlayerView.define_ranking()
+        first_name = self.define_first_name()
+        last_name = self.define_last_name()
+        date_of_birth = self.define_date_of_birth()
+        gender = self.define_gender()
+        ranking = self.define_ranking()
         return [first_name, last_name, date_of_birth, gender, ranking]
 
-    @staticmethod
-    def display_player(player):
+    def display_player(self, player):
         confirmation = " Confirmation "
-        print(f"\n {confirmation.center(56,'-')}")
-        print(f"{player.first_name} {player.last_name} est {player.gender}, "
+        print(f"\n {confirmation.center(60,'-')}")
+        print(f"\n{player.first_name} {player.last_name} est {player.gender}, "
               f"né le {player.date_of_birth}.\n"
               f"Il est actuellement, {player.ranking} au classement "
               f"national.\n"
