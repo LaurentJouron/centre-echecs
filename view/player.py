@@ -24,7 +24,7 @@ class PlayerView:
             if not last_name.isalpha():
                 print("Nom invalide.")
             else:
-                return last_name
+                return last_name.capitalize()
     
     def define_date_of_birth(self):
         """Define the birthday of participants."""
@@ -67,7 +67,7 @@ class PlayerView:
 
     def display_player(self, player):
         confirmation = " Confirmation "
-        print(f"\n {confirmation.center(60,'-')}")
+        print(f"\n {confirmation.center(90,'-')}")
         print(f"\n{player.first_name} {player.last_name} est {player.gender}, "
               f"né le {player.date_of_birth}.\n"
               f"Il est actuellement, {player.ranking} au classement "

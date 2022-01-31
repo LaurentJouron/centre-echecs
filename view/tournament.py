@@ -7,7 +7,7 @@ from datetime import timedelta
 class TournamentView:
     """What information is needed for the tournament."""
     
-    def __init__(self, number_of_day=1, number_of_round=4, number_players=8):
+    def __init__(self, number_of_day=0, number_of_round=4, number_players=8):
         self.number_of_day = number_of_day
         self.number_of_round = number_of_round
         self.number_players = number_players
@@ -30,15 +30,40 @@ class TournamentView:
         """Tournament end date."""
         end_date = self.get_tournament_start_date() + timedelta(
             days=self.number_of_day)
-        return end_date
+        if end_date == self.get_tournament_start_date():
+            return "même jour"
+        else:
+            return end_date
     
     def get_number_of_round(self):
         """Number of turns."""
-        return self.number_of_round
+        while True:
+            oui_non = input(f"Y a-t-il {self.number_of_round} tours? O/N: ")
+            oui_non = oui_non.upper()
+            if oui_non == "O":
+                return self.number_of_round
+            elif oui_non == "N":
+                self.number_of_round = input("Combien y a-t-il de tours: ")
+                return self.number_of_round
+            else:
+                oui_non = False
+                if not oui_non:
+                    print("Erreur de saisie")
     
     def get_number_of_player(self):
         """Number of players."""
-        return self.number_players
+        while True:
+            oui_non = input(f"Y a-t-il {self.number_players} joueurs? O/N: ")
+            oui_non = oui_non.upper()
+            if oui_non == "O":
+                return self.number_players
+            elif oui_non == "N":
+                self.number_players = input("Combien y a-t-il de joueurs: ")
+                return self.number_players
+            else:
+                oui_non = False
+                if not oui_non:
+                    print("Erreur de saisie")
     
     def organize_new_tournament(self):
         name = self.name_of_tournament()
@@ -52,9 +77,9 @@ class TournamentView:
     
     def display_tournament_organization(self, tournament):
         start_of_tournament = " Démarrage du tournoi "
-        print(f"\n {start_of_tournament.center(60, '-')}")
-        print(f"\n Le tournoi d'échecs {tournament.name} commencera le "
-              f"{tournament.start_date} à {tournament.place}.\n"
-              f" Pour finir le {tournament.end_date}.\n "
-              f"Il accueillera {tournament.players} joueurs"
-              f" pour {tournament.rounds} tours.\n")
+        print(f"\n {start_of_tournament.center(90, '-')}")
+        print(f"\n Le tournoi d'échec {tournament.name} commence le "
+              f"{tournament.start_date} à 9h00 pour finir le"
+              f" {tournament.end_date} à 18h00.\n "
+              f"Il se déroule {tournament.place} avec {tournament.players} "
+              f"joueurs en {tournament.rounds} tours.\n")
