@@ -6,11 +6,13 @@ from datetime import timedelta
 
 class TournamentView:
     """What information is needed for the tournament."""
+
+    number_of_day = 0
+    number_of_round = 4
+    number_players = 8
     
-    def __init__(self, number_of_day=0, number_of_round=4, number_players=8):
-        self.number_of_day = number_of_day
-        self.number_of_round = number_of_round
-        self.number_players = number_players
+    def __init__(self):
+        pass
     
     def name_of_tournament(self):
         """Name the tournament."""
@@ -38,7 +40,7 @@ class TournamentView:
     def get_number_of_round(self):
         """Number of turns."""
         while True:
-            oui_non = input(f"Y a-t-il {self.number_of_round} tours? O/N: ")
+            oui_non = input(f"Il y a {self.number_of_round} tours? O/N: ")
             oui_non = oui_non.upper()
             if oui_non == "O":
                 return self.number_of_round
@@ -53,7 +55,8 @@ class TournamentView:
     def get_number_of_player(self):
         """Number of players."""
         while True:
-            oui_non = input(f"Y a-t-il {self.number_players} joueurs? O/N: ")
+            oui_non = input(f"Il y a {self.number_players} joueurs? "
+                            f"O/N: ")
             oui_non = oui_non.upper()
             if oui_non == "O":
                 return self.number_players

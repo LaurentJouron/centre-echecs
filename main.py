@@ -2,6 +2,11 @@
 
 from controller.tournament import TournamentController
 from controller.player import PlayerController
+from controller.match import MatchController
+
+number_of_day = 0
+number_of_round = 4
+number_players = 8
 
 if __name__ == '__main__':
     
@@ -18,3 +23,6 @@ if __name__ == '__main__':
     
     create_player = PlayerController()
     PlayerController.create_player()
+
+    game_management = MatchController()
+    MatchController.game_management()
