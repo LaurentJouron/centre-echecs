@@ -81,8 +81,8 @@ class TournamentView:
     def display_tournament_organization(self, tournament):
         start_of_tournament = " Démarrage du tournoi "
         print(f"\n {start_of_tournament.center(90, '-')}")
-        print(f"\n Le tournoi d'échec {tournament.name} commence le "
+        print(f"Le tournoi d'échec {tournament.name} commence le "
               f"{tournament.start_date} à 9h00 pour finir le"
-              f" {tournament.end_date} à 18h00.\n "
+              f" {tournament.end_date} à 18h00.\n"
               f"Il se déroule {tournament.place} avec {tournament.players} "
               f"joueurs en {tournament.rounds} tours.\n")

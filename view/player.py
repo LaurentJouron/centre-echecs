@@ -13,7 +13,7 @@ class PlayerView:
         while True:
             first_name = input("Veuillez saisir le prénom du joueur: ")
             if not first_name.isalpha():
-                print("Prénom invalide.")
+                print("Prénom invalide")
             else:
                 return first_name.capitalize()
     
@@ -22,7 +22,7 @@ class PlayerView:
         while True:
             last_name = input("Saisissez le nom de famille: ")
             if not last_name.isalpha():
-                print("Nom invalide.")
+                print("Nom invalide")
             else:
                 return last_name.capitalize()
     
@@ -30,7 +30,7 @@ class PlayerView:
         """Define the birthday of participants."""
         date_of_birth = input("Indiquez sa date de naissance: ")
         date_of_birth = datetime.strptime(date_of_birth,
-                                          "%d%m%Y").strftime("%d/%m/%Y")
+                                          "%d%m%Y").strftime("%A %d %B %Y")
         return date_of_birth
     
     def define_gender(self):
@@ -53,9 +53,9 @@ class PlayerView:
             ranking = input("Indiquez sa place au classement national: ")
             if ranking == "1":
                 return f"{ranking}er"
-            else:
+            elif ranking > "1":
                 return f"{ranking}ème"
-    
+
     def get_player_information(self):
         """Compilation of information."""
         first_name = self.define_first_name()
