@@ -15,3 +15,6 @@ class PlayerModel:
         """Get the information of a participant."""
         return self.first_name + " " + self.last_name + " " +\
             self.gender + " " + self.date_of_birth + " " + self.ranking
+    
+    def __str__(self):
+        pass

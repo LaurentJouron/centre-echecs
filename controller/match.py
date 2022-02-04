@@ -9,8 +9,7 @@ class MatchController:
     
     @staticmethod
     def game_management():
-        game_management = MatchView()
-        game_data = game_management.create_a_match()
-        match = MatchModel(game_data[0])
+        pass
+
 
 
