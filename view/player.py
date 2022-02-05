@@ -28,10 +28,10 @@ class PlayerView:
     
     def define_date_of_birth(self):
         """Define the birthday of participants."""
-        date_of_birth = input("Indiquez sa date de naissance: ")
-        date_of_birth = datetime.strptime(date_of_birth,
-                                          "%d%m%Y").strftime("%A %d %B %Y")
-        return date_of_birth
+        birthday = input("Indiquez sa date de naissance: ")
+        birthday = datetime.strptime(birthday, "%d%m%Y").\
+            strftime("%A %d %B %Y")
+        return birthday
     
     def define_gender(self):
         """Define the gender of participants."""

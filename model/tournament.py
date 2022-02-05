@@ -14,5 +14,9 @@ class TournamentModel:
 
     def def_all_information_of_tournament(self):
         """Get the information of a tournament."""
-        return self.name + " " + self.place + " " + self.start_date + " " + \
-            self.end_date + " " + self.rounds + " " + self.players
+        return self.name + " " +\
+            self.place + " " +\
+            self.start_date + " " + \
+            self.end_date + " " +\
+            self.rounds + " " +\
+            self.players

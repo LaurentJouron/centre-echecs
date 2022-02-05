@@ -9,7 +9,7 @@ if __name__ == '__main__':
     
     """Creation of a tournament."""
     tournament = " Création d'un tournoi "
-    print(f"\n{tournament.center(90, '-')}")
+    print(f"{tournament.center(90, '-')}")
     
     new_tournament = TournamentController()
     TournamentController.new_tournament()

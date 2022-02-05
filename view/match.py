@@ -4,10 +4,9 @@
 class MatchView:
     """Manages the results of the chess tournament."""
     
-    def __init__(self, player1, player2, draw):
-        self.player_1 = player1
-        self.player_2 = player2
-        self.draw = draw
+    def __init__(self):
+        self.player_1 = None
+        self.player_2 = None
     
     def player1_win(self):
         """player 1 wins"""
@@ -32,14 +31,12 @@ class MatchView:
             return self.player2_win()
         else:
             self.draw()
-            return self.draw
+            return self.draw()
     
-    def display_match(self, match):
-        player1_win = self.player1_win()
-        player2_win = self.player2_win()
-        if player1_win:
-            print(f"le gagnant marque {match.player1_win} point.")
-        elif player2_win:
-            print(f"le gagnant marque {match.player2_win} point.")
+    def display_match(self):
+        if self.player1_win():
+            print(f"le gagnant marque point.")
+        elif self.player2_win():
+            print(f"le gagnant marque point.")
         else:
             print(f"Les joueurs sont à égalité et marque 0.5 points chacun.")
