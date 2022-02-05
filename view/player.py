@@ -53,8 +53,12 @@ class PlayerView:
             ranking = input("Indiquez sa place au classement national: ")
             if ranking == "1":
                 return f"{ranking}er"
-            elif ranking > "1":
+            if ranking >= "1":
                 return f"{ranking}ème"
+            else:
+                ranking = False
+                if not ranking:
+                    print(f"Erreur de saisie")
 
     def get_player_information(self):
         """Compilation of information."""

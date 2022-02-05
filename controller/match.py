@@ -9,7 +9,8 @@ class MatchController:
     
     @staticmethod
     def game_management():
-        pass
-
-
-
+        match_view = MatchView()
+        match_data = match_view.results()
+        match = MatchModel(match_data[0],
+                           match_data[1])
+        match_view.display_match(match)

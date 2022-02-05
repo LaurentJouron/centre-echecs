@@ -36,49 +36,20 @@ class TournamentView:
             return "même jour"
         else:
             return end_date
-    
-    def get_number_of_round(self):
-        """Number of turns."""
-        while True:
-            oui_non = input(f"Il y a {self.number_of_round} tours? O/N: ")
-            oui_non = oui_non.upper()
-            if oui_non == "O":
-                return self.number_of_round
-            elif oui_non == "N":
-                self.number_of_round = input("Combien y a-t-il de tours: ")
-                return self.number_of_round
-            else:
-                oui_non = False
-                if not oui_non:
-                    print("Erreur de saisie")
-    
-    def get_number_of_player(self):
-        """Number of players."""
-        while True:
-            oui_non = input(f"Il y a {self.number_players} joueurs? "
-                            f"O/N: ")
-            oui_non = oui_non.upper()
-            if oui_non == "O":
-                return self.number_players
-            elif oui_non == "N":
-                self.number_players = input("Combien y a-t-il de joueurs: ")
-                return self.number_players
-            else:
-                oui_non = False
-                if not oui_non:
-                    print("Erreur de saisie")
-    
+
     def organize_new_tournament(self):
+        """Gathering of elements of the tournament class."""
         name = self.name_of_tournament()
         place = self.tournament_venue()
         start_date = self.get_tournament_start_date()
         end_date = self.get_tournament_end_date()
-        number_round = self.get_number_of_round()
-        number_players = self.get_number_of_player()
+        number_round = self.number_of_round
+        number_players = self.number_players
         return [name, place, start_date, end_date, number_round,
                 number_players]
     
     def display_tournament_organization(self, tournament):
+        """Confirmation phrase of the tournament class."""
         start_of_tournament = " Démarrage du tournoi "
         print(f"\n {start_of_tournament.center(90, '-')}")
         print(f"Le tournoi d'échec {tournament.name} commence le "
