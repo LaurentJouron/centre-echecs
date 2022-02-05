@@ -16,12 +16,12 @@ class TournamentView:
     
     def name_of_tournament(self):
         """Name the tournament."""
-        name = input("Saisissez le nom du tournoi: ")
+        name: str = input("Saisissez le nom du tournoi: ")
         return name.capitalize()
     
     def tournament_venue(self):
         """Where the tournament goes."""
-        place = input("Lieu du tournoi: ")
+        place: str = input("Lieu du tournoi: ")
         return place.capitalize()
     
     def get_tournament_start_date(self):
