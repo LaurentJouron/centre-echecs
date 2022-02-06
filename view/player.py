@@ -6,7 +6,11 @@ from datetime import datetime
 class PlayerView:
     """The player information you need to organize a tournament."""
     def __init__(self):
-        pass
+        self.first_name = None
+        self.last_name = None
+        self.birthday = None
+        self.gender = None
+        self.ranking = None
     
     def define_first_name(self):
         """Define the first-name of participants."""
@@ -64,17 +68,17 @@ class PlayerView:
         """Compilation of information."""
         first_name = self.define_first_name()
         last_name = self.define_last_name()
-        date_of_birth = self.define_date_of_birth()
+        birthday = self.define_date_of_birth()
         gender = self.define_gender()
         ranking = self.define_ranking()
-        return [first_name, last_name, date_of_birth, gender, ranking]
+        return [first_name, last_name, birthday, gender, ranking]
 
     def display_player(self, player):
         confirmation = " Confirmation "
         print(f"\n {confirmation.center(90,'-')}")
-        print(f"\n{player.first_name} {player.last_name} est {player.gender}, "
-              f"né le {player.date_of_birth}.\n"
+        print(f"{player.first_name} {player.last_name} est {player.gender}, "
+              f"né le {player.birthday}.\n"
               f"Il est actuellement, {player.ranking} au classement "
               f"national.\n"
               f"Son inscription est validée.\n"
-              f"Bonne chance!")
+              f"Bonne chance!\n")

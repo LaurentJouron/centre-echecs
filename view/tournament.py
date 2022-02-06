@@ -12,7 +12,8 @@ class TournamentView:
     number_players = 8
     
     def __init__(self):
-        pass
+        self.name = None
+        self.place = None
     
     def name_of_tournament(self):
         """Name the tournament."""

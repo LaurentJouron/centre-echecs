@@ -14,12 +14,16 @@ if __name__ == '__main__':
     new_tournament = TournamentController()
     TournamentController.new_tournament()
     
-    """Creation of a new player."""
+    """Register players."""
     player = " Enregistrer les joueurs "
     print(f"{player.center(90, '-')}")
     
     create_player = PlayerController()
     PlayerController.create_player()
 
+    """Match results."""
+    match = " Résultats des matchs "
+    print(f"{match.center(90, '-')}")
+    
     game_management = MatchController()
     MatchController.game_management()
