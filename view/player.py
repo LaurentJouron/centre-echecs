@@ -5,13 +5,14 @@ from datetime import datetime
 
 class PlayerView:
     """The player information you need to organize a tournament."""
-    def __init__(self):
-        self.first_name = None
-        self.last_name = None
-        self.birthday = None
-        self.gender = None
-        self.ranking = None
-    
+    def __init__(self, first_name=None, last_name=None, birthday=None,
+                 gender=None, ranking=None):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.birthday = birthday
+        self.gender = gender
+        self.ranking = ranking
+
     def define_first_name(self):
         """Define the first-name of participants."""
         while True:
@@ -20,7 +21,7 @@ class PlayerView:
                 print("Prénom invalide")
             else:
                 return first_name.capitalize()
-    
+
     def define_last_name(self):
         """Define the last_name of participants."""
         while True:
@@ -29,14 +30,14 @@ class PlayerView:
                 print("Nom invalide")
             else:
                 return last_name.capitalize()
-    
+
     def define_date_of_birth(self):
         """Define the birthday of participants."""
         birthday = input("Indiquez sa date de naissance: ")
         birthday = datetime.strptime(birthday, "%d%m%Y").\
             strftime("%A %d %B %Y")
         return birthday
-    
+
     def define_gender(self):
         """Define the gender of participants."""
         while True:
@@ -50,7 +51,7 @@ class PlayerView:
                 gender = False
                 if not gender:
                     print(f"Erreur de saisie")
-    
+
     def define_ranking(self):
         """Define the ranking of participants."""
         while True:
