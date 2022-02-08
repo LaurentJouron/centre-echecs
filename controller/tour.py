@@ -2,7 +2,7 @@
 
 
 from view.tour import TourView
-from view.tour import TourModel
+from model.tour import TourModel
 
 
 class TourController:

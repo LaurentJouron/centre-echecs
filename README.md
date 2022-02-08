@@ -36,8 +36,62 @@ This was done as part of a training course on :
 Because they know this is your first client project, they want to know that your code will be clean and maintainable. As a Python enthusiast, you immediately know they want you to follow the code style guidelines – PEP 8 in particular.
 
 ___________
+<h1 align="center">The application details</h1>
+<table>
+  <tr>
+    <td align="center">
+      <a href=https://github.com/LaurentJouron/centre-echecs/blob/main/controller/tournament.py">
+        <img width="150px"
+          src="https://st3.depositphotos.com/6887418/15066/v/600/depositphotos_150664936-stock-illustration-funny-boy-cartoon-playing-chess.jpg" /><br />
+        <sub><b>tournament</b></sub></a><br />
+      <a href=https://github.com/LaurentJouron/centre-echecs/blob/main/controller/tournament.py" title="tournament" ></a> 
+    </td>
+    <td align="center">
+      <a href=https://github.com/LaurentJouron/centre-echecs/blob/main/controller/player.py">
+        <img width="150px"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFDFtFm9ohU154LXVLVPXbQcdaz8DM2UP9Lw&usqp=CAU" /><br />
+        <sub><b>player</b></sub></a><br />
+      <a href=https://github.com/LaurentJouron/centre-echecs/blob/main/controller/player.py" title="player" ></a> 
+    </td>
+    <td align="center">
+      <a href=https://github.com/LaurentJouron/centre-echecs/blob/main/controller/tour.py">
+        <img width="150px"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-1XmR2d_5fUC8cEQJwi9N1-_vmn5VfjkmiQ&usqp=CAU" /><br />
+        <sub><b>round</b></sub></a><br />
+      <a href=https://github.com/LaurentJouron/centre-echecs/blob/main/controller/tour.py" title="round" ></a> 
+    </td>
+    <td align="center">
+      <a href=https://github.com/LaurentJouron/centre-echecs/blob/main/controller/match.py">
+        <img width="150px"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxrUQEOqyFyKvVOtRpGImUX6mGKku_89P6Dg&usqp=CAU" /><br />
+        <sub><b>game</b></sub></a><br />
+      <a href=https://github.com/LaurentJouron/centre-echecs/blob/main/controller/match.py" title="game" ></a> 
+    </td>
+  </tr>
+</table>
 
-<h1 align="center">Purpose of the application</h1>
+* A class to create a tournament.
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/view/tournament.py" target="_blank">class TournamentView</a>
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/controller/tournament.py" target="_blank">class TournamentController</a>
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/model/tournament.py" target="_blank">class TournamentModel</a>
+
+
+* A class to create tournament players.
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/view/player.py" target="_blank">class PlayerView</a>
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/controller/player.py" target="_blank">class PlayerController</a>
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/model/player.py" target="_blank">class PlayerModel</a></br>
+
+
+* A class to manage tournament meetings.
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/view/tour.py" target="_blank">class TourView</a>
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/controller/tour.py" target="_blank">class TourController</a>
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/model/tour.py" target="_blank">class TourModel</a></br>
+
+
+* A class to manage tournament scores.
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/view/match.py" target="_blank">class MatchView</a>
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/controller/match.py" target="_blank">class MatchController</a>
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/model/match.py" target="_blank">class MatchModel</a></br>
 
 ___________
 
@@ -217,8 +271,63 @@ Comme ils savent qu'il s'agit de votre premier projet client, ils veulent avoir 
 
 ___________
 
-<h1 align="center">But de l'application</h1>
+<h1 align="center">Détails de l'application</h1>
 
+<table>
+  <tr>
+    <td align="center">
+      <a href=https://github.com/LaurentJouron/centre-echecs/blob/main/controller/tournament.py">
+        <img width="150px"
+          src="https://st3.depositphotos.com/6887418/15066/v/600/depositphotos_150664936-stock-illustration-funny-boy-cartoon-playing-chess.jpg" /><br />
+        <sub><b>Tournoi</b></sub></a><br />
+      <a href=https://github.com/LaurentJouron/centre-echecs/blob/main/controller/tournament.py" title="tournoi" ></a> 
+    </td>
+    <td align="center">
+      <a href=https://github.com/LaurentJouron/centre-echecs/blob/main/controller/player.py">
+        <img width="150px"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFDFtFm9ohU154LXVLVPXbQcdaz8DM2UP9Lw&usqp=CAU" /><br />
+        <sub><b>joueur</b></sub></a><br />
+      <a href=https://github.com/LaurentJouron/centre-echecs/blob/main/controller/player.py" title="joueur" ></a> 
+    </td>
+    <td align="center">
+      <a href=https://github.com/LaurentJouron/centre-echecs/blob/main/controller/tour.py">
+        <img width="150px"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-1XmR2d_5fUC8cEQJwi9N1-_vmn5VfjkmiQ&usqp=CAU" /><br />
+        <sub><b>tour</b></sub></a><br />
+      <a href=https://github.com/LaurentJouron/centre-echecs/blob/main/controller/tour.py" title="tour" ></a> 
+    </td>
+    <td align="center">
+      <a href=https://github.com/LaurentJouron/centre-echecs/blob/main/controller/match.py">
+        <img width="150px"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxrUQEOqyFyKvVOtRpGImUX6mGKku_89P6Dg&usqp=CAU" /><br />
+        <sub><b>match</b></sub></a><br />
+      <a href=https://github.com/LaurentJouron/centre-echecs/blob/main/controller/match.py" title="match" ></a> 
+    </td>
+  </tr>
+</table>
+
+* Une classe pour créer un tournoi.
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/view/tournament.py" target="_blank">class TournamentView</a>
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/controller/tournament.py" target="_blank">class TournamentController</a>
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/model/tournament.py" target="_blank">class TournamentModel</a>
+
+
+* Une classe pour créer les joueurs du tournoi.
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/view/player.py" target="_blank">class PlayerView</a>
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/controller/player.py" target="_blank">class PlayerController</a>
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/model/player.py" target="_blank">class PlayerModel</a></br>
+
+
+* Une classe pour gérer les rencontres du tournoi.
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/view/tour.py" target="_blank">class TourView</a>
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/controller/tour.py" target="_blank">class TourController</a>
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/model/tour.py" target="_blank">class TourModel</a></br>
+
+
+* Une classe pour gérer les scores du tournoi.
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/view/match.py" target="_blank">class MatchView</a>
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/controller/match.py" target="_blank">class MatchController</a>
+  * <a href="https://github.com/LaurentJouron/centre-echecs/blob/main/model/match.py" target="_blank">class MatchModel</a></br>
 ___________
 
 <h1 align="center">Langage</h1>

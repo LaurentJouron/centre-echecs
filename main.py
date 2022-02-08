@@ -3,6 +3,7 @@
 from controller.tournament import TournamentController
 from controller.player import PlayerController
 from controller.match import MatchController
+from controller.tour import TourController
 
 
 if __name__ == '__main__':
@@ -21,9 +22,18 @@ if __name__ == '__main__':
     create_player = PlayerController()
     PlayerController.create_player()
 
+    """New round."""
+    tour = " Nouveau tour "
+    print(f"{tour.center(90, '-')}")
+
+    tour = TourController()
+    MatchController.tour()
+
     """Match results."""
     match = " Résultats des matchs "
     print(f"{match.center(90, '-')}")
     
     game_management = MatchController()
     MatchController.game_management()
+
+
