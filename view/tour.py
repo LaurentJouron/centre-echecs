@@ -9,16 +9,10 @@ class TourView:
     blitz = 5
     bullet = 2
 
-    # def __init__(self, player1=None, player2=None, players=None):
-    #     self.players = players
-    #     self.player1 = player1
-    #     self.player2 = player2
-
-    def __init__(self):
-        # self.players = players
-        # self.player1 = player1
-        # self.player2 = player2
-        pass
+    def __init__(self, player1=None, player2=None, players=None):
+        self.players = players
+        self.player1 = player1
+        self.player2 = player2
 
     def how_many_players(self):
         """How many player in tournament and creat 2 groups."""

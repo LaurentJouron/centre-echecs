@@ -10,14 +10,8 @@ class TournamentView:
     number_of_day = 0
     number_of_round = 4
     number_players = 8
-    
-    # def __init__(self, name=None, place=None):
-    #     self.name = name
-    #     self.place = place
 
     def __init__(self):
-        # self.name_of_tournament()
-        # self.tournament_venue()
         pass
     
     def name_of_tournament(self):

@@ -4,10 +4,6 @@
 class MatchView:
     """Manages the results of the chess tournament."""
     
-    # def __init__(self, player1=None, player2=None):
-    #     self.player1 = player1
-    #     self.player2 = player2
-
     def __init__(self, player1=None, player2=None):
         self.player1 = player1
         self.player2 = player2
