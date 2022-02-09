@@ -134,7 +134,8 @@ ___________
 <h1 align="center">Library</h1>
 
 
-We used 1 different librarie for this project, here are the explanatory documents:
+We used 3 differents librarie for this project, here are the explanatory 
+documents:
   
 <table>
   <tr>
@@ -370,7 +371,8 @@ ___________
 
 <h1 align="center">Librairies</h1>
 
-Nous avons utilisé 1 bibliothèque différentes pour ce projet, voici les documents explicatifs :
+Nous avons utilisé 3 bibliothèques différentes pour ce projet, voici les 
+documents explicatifs :
   
 <table>
   <tr>

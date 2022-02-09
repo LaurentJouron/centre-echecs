@@ -12,26 +12,14 @@ class MatchView:
         """player 1 wins"""
         self.player1 = 1
         self.player2 = 0
-        return self.player1, self.player2
     
     def player2_win(self):
         """player 2 wins"""
         self.player1 = 0
         self.player2 = 1
-        return self.player1, self.player2
     
     def draw(self):
-        players = self.player1 = self.player2 = 0.5
-        return players
-    
-    def results(self):
-        if self.player1_win():
-            return self.player1_win()
-        elif self.player2_win():
-            return self.player2_win()
-        else:
-            self.draw()
-            return self.draw()
+        self.player1 = self.player2 = 0.5
     
     def display_match(self, match):
         if self.player1_win():
