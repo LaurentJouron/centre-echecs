@@ -5,13 +5,20 @@ from datetime import datetime
 
 class PlayerView:
     """The player information you need to organize a tournament."""
-    def __init__(self, first_name=None, last_name=None, birthday=None,
-                 gender=None, ranking=None):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.birthday = birthday
-        self.gender = gender
-        self.ranking = ranking
+    # def __init__(self, first_name=None, last_name=None, birthday=None,
+    #              gender=None, ranking=None):
+    #     self.first_name = first_name
+    #     self.last_name = last_name
+    #     self.birthday = birthday
+    #     self.gender = gender
+    #     self.ranking = ranking
+
+    def __init__(self):
+        self.define_first_name()
+        self.define_last_name()
+        self.define_date_of_birth()
+        self.define_gender()
+        self.define_ranking()
 
     def define_first_name(self):
         """Define the first-name of participants."""
