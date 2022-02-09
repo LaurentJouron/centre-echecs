@@ -14,11 +14,12 @@ class PlayerView:
     #     self.ranking = ranking
 
     def __init__(self):
-        self.define_first_name()
-        self.define_last_name()
-        self.define_date_of_birth()
-        self.define_gender()
-        self.define_ranking()
+        # self.define_first_name()
+        # self.define_last_name()
+        # self.define_date_of_birth()
+        # self.define_gender()
+        # self.define_ranking()
+        pass
 
     def define_first_name(self):
         """Define the first-name of participants."""
