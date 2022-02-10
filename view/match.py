@@ -20,12 +20,4 @@ class MatchView:
     
     def draw(self):
         self.player1 = self.player2 = 0.5
-    
-    def display_match(self, match):
-        if self.player1_win():
-            print(f"le gagnant marque {match.player1} point.")
-        elif self.player2_win():
-            print(f"le gagnant marque {match.player2} point.")
-        else:
-            print(f"Les joueurs sont à égalité et marque {match.draw()}"
-                  f"points chacun.")
+
