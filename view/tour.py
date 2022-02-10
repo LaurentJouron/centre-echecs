@@ -15,7 +15,7 @@ class TourView:
         self.player2 = player2
 
     def how_many_players(self):
-        """How many player in tournament and creat 2 groups."""
+        """How many player in tournament and create 2 groups."""
         players = PlayerModel.len()
 
     def first_tour(self):

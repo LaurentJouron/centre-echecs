@@ -26,14 +26,14 @@ if __name__ == '__main__':
     tour = " Nouveau tour "
     print(f"{tour.center(90, '-')}")
 
-    new_tour = TourController()
-    MatchController.new_tour()
-
-    """Match results."""
-    match = " Résultats des matchs "
-    print(f"{match.center(90, '-')}")
-    
-    game_management = MatchController()
-    MatchController.game_management()
+    # new_tour = TourController()
+    # MatchController.new_tour()
+    #
+    # """Match results."""
+    # match = " Résultats des matchs "
+    # print(f"{match.center(90, '-')}")
+    #
+    # game_management = MatchController()
+    # MatchController.game_management()
 
 
