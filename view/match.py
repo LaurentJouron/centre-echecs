@@ -2,7 +2,7 @@
 
 
 class MatchView:
-    """Manages the results of the chess tournament."""
+    
     
     def __init__(self):
         pass
