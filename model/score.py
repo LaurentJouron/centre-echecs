@@ -1,7 +1,7 @@
 """Management of tournament organization."""
 
 
-class MatchModel:
+class ScoreModel:
     """Manages the results of the chess tournament."""
     
     players_and_score = ["player1", 0, "player2", 0]
