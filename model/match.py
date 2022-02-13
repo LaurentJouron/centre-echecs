@@ -1,14 +1,8 @@
 """Management of tournament organization."""
 
 
-class ScoreModel:
+class MatchModel:
     """Manages the results of the chess tournament."""
-    
-    players_and_score = ["player1", 0, "player2", 0]
-    
-    player1 = " = ".join(players_and_score[0:1])
-    player2 = " = ".join(players_and_score[2:3])
-
     def __init__(self, player1, score1, player2, score2):
         self.player1 = player1
         self.score1 = score1

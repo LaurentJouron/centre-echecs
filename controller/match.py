@@ -1,10 +1,10 @@
 """Management of chess player results."""
 
-from view.score import ScoreView
-from model.score import ScoreModel
+from view.match import MatchView
+from model.match import MatchModel
 
 
-class ScoreController:
+class MatchController:
     """Controls the organization of games, scores and ranking in real time."""
 
     def __init__(self):
