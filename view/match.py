@@ -3,6 +3,5 @@
 
 class MatchView:
     
-    
     def __init__(self):
         pass

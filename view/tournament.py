@@ -16,12 +16,12 @@ class TournamentView:
     
     def name_of_tournament(self):
         """Name the tournament."""
-        name: str = input("Saisissez le nom du tournoi: ")
+        name: str = input("Enter the name of the tournament: ")
         return name.capitalize()
     
     def tournament_venue(self):
         """Where the tournament goes."""
-        place: str = input("Lieu du tournoi: ")
+        place: str = input("Venue of the tournament: ")
         return place.capitalize()
     
     def get_tournament_start_date(self):
@@ -33,7 +33,7 @@ class TournamentView:
         end_date = self.get_tournament_start_date() + timedelta(
             days=self.number_of_day)
         if end_date == self.get_tournament_start_date():
-            return "même jour"
+            return "same day"
         else:
             return end_date
 
@@ -50,10 +50,10 @@ class TournamentView:
     
     def display_tournament_organization(self, tournament):
         """Confirmation phrase of the tournament class."""
-        start_of_tournament = " Démarrage du tournoi "
+        start_of_tournament = " Start of the tournament "
         print(f"\n {start_of_tournament.center(90, '-')}")
-        print(f"Le tournoi d'échec {tournament.name} commence le "
-              f"{tournament.start_date} à 9h00 pour finir le"
-              f" {tournament.end_date} à 18h00.\n"
-              f"Il se déroule {tournament.place} avec {tournament.players} "
-              f"joueurs en {tournament.rounds} tours.\n")
+        print(f"The {tournament.name} chess tournament starts on "
+              f"{tournament.start_date} at 9:00 am and end on"
+              f" {tournament.end_date} at 6:00 pm.\n"
+              f"He takes place {tournament.place} with {tournament.players} "
+              f"players in {tournament.rounds} rounds.\n")
