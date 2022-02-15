@@ -32,15 +32,15 @@ if __name__ == '__main__':
     PlayerController.create_player()
 
     """New round."""
-    tour = " new round "
+    tour = " New round "
     print(f"{tour.center(90, '-')}")
 
     # new_tour = TourController()
     # TourController.new_tour()
     #
-    # """Match results."""
-    # match = " match results "
-    # print(f"{score.center(90, '-')}")
+    """Match results."""
+    match = " Match results "
+    print(f"{match.center(90, '-')}")
     #
     # game_management = MatchController()
     # MatchController.game_management()
