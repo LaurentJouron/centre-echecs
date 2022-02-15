@@ -13,9 +13,13 @@ class MatchModel:
         """player 1 wins"""
         self.player1 = "player1"
         self.score1 += 1
+        self.player2 = "player2"
+        self.score2 += 0
     
     def player2_win(self):
         """player 2 wins"""
+        self.player1 = "player1"
+        self.score1 += 0
         self.player2 = "player2"
         self.score2 += 1
     
@@ -26,6 +30,5 @@ class MatchModel:
         self.score2 += 0.5
 
     def get_score(self):
-        """Get the information of a participant."""
-        # self.player1 + " " + self.score1 + " " + self.player2 + " " + \
-        #       self.score2
+        """Get a results."""
+        "player1" + " : " + self.score1 + " " + "player2" + " : " + self.score2
