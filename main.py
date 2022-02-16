@@ -41,8 +41,6 @@ if __name__ == '__main__':
     """Match results."""
     match = " Match results "
     print(f"{match.center(90, '-')}")
-    #
-    # game_management = MatchController()
-    # MatchController.game_management()
 
-
+    game_management = MatchController()
+    MatchController.score_match()
