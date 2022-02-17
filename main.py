@@ -13,7 +13,7 @@ if __name__ == '__main__':
     print(f"\n{welcome.center(90, ' ')}\n")
     
     """Follow the instructions."""
-    instruction = " Please follow the instructions below: "
+    instruction = " Please follow the instructions below "
     print(f"{instruction.center(90, ' ')} \n")
     
     """Starting the game"""
@@ -37,10 +37,12 @@ if __name__ == '__main__':
 
     # new_tour = TourController()
     # TourController.new_tour()
-    #
+
     """Match results."""
     match = " Match results "
     print(f"{match.center(90, '-')}")
+    score = " Selects 1 for win - D for tie - 0 for lose "
+    print(f"{score.center(90, ' ')}")
 
     game_management = MatchController()
     MatchController.score_match()

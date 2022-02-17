@@ -34,4 +34,4 @@ class MatchModel:
 
     def get_score(self):
         """Get a results."""
-        "player1" + " : " + self.score1 + " " + "player2" + " : " + self.score2
+        "player1: " + self.score1 + " " + "player2: " + self.score2

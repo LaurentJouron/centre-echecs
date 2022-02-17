@@ -10,9 +10,9 @@ class MatchController:
     @staticmethod
     def score_match():
         match_view = MatchView()
-        match_results = match_view.results()
-        match_data = match_results.get_player_information()
-        match = MatchModel(match_data[0],  # player 1
-                           match_data[1],  # score 1
-                           match_data[2],  # player 2
-                           match_data[3])  # score 2
+        match_data = match_view.results()
+        match = MatchModel(match_data[0][0],  # player 1
+                           match_data[0][1],  # score 1
+                           match_data[1][0],  # player 2
+                           match_data[1][1])  # score 2
+        match_view.display_winner(match)
