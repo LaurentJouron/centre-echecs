@@ -2,50 +2,52 @@
 
 
 class MatchView:
-    def __init__(self):
-        pass
+    def __init__(self, player1, score1, player2, score2):
+        self.player1 = player1
+        self.score1 = score1
+        self.player2 = player2
+        self.score2 = score2
     
     def result_player1(self):
         """Define the result of the player1."""
         while True:
-            score1 = input("Select the player1 score: ")
+            score1 = input(f"Select the {self.player1.first_name} score: ")
+            score1 = score1.upper()
             if score1 == "0":
-                return ["player1", 0]
+                return 0
             elif score1 == "D":
-                return ["player1", 0.5]
+                return 0.5
             elif score1 == "1":
-                return ["player1", 1]
+                return 1
             else:
                 score1 = False
                 if not score1:
                     print(f"Input error")
-
-    def result_player2(self):
-        """Define the result of the player1."""
-        while True:
-            score2 = input("Select the player2 score: ")
+                    
+            score2 = input(f"Select the {self.player2.first_name} score: ")
+            score2 = score2.upper()
             if score2 == "0":
-                return ["player2", 0]
+                return 0
             elif score2 == "D":
-                return ["player2", 0.5]
+                return 0.5
             elif score2 == "1":
-                return ["player2", 1]
+                return 1
             else:
                 score2 = False
                 if not score2:
                     print(f"Input error")
                     
     def results(self):
-        score1 = self.result_player1()
-        score2 = self.result_player2()
-        return ["player1: ", score1], ["player2", score2]
+        player1 = self.player1.first_name + " : " + self.score1
+        player2 = self.player2.first_name + " : " + self.score2
+        return [[player1], [player2]]
 
     def display_winner(self, match):
-        winner = " The winner "
-        print(f"\n {winner.center(90,'-')}")
-        if self.result_player1() == "1":
-            print(f"Player 1 wins the game and scores {match.score1} point.")
-        if self.result_player2() == "1":
-            print(f"Player 2 wins the game and scores {match.score2} point.")
-        if self.result_player1() == "0.5":
-            print(f"Players are tied for {match.score1} points each.")
+        score = " The score "
+        print(f"\n {score.center(90,'-')}")
+        print(f"Here are the results of the match between "
+              f"{match.player1.first_name} and {match.player2.first_name}.\n"
+              f"{match.player1.first_name} scores {match.score1} point and "
+              f"{match.player2.first_name} scores {match.score2} point.\n"
+              f"Thank you both.")
+       

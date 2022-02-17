@@ -4,13 +4,14 @@
 class TournamentModel:
     """Information of the chess tournament."""
 
-    def __init__(self, name, place, start_date, end_date, rounds, players):
+    def __init__(self, name, place, start_date, end_date):
+        """Builder of the model tournament."""
         self.name = name
         self.place = place
         self.start_date = start_date
         self.end_date = end_date
-        self.rounds = rounds
-        self.players = players
+        self.rounds = []
+        self.players = []
 
     def def_all_information_of_tournament(self):
         """Get the information of a tournament."""
@@ -20,3 +21,7 @@ class TournamentModel:
             self.end_date + " " +\
             self.rounds + " " +\
             self.players
+
+    def add_player(self, player):
+        """Adding players and tournament scores to the list."""
+        self.players.append(player)

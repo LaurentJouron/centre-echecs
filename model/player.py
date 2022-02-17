@@ -5,11 +5,13 @@ class PlayerModel:
     """Entering information of the différent players of the tournament."""
     
     def __init__(self, first_name, last_name, birthday, gender, ranking):
+        """Builder of the model player."""
         self.first_name = first_name
         self.last_name = last_name
         self.birthday = birthday
         self.gender = gender
         self.ranking = ranking
+        self.players = []
     
     def get_full_name(self):
         """Get the information of a participant."""

@@ -55,5 +55,6 @@ class TournamentView:
         print(f"The {tournament.name} chess tournament starts on "
               f"{tournament.start_date} at 9:00 am and end on"
               f" {tournament.end_date} at 6:00 pm.\n"
-              f"He takes place {tournament.place} with {tournament.players} "
-              f"players in {tournament.rounds} rounds.\n")
+              f"He takes place {tournament.place} with"
+              f" {self.number_players} "
+              f"players in {self.number_of_round} rounds.\n")
