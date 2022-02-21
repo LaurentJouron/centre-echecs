@@ -41,7 +41,7 @@ if __name__ == '__main__':
     """Match results."""
     match = " Match results "
     print(f"{match.center(90, '-')}")
-    score = " Selects 1 for win - D for tie - 0 for lose "
+    score = " Selects: 1 for win - D for tie - 0 for lose "
     print(f"{score.center(90, ' ')}")
 
     game_management = MatchController()

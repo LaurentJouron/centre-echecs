@@ -20,3 +20,4 @@ class PlayerModel:
             self.gender + " " +\
             self.birthday + " " +\
             self.ranking
+    

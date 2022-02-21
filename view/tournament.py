@@ -13,7 +13,7 @@ class TournamentView:
 
     def __init__(self):
         pass
-    
+        
     def name_of_tournament(self):
         """Name the tournament."""
         name: str = input("Enter the name of the tournament: ")

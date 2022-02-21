@@ -9,6 +9,7 @@ class MatchModel:
         self.score1 = score1
         self.player2 = player2
         self.score2 = score2
+        self.results = []
     
     def player1_win(self):
         """player 1 wins"""
@@ -26,5 +27,6 @@ class MatchModel:
     
     def get_score(self):
         """Get a results."""
-        results = self.player1.first_name + " : " + self.score1 + " / " + \
-            self.player2.first_name + " : " + self.score2
+        player1 = self.player1.first_name + " : " + self.score1 + " / " + \
+            self.player2.first_name + " : " + self.score2 + " / " + \
+            self.player1.append()

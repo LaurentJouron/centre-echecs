@@ -2,13 +2,13 @@
 
 
 class MatchView:
-    def __init__(self, player1, score1, player2, score2):
+    def __init__(self, player1, player2):
         self.player1 = player1
-        self.score1 = score1
+        self.score1 = None
         self.player2 = player2
-        self.score2 = score2
+        self.score2 = None
     
-    def result_player1(self):
+    def result_players(self):
         """Define the result of the player1."""
         while True:
             score1 = input(f"Select the {self.player1.first_name} score: ")
