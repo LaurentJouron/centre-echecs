@@ -5,9 +5,10 @@ from datetime import datetime
 
 class PlayerView:
     """The player information you need to organize a tournament."""
+    new_player = 0
 
     def __init__(self):
-        pass
+        PlayerView.new_player += 1
 
     def define_first_name(self):
         """Define the first-name of participants."""
@@ -82,3 +83,4 @@ class PlayerView:
               f"He is currently {player.ranking} in national ranking. \n"
               f"His registration is validated.\n"
               f"Good luck!\n")
+        print(f"Il y a {PlayerView.new_player} joueur enregistré.")
