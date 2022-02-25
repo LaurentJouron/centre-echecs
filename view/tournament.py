@@ -1,16 +1,15 @@
 """Enter information for the tournament organization."""
-
+import constant
 from datetime import date
 from datetime import timedelta
+
+number_of_players = constant.NUMBER_OF_PLAYERS
+number_of_round = constant.NUMBER_OF_ROUND
+number_of_day = constant.NUMBER_OF_DAY
 
 
 class TournamentView:
     """What information is needed for the tournament."""
-
-    number_of_day = 0
-    number_of_round = 4
-    number_players = 8
-
     def __init__(self):
         pass
         
@@ -31,7 +30,7 @@ class TournamentView:
     def get_tournament_end_date(self):
         """Tournament end date."""
         end_date = self.get_tournament_start_date() + timedelta(
-            days=self.number_of_day)
+            days=number_of_day)
         if end_date == self.get_tournament_start_date():
             return "same day"
         else:
@@ -43,8 +42,8 @@ class TournamentView:
         place = self.tournament_venue()
         start_date = self.get_tournament_start_date()
         end_date = self.get_tournament_end_date()
-        number_round = self.number_of_round
-        number_players = self.number_players
+        number_round = number_of_round
+        number_players = number_of_players
         return [name, place, start_date, end_date, number_round,
                 number_players]
     
@@ -56,5 +55,5 @@ class TournamentView:
               f"{tournament.start_date} at 9:00 am and end on"
               f" {tournament.end_date} at 6:00 pm.\n"
               f"He takes place {tournament.place} with"
-              f" {self.number_players} "
-              f"players in {self.number_of_round} rounds.\n")
+              f" {number_of_players} "
+              f"players in {number_of_round} rounds.\n")

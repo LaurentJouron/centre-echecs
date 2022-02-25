@@ -5,8 +5,8 @@ from controller.player import PlayerController
 from controller.tour import TourController
 from controller.match import MatchController
 
-
 if __name__ == '__main__':
+    
     """Welcome to the game."""
 
     """Sentence when opening the game."""
@@ -23,21 +23,21 @@ if __name__ == '__main__':
     tournament = " Creating a tournament "
     print(f"{tournament.center(90, '-')}")
 
-    new_tournament = TournamentController()
-    TournamentController.new_tournament()
+    tournament_controller = TournamentController()
+    TournamentController.new_tournament(self=tournament_controller)
 
     """Register players."""
     player = " Register players "
     print(f"{player.center(90, '-')}")
 
-    create_player = PlayerController()
-    PlayerController.create_player()
+    player_controller = PlayerController()
+    PlayerController.create_player(self=player_controller)
 
     """New round."""
     tour = " New round "
     print(f"{tour.center(90, '-')}")
 
-    # new_tour = TourController()
+    # tour_controller = TourController()
     # TourController.new_tour()
 
     """Match results."""
@@ -46,5 +46,5 @@ if __name__ == '__main__':
     score = " Selects: 1 for win - D for tie - 0 for lose "
     print(f"{score.center(90, ' ')}")
 
-    game_management = MatchController()
-    MatchController.game_match()
+    match_controller = MatchController()
+    MatchController.game_match(self=match_controller)

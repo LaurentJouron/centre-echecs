@@ -32,11 +32,14 @@ class MatchView:
             return score1, score2
 
     def results(self):
+        """We collect the results of the matches to record them and organize
+        the ranking."""
         player1 = self.player1.first_name + " : " + self.score1
         player2 = self.player2.first_name + " : " + self.score2
         return [[player1], [player2]]
 
     def display_winner(self, match):
+        """The points added to each are displayed."""
         score = " The score "
         print(f"\n {score.center(90,'-')}")
         print(f"Here are the results of the match between "
