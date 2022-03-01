@@ -1,5 +1,4 @@
 """Enter the information of the players who will participate."""
-
 from datetime import datetime
 
 

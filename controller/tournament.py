@@ -11,11 +11,15 @@ class TournamentController:
     def new_tournament(self):
         """Imports view data, imports model data and compares accuracy."""
         tournament_data = self.tournament_view.organize_new_tournament()
-        tournament = TournamentModel(tournament_data[0],  # name
-                                     tournament_data[1],  # place
-                                     tournament_data[2],  # start date
-                                     tournament_data[3])  # end date
+        tournament = TournamentModel(name=tournament_data[0],
+                                     place=tournament_data[1],
+                                     start_date=tournament_data[2],
+                                     end_date=tournament_data[3])
 
         return self.tournament_view.display_tournament_organization(tournament)
+    
+    def add_player(self):
+        """Add players to the current tournament"""
 
-"""Si j'ai un trounoi ajouter un player et boucler 8 fois"""
+
+"""Si j'ai un tournoi ajouter un player et boucler 8 fois"""

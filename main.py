@@ -2,7 +2,7 @@
 
 from controller.tournament import TournamentController
 from controller.player import PlayerController
-from controller.tour import TourController
+# from controller.tour import TourController
 from controller.match import MatchController
 
 if __name__ == '__main__':

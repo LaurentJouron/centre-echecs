@@ -1,11 +1,12 @@
 """Enter information for the tournament organization."""
-import constant
 from datetime import date
 from datetime import timedelta
 
-number_of_players = constant.NUMBER_OF_PLAYERS
-number_of_round = constant.NUMBER_OF_ROUND
-number_of_day = constant.NUMBER_OF_DAY
+import constants
+
+number_of_players = constants.NUMBER_OF_PLAYERS
+number_of_round = constants.NUMBER_OF_ROUND
+number_of_day = constants.NUMBER_OF_DAY
 
 
 class TournamentView:

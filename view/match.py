@@ -1,4 +1,5 @@
 """Enter the results of the players participating in the tournament."""
+from view.player import PlayerView
 from controller.player import PlayerController
 
 
