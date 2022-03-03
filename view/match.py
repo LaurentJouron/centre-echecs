@@ -5,9 +5,9 @@ from controller.player import PlayerController
 
 class MatchView:
     def __init__(self):
-        self.player1 = PlayerController.create_player()
+        self.player1 = PlayerController.create_player(PlayerView.new_player)
         self.score1 = None
-        self.player2 = PlayerController.create_player()
+        self.player2 = PlayerController.create_player(PlayerView.new_player)
         self.score2 = None
     
     def result_players(self):
