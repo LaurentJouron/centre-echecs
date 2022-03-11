@@ -1,9 +1,9 @@
 """Entry point."""
 
 from controller.tournament import TournamentController
-from controller.player import PlayerController
+# from controller.player import PlayerController
 # from controller.tour import TourController
-from controller.match import MatchController
+# from controller.match import MatchController
 
 if __name__ == '__main__':
     
@@ -24,27 +24,30 @@ if __name__ == '__main__':
     print(f"{tournament.center(90, '-')}")
 
     tournament_controller = TournamentController()
-    TournamentController.new_tournament(self=tournament_controller)
+    TournamentController.new_tournament()
+
+    start_of_tournament = " Start of the tournament "
+    print(f"\n {start_of_tournament.center(90, '-')}")
 
     """Register players."""
     player = " Register players "
     print(f"{player.center(90, '-')}")
 
-    player_controller = PlayerController()
-    PlayerController.create_player(self=player_controller)
-
-    """New round."""
-    tour = " New round "
-    print(f"{tour.center(90, '-')}")
-
-    # tour_controller = TourController()
-    # TourController.new_tour()
-
-    """Match results."""
-    match = " Match results "
-    print(f"{match.center(90, '-')}")
-    score = " Selects: 1 for win - D for tie - 0 for lose "
-    print(f"{score.center(90, ' ')}")
-
-    match_controller = MatchController()
-    MatchController.game_match(self=match_controller)
+    # player_controller = PlayerController()
+    # PlayerController.create_player(self=player_controller)
+    #
+    # """New round."""
+    # tour = " New round "
+    # print(f"{tour.center(90, '-')}")
+    #
+    # # tour_controller = TourController()
+    # # TourController.new_tour()
+    #
+    # """Match results."""
+    # match = " Match results "
+    # print(f"{match.center(90, '-')}")
+    # score = " Selects: 1 for win - D for tie - 0 for lose "
+    # print(f"{score.center(90, ' ')}")
+    #
+    # match_controller = MatchController()
+    # MatchController.game_match(self=match_controller)

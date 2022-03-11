@@ -3,7 +3,7 @@
 
 class PlayerModel:
     """Entering information of the différent players of the tournament."""
-    
+
     def __init__(self, first_name, last_name, birthday, gender, ranking):
         """Builder of the model player."""
         self.first_name = first_name
@@ -11,12 +11,11 @@ class PlayerModel:
         self.birthday = birthday
         self.gender = gender
         self.ranking = ranking
-        self.players = []
-    
-    def get_full_name(self):
+
+    def __str__(self):
         """Get the information of a participant."""
-        return self.first_name + " " + \
-            self.last_name + " " +\
-            self.gender + " " +\
-            self.birthday + " " +\
-            self.ranking
+        return f"{self.first_name} {self.last_name} est {self.gender}, " \
+               f"né le {self.birthday}.\n" \
+               f"Actuellement, {self.ranking} au classement national.\n" \
+               f"Son inscription est validée.\n" \
+               f"Bonne chance!"
