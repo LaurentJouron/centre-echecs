@@ -11,7 +11,6 @@ class PlayerModel:
         self.birthday = birthday
         self.gender = gender
         self.ranking = ranking
-        self.players = []
     
     def get_full_name(self):
         """Get the information of a participant."""
