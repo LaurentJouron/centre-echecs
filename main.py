@@ -6,22 +6,20 @@ from controller.tournament import TournamentController
 # from controller.match import MatchController
 
 if __name__ == '__main__':
-    
-    """Sentence when opening the game."""
+    """Reception"""
     welcome = " Welcome to the << CENTER-ECHEC >> application "
     print(f"\n{welcome.center(90, ' ')}\n")
     
-    """Follow the instructions."""
     instruction = " Please follow the instructions below "
     print(f"{instruction.center(90, ' ')} \n")
 
-    """Starting the game"""
     """Creation of a tournament."""
     tournament = " Creating a tournament "
     print(f"{tournament.center(90, '-')}")
 
+    """Starting the game"""
     tournament_controller = TournamentController()
-    TournamentController.new_tournament()
+    print(str(TournamentController.new_tournament()))
 
     start_of_tournament = " Start of the tournament "
     print(f"\n {start_of_tournament.center(90, '-')}")
