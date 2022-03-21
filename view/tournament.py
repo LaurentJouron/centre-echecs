@@ -57,24 +57,24 @@ class TournamentView:
             return end_date
         
     @staticmethod
-    def number_players():
+    def players():
         """
         Take the number of players on the constant file.
         Returns:
             int: number of players
         """
-        number_players = constants.NUMBER_OF_PLAYERS
-        return number_players
+        players = constants.NUMBER_OF_PLAYERS
+        return players
     
     @staticmethod
-    def number_rounds():
+    def rounds():
         """
         Take the number of rounds on the constant file.
         Returns:
             int: number of rounds
         """
-        number_of_round = constants.NUMBER_OF_ROUND
-        return number_of_round
+        rounds = constants.NUMBER_OF_ROUND
+        return rounds
         
     @staticmethod
     def get_all():
@@ -83,7 +83,7 @@ class TournamentView:
         place = TournamentView.place()
         start_date = TournamentView.start_date()
         end_date = TournamentView.end_date(start_date)
-        number_players = TournamentView.number_players()
-        number_rounds = TournamentView.number_rounds()
-        return name, place, start_date, end_date, number_players, number_rounds
+        players = TournamentView.players()
+        rounds = TournamentView.rounds()
+        return name, place, start_date, end_date, players, rounds
         

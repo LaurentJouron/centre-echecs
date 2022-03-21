@@ -12,11 +12,11 @@ class TournamentController:
     @staticmethod
     def new_tournament():
         """Imports view data, imports model data and compares accuracy."""
-        name, place, start_date, end_date, number_players, number_rounds = \
+        name, place, start_date, end_date, players, rounds = \
             TournamentView.get_all()
         
         tournament = TournamentModel(name, place, start_date, end_date,
-                                     number_players, number_rounds)
+                                     players, rounds)
         
         TournamentModel.create_file()
         return tournament

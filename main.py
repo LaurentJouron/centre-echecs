@@ -7,22 +7,28 @@ from controller.tournament import TournamentController
 
 if __name__ == '__main__':
     """Reception"""
-    welcome = " Welcome to the << CENTER-ECHEC >> application "
+    welcome = " Welcome to the << CHESS-CENTER >> application "
     print(f"\n{welcome.center(90, ' ')}\n")
     
     instruction = " Please follow the instructions below "
     print(f"{instruction.center(90, ' ')} \n")
 
     """Creation of a tournament."""
-    tournament = " Creating a tournament "
+    tournament = " Tournament creation "
     print(f"{tournament.center(90, '-')}")
 
     """Starting the game"""
-    tournament_controller = TournamentController()
+    # tournament_controller = TournamentController()
     print(str(TournamentController.new_tournament()))
 
     start_of_tournament = " Start of the tournament "
     print(f"\n {start_of_tournament.center(90, '-')}")
+    
+    
+
+    # confirmation = " Confirmation "
+    # print(f"\n {confirmation.center(90, '-')}")
+    
 
     # """Register players."""
     # player = " Register players "

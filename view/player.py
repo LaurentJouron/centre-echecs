@@ -24,12 +24,12 @@ class PlayerView:
             return last_name.capitalize()
 
     @staticmethod
-    def define_date_of_birth():
+    def define_birthday():
         """Define the birthday of participants."""
-        date_of_birthday = input("Enter his date of birth: ")
-        date_of_birthday = datetime.strptime(date_of_birthday, "%d%m%Y").\
+        birthday = input("Enter his date of birth: ")
+        birthday = datetime.strptime(birthday, "%d%m%Y").\
             strftime("%A %d %B %Y")
-        return date_of_birthday
+        return birthday
 
     @staticmethod
     def define_gender():
@@ -67,7 +67,7 @@ class PlayerView:
     def get_all_information(self):
         first_name = self.define_first_name()
         last_name = self.define_last_name()
-        birthday = self.define_date_of_birth()
+        birthday = self.define_birthday()
         gender = self.define_gender()
         ranking = self.define_ranking()
         return first_name, last_name, birthday, gender, ranking

@@ -11,12 +11,9 @@ class PlayerModel:
         self.birthday = birthday
         self.gender = gender
         self.ranking = ranking
-        self.players = []
-    
-    def get_full_name(self):
-        """Get the information of a participant."""
-        return self.first_name + " " + \
-            self.last_name + " " +\
-            self.gender + " " +\
-            self.birthday + " " +\
-            self.ranking
+        
+    def __str__(self):
+        return f"{self.first_name} {self.last_name} is a {self.gender} born " \
+               f"on {self.birthday}, Currently, {self.ranking} in the " \
+               f"national ranking.\n " \
+               f"Registration is validated have a good luck!\n"

@@ -9,10 +9,9 @@ class PlayerController:
     @staticmethod
     def create_player():
         """Imports view data, imports model data and compares accuracy."""
-        first_name, last_name, birthday, gender, ranking = PlayerView.get_all_information()
-        player = PlayerModel(first_name,
-                             last_name,
-                             birthday,
-                             gender,
-                             ranking)
+        first_name, last_name, birthday, gender, ranking = \
+            PlayerView.get_all_information()
+        
+        player = PlayerModel(first_name, last_name, birthday, gender, ranking)
+        
         return player
