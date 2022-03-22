@@ -1,10 +1,11 @@
 """Information for participants in chess tournaments."""
-from controller.player import PlayerController
+from tinydb import TinyDB, where
 
 
 class PlayerModel:
+    db = TinyDB(f"data/players.json", indent=4)
+
     """Entering information of the différent players of the tournament."""
-    
     def __init__(self, first_name, last_name, birthday, gender, ranking):
         """Builder of the model player."""
         self.first_name = first_name
@@ -20,8 +21,18 @@ class PlayerModel:
                f"Registration is validated have a good luck!\n"
 
     def save(self):
-        PlayerController.create().insert({"First-name:": self.first_name,
-                                          "Last-name:": self.last_name,
-                                          "Birthday:": self.birthday,
-                                          "Gender:": self.gender,
-                                          "Ranking:": self.ranking})
+        PlayerModel.db.insert({"first-name": self.first_name,
+                               "last-name": self.last_name,
+                               "birthday": self.birthday,
+                               "gender": self.gender,
+                               "ranking": self.ranking})
+
+    @staticmethod
+    def get_all():
+        return PlayerModel.db
+
+    def delete(self):
+        return PlayerModel.db.remove(where("first-name") == self.first_name)
+
+    def modify(self):
+        pass

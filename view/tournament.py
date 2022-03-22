@@ -78,7 +78,10 @@ class TournamentView:
         
     @staticmethod
     def get_all():
-        """Groups all functions of the class."""
+        """Groups all functions of the class.
+        Returns:
+            list: [name, place, start_date, end_date, players, rounds]
+        """
         name = TournamentView.name()
         place = TournamentView.place()
         start_date = TournamentView.start_date()

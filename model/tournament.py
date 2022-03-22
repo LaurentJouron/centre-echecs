@@ -1,11 +1,7 @@
 """Information of the chess tournament."""
-from tinydb import TinyDB
 
 
 class TournamentModel:
-    """ Creation of the file for the tournament. """
-    db = TinyDB(f"data/tournament.json", indent=4)
-    
     """Information of the chess tournament."""
     def __init__(self, name, place, start_date, end_date, players, rounds):
         
@@ -25,9 +21,3 @@ class TournamentModel:
                f"He takes place {self.place} with " \
                f"{self.players} players in {self.rounds} " \
                f"rounds."
-    
-    @staticmethod
-    def create_file():
-        """ Creation of the file for the tournament. """
-        db = TinyDB(f"data/tournament.json", indent=4)
-        return db

@@ -7,7 +7,9 @@ class PlayerView:
 
     @staticmethod
     def define_first_name():
-        """Define the first-name of participants."""
+        """Define the first-name of participants.
+        Returns:
+            str: players first-name """
         while True:
             first_name = input("Please enter the player’s first name: ")
             if not first_name.isalpha():
@@ -16,7 +18,9 @@ class PlayerView:
 
     @staticmethod
     def define_last_name():
-        """Define the last_name of participants."""
+        """Define the last_name of participants.
+        Returns:
+            str: players last-name """
         while True:
             last_name = input("Enter the last name: ")
             if not last_name.isalpha():
@@ -25,7 +29,9 @@ class PlayerView:
 
     @staticmethod
     def define_birthday():
-        """Define the birthday of participants."""
+        """Define the birthday of participants.
+        Returns:
+            date: players birthday """
         birthday = input("Enter his date of birth: ")
         birthday = datetime.strptime(birthday, "%d%m%Y").\
             strftime("%A %d %B %Y")
@@ -33,7 +39,9 @@ class PlayerView:
 
     @staticmethod
     def define_gender():
-        """Define the gender of participants."""
+        """Define the gender of participants.
+        Returns:
+            str: players gender """
         while True:
             gender = input("Select M for men or F for women: ")
             gender = gender.upper()
@@ -48,7 +56,9 @@ class PlayerView:
 
     @staticmethod
     def define_ranking():
-        """Define the ranking of participants."""
+        """Define the ranking of participants.
+        Returns:
+            int: players national ranking """
         while True:
             ranking = input("Indicate its place in the national ranking: ")
             if ranking == "1":
@@ -66,9 +76,25 @@ class PlayerView:
 
     @staticmethod
     def get_all_information():
+        """
+        Groups all fonction of the class.
+        Returns:
+             list: [first_name, last_name, birthday, gender, ranking]
+        """
         first_name = PlayerView.define_first_name()
         last_name = PlayerView.define_last_name()
         birthday = PlayerView.define_birthday()
         gender = PlayerView.define_gender()
         ranking = PlayerView.define_ranking()
         return first_name, last_name, birthday, gender, ranking
+
+    @staticmethod
+    def display_all(players):
+        """
+        Display all players of the tournament.
+        Param players: list of players
+        return:
+            print: information of players
+        """
+        for player in players:
+            print(player)

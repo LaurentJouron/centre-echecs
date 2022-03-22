@@ -1,7 +1,9 @@
 """Information for the organisation of chass tournaments."""
 import time
+import constants
 
-from model.player import PlayerModel
+bullet = constants.BULLET
+blitz = constants.BLITZ
 
 
 class TourModel:
@@ -13,10 +15,6 @@ class TourModel:
         self.players = players
         self.player1 = player1
         self.player2 = player2
-
-    def how_many_players(self):
-        """How many player in tournament and create 2 groups."""
-        players = PlayerModel.len()
 
     def first_tour(self):
         player1 = self.players[::2]
