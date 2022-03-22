@@ -64,10 +64,11 @@ class PlayerView:
                 if not ranking:
                     print(f"Input error")
 
-    def get_all_information(self):
-        first_name = self.define_first_name()
-        last_name = self.define_last_name()
-        birthday = self.define_birthday()
-        gender = self.define_gender()
-        ranking = self.define_ranking()
+    @staticmethod
+    def get_all_information():
+        first_name = PlayerView.define_first_name()
+        last_name = PlayerView.define_last_name()
+        birthday = PlayerView.define_birthday()
+        gender = PlayerView.define_gender()
+        ranking = PlayerView.define_ranking()
         return first_name, last_name, birthday, gender, ranking

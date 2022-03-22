@@ -22,17 +22,17 @@ if __name__ == '__main__':
     print(str(TournamentController.new_tournament()))
 
     start_of_tournament = " Start of the tournament "
-    print(f"\n {start_of_tournament.center(90, '-')}")
+    print(f"\n {start_of_tournament.center(90, '*')}")
     
+    """Register players."""
+    player = " Register players "
+    print(f"{player.center(90, '-')}")
     
 
     # confirmation = " Confirmation "
     # print(f"\n {confirmation.center(90, '-')}")
     
 
-    # """Register players."""
-    # player = " Register players "
-    # print(f"{player.center(90, '-')}")
 
     # player_controller = PlayerController()
     # PlayerController.create_player(self=player_controller)

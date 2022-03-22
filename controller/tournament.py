@@ -17,6 +17,5 @@ class TournamentController:
         
         tournament = TournamentModel(name, place, start_date, end_date,
                                      players, rounds)
-        
         TournamentModel.create_file()
         return tournament

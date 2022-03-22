@@ -1,4 +1,5 @@
 """Information for participants in chess tournaments."""
+from controller.player import PlayerController
 
 
 class PlayerModel:
@@ -17,3 +18,10 @@ class PlayerModel:
                f"on {self.birthday}, Currently, {self.ranking} in the " \
                f"national ranking.\n " \
                f"Registration is validated have a good luck!\n"
+
+    def save(self):
+        PlayerController.create().insert({"First-name:": self.first_name,
+                                          "Last-name:": self.last_name,
+                                          "Birthday:": self.birthday,
+                                          "Gender:": self.gender,
+                                          "Ranking:": self.ranking})
