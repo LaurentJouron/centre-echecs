@@ -37,10 +37,11 @@ class TournamentView:
             date: start tournament
         """
         start_date = date.today()
+        start_date = start_date.strftime("%A %d %B %Y")
         return start_date
     
     @staticmethod
-    def end_date(start_date):
+    def end_date():
         """
         Tournament end date.
         Agrs:
@@ -50,11 +51,11 @@ class TournamentView:
             or
             date: end date
         """
-        end_date = start_date + timedelta(number_of_day)
-        if end_date == start_date:
+        end_date = date.today() + timedelta(number_of_day)
+        if end_date == date.today():
             return "same day"
         else:
-            return end_date
+            return end_date.strftime("%A %d %B %Y")
         
     @staticmethod
     def players():
@@ -85,7 +86,7 @@ class TournamentView:
         name = TournamentView.name()
         place = TournamentView.place()
         start_date = TournamentView.start_date()
-        end_date = TournamentView.end_date(start_date)
+        end_date = TournamentView.end_date()
         players = TournamentView.players()
         rounds = TournamentView.rounds()
         return name, place, start_date, end_date, players, rounds

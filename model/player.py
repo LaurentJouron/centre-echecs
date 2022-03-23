@@ -29,10 +29,13 @@ class PlayerModel:
 
     @staticmethod
     def get_all():
-        return PlayerModel.db
+        return PlayerModel.db.all()
 
     def delete(self):
         return PlayerModel.db.remove(where("first-name") == self.first_name)
 
     def modify(self):
         pass
+
+    def erase_file(self):
+        PlayerModel.db.purge()

@@ -61,6 +61,8 @@ class PlayerView:
             int: players national ranking """
         while True:
             ranking = input("Indicate its place in the national ranking: ")
+            if ranking < "1":
+                return False
             if ranking == "1":
                 return f"{ranking}st"
             if ranking == "2":

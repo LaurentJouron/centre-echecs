@@ -9,39 +9,39 @@ if __name__ == '__main__':
 
     # Reception
     welcome = " Welcome to the << CHESS-CENTER >> application "
-    print(f"\n{welcome.center(90, ' ')}\n")
+    print(f"\n{welcome.center(106, ' ')}\n")
 
     instruction = " Please follow the instructions below "
-    print(f"{instruction.center(90, ' ')} \n")
+    print(f"{instruction.center(106, ' ')} \n")
 
     tournament = " Tournament creation "
-    print(f"{tournament.center(90, '-')}")
+    print(f"{tournament.center(106, '-')}")
 
     # Starting the game
-    # tournament_controller = TournamentController()
-    print(str(TournamentController.new_tournament()))
+    tournament_controller = TournamentController()
+    print(str(tournament_controller.new_tournament()))
 
     start_of_tournament = " Start of the tournament "
-    print(f"\n{start_of_tournament.center(90, '*')}")
+    print(f"\n{start_of_tournament.center(106, '*')}")
 
     player = " Register players "
-    print(f"{player.center(90, '-')}")
+    print(f"{player.center(106, '-')}")
 
-    confirmation = " Confirmation "
-    print(f"\n{confirmation.center(90, '-')}")
+    # confirmation = " Confirmation "
+    # print(f"\n{confirmation.center(106, '-')}")
 
     # player_controller = PlayerController()
     # print(str(PlayerController.create()))
 
     # """New round."""
     # tour = " New round "
-    # print(f"{tour.center(90, '-')}")
+    # print(f"{tour.center(106, '-')}")
 
     # tour_controller = TourController()
     # TourController.new_tour()
 
     # """Match results."""
     # match = " Match results "
-    # print(f"{match.center(90, '-')}")
+    # print(f"{match.center(106, '-')}")
     # score = " Selects: 1 for win - D for tie - 0 for lose "
-    # print(f"{score.center(90, ' ')}")
+    # print(f"{score.center(106, ' ')}")

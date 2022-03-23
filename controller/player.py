@@ -21,7 +21,6 @@ class PlayerController:
     def get_all():
         players_model = []
         players = PlayerModel.get_all()
-
         for player in players:
             players = PlayerModel(player["first-name"],
                                   player["last-name"],

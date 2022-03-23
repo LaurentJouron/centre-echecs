@@ -1,10 +1,10 @@
 """Management of the tournament organization"""
-
 from view.tournament import TournamentView
 from model.tournament import TournamentModel
 
 import constants
 
+# Call the variable contante of players number
 number_of_player = constants.NUMBER_OF_PLAYERS
 
 

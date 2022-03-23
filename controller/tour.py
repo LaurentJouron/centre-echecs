@@ -4,4 +4,5 @@ from model.tour import TourModel
 
 
 class TourController:
+
     pass
