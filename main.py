@@ -16,16 +16,26 @@ if __name__ == '__main__':
 
     tournament = " Tournament creation "
     print(f"{tournament.center(106, '-')}")
-
+    
     # Starting the game
     tournament_controller = TournamentController()
     print(str(tournament_controller.new_tournament()))
 
-    start_of_tournament = " Start of the tournament "
-    print(f"\n{start_of_tournament.center(106, '*')}")
-
-    player = " Register players "
-    print(f"{player.center(106, '-')}")
+    while True:
+        tournament_validate = " Select: 1-> validate  2-> Modify "
+        print(f"\n{tournament_validate.center(106, '-')}")
+        validate = input(f"What you want to do ? ")
+        
+        if validate == "1":
+            start_of_tournament = " Start of the tournament "
+            print(f"\n{start_of_tournament.center(106, '*')}")
+            player = " Register players "
+            print(f"{player.center(106, '-')}")
+        
+        if validate == "2":
+            pass
+        else:
+            validate = False
 
     # confirmation = " Confirmation "
     # print(f"\n{confirmation.center(106, '-')}")

@@ -2,10 +2,8 @@
 
 
 class TournamentModel:
-    """Information of the chess tournament."""
+    """Builder of the model tournament."""
     def __init__(self, name, place, start_date, end_date, players, rounds):
-        
-        """Builder of the model tournament."""
         self.name = name
         self.place = place
         self.start_date = start_date
@@ -21,3 +19,6 @@ class TournamentModel:
                f"He takes place {self.place} with " \
                f"{self.players} players in {self.rounds} " \
                f"rounds."
+
+    def modify(self):
+        pass

@@ -14,7 +14,9 @@ class PlayerView:
             first_name = input("Please enter the player’s first name: ")
             if not first_name.isalpha():
                 print("Invalid first name")
-            return first_name.capitalize()
+                ValueError()
+            else:
+                return first_name.capitalize()
 
     @staticmethod
     def define_last_name():
@@ -25,7 +27,9 @@ class PlayerView:
             last_name = input("Enter the last name: ")
             if not last_name.isalpha():
                 print("Invalid name")
-            return last_name.capitalize()
+                ValueError()
+            else:
+                return last_name.capitalize()
 
     @staticmethod
     def define_birthday():
@@ -62,7 +66,11 @@ class PlayerView:
         while True:
             ranking = input("Indicate its place in the national ranking: ")
             if ranking < "1":
-                return False
+                print(f"Input error")
+                ValueError()
+            if ranking != int:
+                print(f"Input error")
+                ValueError()
             if ranking == "1":
                 return f"{ranking}st"
             if ranking == "2":
@@ -71,10 +79,6 @@ class PlayerView:
                 return f"{ranking}rd"
             if ranking >= "4":
                 return f"{ranking}th"
-            else:
-                ranking = False
-                if not ranking:
-                    print(f"Input error")
 
     @staticmethod
     def get_all_information():

@@ -16,9 +16,14 @@ class TournamentView:
         Returns:
             str: Tournament name
         """
-        name: str = input("Enter the name of the tournament: ").capitalize()
-        return name
-    
+        while True:
+            name: str = input("Enter the tournament name: ").capitalize()
+            if not name.isalpha():
+                print(f"Invalid name")
+                ValueError()
+            else:
+                return name
+
     @staticmethod
     def place():
         """
@@ -26,8 +31,13 @@ class TournamentView:
         Returns:
             str: Tournament place
         """
-        place: str = input("Venue of the tournament: ").capitalize()
-        return place
+        while True:
+            place: str = input("Place of the tournament: ").capitalize()
+            if not place.isalpha():
+                print("Invalid place name")
+                ValueError()
+            else:
+                return place
 
     @staticmethod
     def start_date():

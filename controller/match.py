@@ -1,18 +1,34 @@
 """Management of chess player results."""
-from view.match import MatchView
-from model.match import MatchModel
+import time
+
+import constants
 
 
 class MatchController:
     """Controls the organization of games and scores in real time."""
-    def __init__(self):
-        self.match_view = MatchView()
-    
-    def game_match(self):
-        """Imports view data, imports model data and compares accuracy."""
-        match_data = self.match_view.results()
-        match = MatchModel(player1=match_data[0][0],
-                           score1=match_data[0][1],
-                           player2=match_data[1][0],
-                           score2=match_data[1][1])
-        return match
+
+    @staticmethod
+    def blitz():
+        """The blitz gives a maximum of 5 minutes to each player"""
+        blitz_time = constants.BLITZ
+        blitz = blitz_time * 60
+        while blitz:
+            minutes, seconds = divmod(blitz_time, 60)
+            timer = '{:02d}:{:02d}'.format(minutes, seconds)
+            print(timer, end="\r")
+            time.sleep(1)
+            blitz_time -= 1
+        print("The game is over")
+
+    @staticmethod
+    def bullet_countdown():
+        """The bullet gives a maximum of 2 minutes to each player"""
+        bullet = constants.BULLET
+        bullet = bullet * 60
+        while bullet:
+            minutes, seconds = divmod(bullet, 60)
+            timer = '{:02d}:{:02d}'.format(minutes, seconds)
+            print(timer, end="\r")
+            time.sleep(1)
+            bullet -= 1
+        print("The game is over")
