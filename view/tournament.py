@@ -68,7 +68,7 @@ class TournamentView:
             return end_date.strftime("%A %d %B %Y")
         
     @staticmethod
-    def players():
+    def append_player():
         """
         Take the number of players on the constant file.
         Returns:
@@ -97,7 +97,5 @@ class TournamentView:
         place = TournamentView.place()
         start_date = TournamentView.start_date()
         end_date = TournamentView.end_date()
-        players = TournamentView.players()
-        rounds = TournamentView.rounds()
-        return name, place, start_date, end_date, players, rounds
+        return name, place, start_date, end_date
         

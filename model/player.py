@@ -30,11 +30,6 @@ class PlayerModel:
     def get_all():
         return PlayerModel.db.all()
     
-    def delete(self):
-        return PlayerModel.db.remove(where("first-name") == self.first_name)
-    
     def modify(self):
         pass
-    
-    def erase_file(self):
-        PlayerModel.db.purge()
+"""Générer l'ID"""
