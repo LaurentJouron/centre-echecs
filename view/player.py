@@ -4,6 +4,14 @@ from datetime import datetime
 
 class PlayerView:
     """The player information you need to organize a tournament."""
+    
+    @staticmethod
+    def define_id():
+        while True:
+            ident = input("Please select one ID : ")
+            if not ident.isnumeric():
+                return False
+            return ident
 
     @staticmethod
     def define_first_name():
@@ -36,7 +44,7 @@ class PlayerView:
         """Define the birthday of participants.
         Returns:
             date: players birthday """
-        birthday = input("Enter his date of birth: ")
+        birthday = input("Enter date of birth: ")
         birthday = datetime.strptime(birthday, "%d%m%Y").\
             strftime("%A %d %B %Y")
         return birthday
@@ -47,12 +55,12 @@ class PlayerView:
         Returns:
             str: players gender """
         while True:
-            gender = input("Select M for men or F for women: ")
+            gender = input("Select M for men or W for women: ")
             gender = gender.upper()
-            if gender == "F":
-                return "a woman"
+            if gender == "W":
+                return "woman"
             elif gender == "M":
-                return "a man"
+                return "man"
             else:
                 gender = False
                 if not gender:
@@ -64,11 +72,8 @@ class PlayerView:
         Returns:
             int: players national ranking """
         while True:
-            ranking = input("Indicate its place in the national ranking: ")
+            ranking = input("Indicate is place in the national ranking: ")
             if ranking < "1":
-                print(f"Input error")
-                ValueError()
-            if ranking != int:
                 print(f"Input error")
                 ValueError()
             if ranking == "1":
@@ -79,7 +84,7 @@ class PlayerView:
                 return f"{ranking}rd"
             if ranking >= "4":
                 return f"{ranking}th"
-
+    
     @staticmethod
     def get_all_information():
         """
@@ -87,12 +92,13 @@ class PlayerView:
         Returns:
              list: [first_name, last_name, birthday, gender, ranking]
         """
+        ident = PlayerView.define_id()
         first_name = PlayerView.define_first_name()
         last_name = PlayerView.define_last_name()
         birthday = PlayerView.define_birthday()
         gender = PlayerView.define_gender()
         ranking = PlayerView.define_ranking()
-        return first_name, last_name, birthday, gender, ranking
+        return ident, first_name, last_name, birthday, gender, ranking
 
     @staticmethod
     def display_all(players):
@@ -104,3 +110,8 @@ class PlayerView:
         """
         for player in players:
             print(player)
+
+    @staticmethod
+    def remove():
+        ident = input("Please select the player ID you want to remove: ")
+        return ident

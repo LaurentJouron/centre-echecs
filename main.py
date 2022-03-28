@@ -1,9 +1,11 @@
 """Entry point."""
-
+import constants
 from controller.tournament import TournamentController
-# from controller.player import PlayerController
+from controller.player import PlayerController
 # from controller.tour import TourController
 # from controller.match import MatchController
+
+number_players = constants.NUMBER_OF_PLAYERS
 
 if __name__ == '__main__':
 
@@ -16,26 +18,58 @@ if __name__ == '__main__':
 
     tournament = " Tournament creation "
     print(f"{tournament.center(106, '-')}")
-    
-    # Starting the game
-    tournament_controller = TournamentController()
-    print(str(tournament_controller.new_tournament()))
 
     while True:
+        # Starting the game
+        tournament_controller = TournamentController()
+        print(str(tournament_controller.new_tournament()))
+
         tournament_validate = " Select: 1-> validate  2-> Modify "
         print(f"\n{tournament_validate.center(106, '-')}")
-        validate = input(f"What you want to do ? ")
         
+        validate = input(f"Select 1 or 2 : ")
         if validate == "1":
             start_of_tournament = " Start of the tournament "
             print(f"\n{start_of_tournament.center(106, '*')}")
-            player = " Register players "
-            print(f"{player.center(106, '-')}")
-        
-        if validate == "2":
-            pass
-        else:
-            validate = False
+
+            # players = PlayerController.get_all()
+            # players = len(players)
+            # while players < number_players:
+            while True:
+                player = " Register players "
+                print(f"{player.center(106, ' ')}")
+
+                player_controller = PlayerController()
+                print(str(PlayerController.create()))
+
+                new_player = " Select 1-> new player  2-> remove player 3-> " \
+                             "show all"
+                print(f"{new_player.center(106, '-')}")
+                new_players = input(f"Select 1, 2 or 3: ").upper()
+                if new_players == "1":
+                    new_players = True
+                if new_players == "2":
+                    PlayerController.remove()
+                    new_players = True
+                if new_players == "3":
+                    PlayerController.get_all()
+                    new_players = True
+            else:
+                new_player = False
+
+            # print(f"Registration is complete for this tournament.")
+
+            if validate == "2":
+                tournament_modification = " Tournament modification "
+                print(f"{tournament_modification.center(106, '-')}")
+
+                tournament_controller = TournamentController()
+                print(str(tournament_controller.new_tournament()))
+
+
+
+
+    # PlayerController.remove()
 
     # confirmation = " Confirmation "
     # print(f"\n{confirmation.center(106, '-')}")
