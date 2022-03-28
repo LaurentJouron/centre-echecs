@@ -68,9 +68,9 @@ class PlayerView:
             if ranking < "1":
                 print(f"Input error")
                 ValueError()
-            if ranking != int:
-                print(f"Input error")
-                ValueError()
+            # if ranking != int:
+            #     print(f"Input error")
+            #     ValueError()
             if ranking == "1":
                 return f"{ranking}st"
             if ranking == "2":
@@ -104,3 +104,8 @@ class PlayerView:
         """
         for player in players:
             print(player)
+
+    @staticmethod
+    def remove():
+        player = input("Please select the player you want to remove: ")
+        return player.capitalize()

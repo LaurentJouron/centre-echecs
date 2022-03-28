@@ -29,3 +29,9 @@ class PlayerController:
                                   player["ranking"])
             players_model.append(players)
         return PlayerView.display_all(players_model)
+
+    @staticmethod
+    def remove():
+        player = PlayerView.remove()
+        player_id = PlayerModel.remove(player)
+        return player_id

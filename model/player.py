@@ -3,7 +3,7 @@ from tinydb import TinyDB, where
 
 
 class PlayerModel:
-    db = TinyDB(f"data/players.json", indent=4)
+    db = TinyDB(f"players.json", indent=4)
     
     """Builder of the model player."""
     def __init__(self, first_name, last_name, birthday, gender, ranking):
@@ -14,9 +14,9 @@ class PlayerModel:
         self.ranking = ranking
     
     def __str__(self):
-        return f"{self.first_name} {self.last_name} is a {self.gender} born " \
-               f"on {self.birthday}, Currently, {self.ranking} in the " \
-               f"national ranking.\n " \
+        return f"\n{self.first_name} {self.last_name} is {self.gender} born " \
+               f"on {self.birthday}. Currently, {self.ranking} in the " \
+               f"national ranking.\n" \
                f"Registration is validated have a good luck!\n"
     
     def save(self):
@@ -32,4 +32,11 @@ class PlayerModel:
     
     def modify(self):
         pass
+
+    def remove(self):
+        player = PlayerModel.db.get("first-name" == self.first_name)
+        player_id = player.doc_id
+        PlayerModel.db.remove(player_id)
+        return player
+
 """Générer l'ID"""
