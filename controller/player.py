@@ -9,10 +9,11 @@ class PlayerController:
     @staticmethod
     def create():
         """Imports view data, imports model data and compares accuracy."""
-        first_name, last_name, birthday, gender, ranking = \
+        ident, first_name, last_name, birthday, gender, ranking = \
             PlayerView.get_all_information()
         
-        player = PlayerModel(first_name, last_name, birthday, gender, ranking)
+        player = PlayerModel(ident, first_name, last_name, birthday, gender,
+                             ranking)
 
         player.save()
         return player
@@ -22,7 +23,8 @@ class PlayerController:
         players_model = []
         players = PlayerModel.get_all()
         for player in players:
-            players = PlayerModel(player["first-name"],
+            players = PlayerModel(player["ID"],
+                                  player["first-name"],
                                   player["last-name"],
                                   player["birthday"],
                                   player["gender"],

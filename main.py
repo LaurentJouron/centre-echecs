@@ -14,49 +14,41 @@ if __name__ == '__main__':
     print(f"\n{welcome.center(106, ' ')}\n")
 
     instruction = " Please follow the instructions below "
-    print(f"{instruction.center(106, ' ')} \n")
+    print(f"{instruction.center(106, ' ')}\n")
 
     tournament = " Tournament creation "
-    print(f"{tournament.center(106, '-')}")
+    print(f"{tournament.center(106, '-')}\n")
 
     while True:
         # Starting the game
         tournament_controller = TournamentController()
         print(str(tournament_controller.new_tournament()))
 
-        tournament_validate = " Select: 1-> validate  2-> Modify "
-        print(f"\n{tournament_validate.center(106, '-')}")
+        tournament_validate = " 1-> validate  2-> Modify "
+        print(f"{tournament_validate.center(106, '-')}\n")
         validate = input(f"Select 1 or 2 : ")
         if validate == "1":
             start_of_tournament = " Start of the tournament "
-            print(f"\n{start_of_tournament.center(106, '*')}")
+            print(f"\n{start_of_tournament.center(106, '*')}\n")
+            
+            player = " -->> Register players <<-- "
+            print(f"{player.center(106, ' ')}\n")
 
-            # players = PlayerController.get_all()
-            # players = len(players)
-            # while players < number_players:
+            player_controller = PlayerController()
+            print(str(PlayerController.create()))
             while True:
-                player = " Register players "
-                print(f"{player.center(106, ' ')}")
-
-                player_controller = PlayerController()
-                print(str(PlayerController.create()))
-
-                add_player = " Want to register another player ? "
+                add_player = " 1-> new player   2-> show all  3-> remove "
                 print(f"{add_player.center(106, '-')}")
 
-                new_player = " Select: Y-> Yes   N-> No"
-                print(f"{new_player.center(106, '-')}")
-                new_players = input(f"Select Y or N : ").upper()
-                if new_players == "Y":
+                new_players = input(f"Select 1, 2 or 3 : ")
+                if new_players == "1":
                     new_players = True
-                if new_players == "N":
-                    new_players = False
-                else:
-                    new_players = False
-                    if not new_players:
-                        print("Input error")
-
-            # print(f"Registration is complete for this tournament.")
+                if new_players == "2":
+                    PlayerController.get_all()
+                    new_players = True
+                if new_players == "3":
+                    PlayerController.remove()
+                    new_players = True
 
             if validate == "2":
                 tournament_modification = " Tournament modification "
@@ -66,9 +58,6 @@ if __name__ == '__main__':
                 print(str(tournament_controller.new_tournament()))
 
 
-
-
-    # PlayerController.remove()
 
 
 
