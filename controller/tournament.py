@@ -1,6 +1,7 @@
 """Management of the tournament organization"""
 from view.tournament import TournamentView
 from model.tournament import TournamentModel
+from controller.player import PlayerController
 
 import constants
 number_of_player = constants.NUMBER_OF_PLAYERS
@@ -17,11 +18,8 @@ class TournamentController:
 
     @staticmethod
     def append_player():
-        players = []
-        number_player = TournamentView.append_player()
-        player = TournamentModel.get_all()
-        while len(players) < number_player:
-            players.append(player)
-            return players
+        append_player = PlayerController.create()
+        append = TournamentModel.append_player(append_player)
+        return append
 
 """players, rounds"""

@@ -5,13 +5,13 @@ from datetime import datetime
 class PlayerView:
     """The player information you need to organize a tournament."""
     
-    @staticmethod
-    def define_id():
-        while True:
-            ident = input("Please select one ID : ")
-            if not ident.isnumeric():
-                return False
-            return ident
+    # @staticmethod
+    # def define_id():
+    #     while True:
+    #         ident = input("Please select one ID : ")
+    #         if not ident.isnumeric():
+    #             return False
+    #         return ident
 
     @staticmethod
     def define_first_name():
@@ -72,7 +72,7 @@ class PlayerView:
         Returns:
             int: players national ranking """
         while True:
-            ranking = input("Indicate is place in the national ranking: ")
+            ranking = input("Indicate your place in the national ranking: ")
             if ranking < "1":
                 print(f"Input error")
                 ValueError()
@@ -82,7 +82,7 @@ class PlayerView:
                 return f"{ranking}nd"
             if ranking == "3":
                 return f"{ranking}rd"
-            if ranking >= "4":
+            else:
                 return f"{ranking}th"
     
     @staticmethod
@@ -92,13 +92,13 @@ class PlayerView:
         Returns:
              list: [first_name, last_name, birthday, gender, ranking]
         """
-        ident = PlayerView.define_id()
+        # ident = PlayerView.define_id()
         first_name = PlayerView.define_first_name()
         last_name = PlayerView.define_last_name()
         birthday = PlayerView.define_birthday()
         gender = PlayerView.define_gender()
         ranking = PlayerView.define_ranking()
-        return ident, first_name, last_name, birthday, gender, ranking
+        return first_name, last_name, birthday, gender, ranking
 
     @staticmethod
     def display_all(players):
@@ -113,5 +113,5 @@ class PlayerView:
 
     @staticmethod
     def remove():
-        ident = input("Please select the player ID you want to remove: ")
-        return ident
+        player = input("Please select the player you want to remove: ")
+        return player

@@ -21,9 +21,8 @@ class TournamentModel:
     def modify(self):
         pass
 
-    @staticmethod
-    def get_all():
-        return TournamentModel.players
+    def append_player(self):
+        return self.players.append(self.players)
     
 """méthode qui permet d'ajouter un player dans le tableau des players"""
 """Une méthode qui ajoute un tour dans le tableau des tours"""

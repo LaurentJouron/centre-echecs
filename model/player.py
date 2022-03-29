@@ -6,9 +6,7 @@ class PlayerModel:
     db = TinyDB(f"data/players.json", indent=4)
     
     """Builder of the model player."""
-    def __init__(self, ident, first_name, last_name, birthday, gender,
-                 ranking):
-        self.ident = ident
+    def __init__(self, first_name, last_name, birthday, gender, ranking):
         self.first_name = first_name
         self.last_name = last_name
         self.birthday = birthday
@@ -23,8 +21,7 @@ class PlayerModel:
                f"Registration is validated have a good luck!\n"
     
     def save(self):
-        PlayerModel.db.insert({"ID": self.ident,
-                               "first-name": self.first_name,
+        PlayerModel.db.insert({"first-name": self.first_name,
                                "last-name": self.last_name,
                                "birthday": self.birthday,
                                "gender": self.gender,
@@ -36,6 +33,12 @@ class PlayerModel:
     
     def modify(self):
         pass
-    
-    def remove(self):
-        return PlayerModel.db.remove(where("ID:") == self.ident)
+
+    @staticmethod
+    def remove():
+        player = PlayerModel.db.all()
+        player = player.doc_id
+        return PlayerModel.db.remove(doc_id=player)
+
+
+        # PlayerModel.db.remove(where("ID:") == self.ident)
