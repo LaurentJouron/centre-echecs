@@ -4,14 +4,6 @@ from datetime import datetime
 
 class PlayerView:
     """The player information you need to organize a tournament."""
-    
-    # @staticmethod
-    # def define_id():
-    #     while True:
-    #         ident = input("Please select one ID : ")
-    #         if not ident.isnumeric():
-    #             return False
-    #         return ident
 
     @staticmethod
     def define_first_name():
@@ -92,7 +84,6 @@ class PlayerView:
         Returns:
              list: [first_name, last_name, birthday, gender, ranking]
         """
-        # ident = PlayerView.define_id()
         first_name = PlayerView.define_first_name()
         last_name = PlayerView.define_last_name()
         birthday = PlayerView.define_birthday()
@@ -113,5 +104,8 @@ class PlayerView:
 
     @staticmethod
     def remove():
-        player = input("Please select the player you want to remove: ")
-        return player
+        """Define the first-name of participants you want removed.
+        Returns:
+            str: players first-name """
+        player = input("Please select first_name you want to remove: ")
+        return player.capitalize()

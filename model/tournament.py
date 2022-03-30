@@ -22,6 +22,7 @@ class TournamentModel:
         pass
 
     def append_player(self):
+        """Adds players to the tournament list."""
         return self.players.append(self.players)
     
 """méthode qui permet d'ajouter un player dans le tableau des players"""

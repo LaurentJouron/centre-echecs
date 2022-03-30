@@ -19,6 +19,7 @@ class PlayerController:
 
     @staticmethod
     def get_all():
+        """Deserializes the database data."""
         players_model = []
         players = PlayerModel.get_all()
         for player in players:
@@ -32,7 +33,7 @@ class PlayerController:
 
     @staticmethod
     def remove():
+        """Removes an item from the list"""
         player = PlayerView.remove()
-        player_id = PlayerModel(player)
-        player_id.remove()
+        player_id = PlayerModel.remove(player)
         return player_id

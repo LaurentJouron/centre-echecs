@@ -18,8 +18,10 @@ class TournamentController:
 
     @staticmethod
     def append_player():
+        """Returns the players to be added to the tournament list."""
         append_player = PlayerController.create()
-        append = TournamentModel.append_player(append_player)
-        return append
+        players = TournamentModel.append_player(append_player)
+        return players
+
 
 """players, rounds"""

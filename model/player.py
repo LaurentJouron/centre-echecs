@@ -7,20 +7,21 @@ class PlayerModel:
     
     """Builder of the model player."""
     def __init__(self, first_name, last_name, birthday, gender, ranking):
-        self.first_name = first_name
-        self.last_name = last_name
+        self.first_name: str = first_name
+        self.last_name: str = last_name
         self.birthday = birthday
-        self.gender = gender
-        self.ranking = ranking
-    
+        self.gender: str = gender
+        self.ranking: int = ranking
+
     def __str__(self):
-        return f"\n{self.first_name} {self.last_name} is a {self.gender} " \
-               f"born " \
-               f"on {self.birthday}, Currently, {self.ranking} in the " \
-               f"national ranking.\n" \
-               f"Registration is validated have a good luck!\n"
+        """Displays all items in the TinyDB file"""
+        return f"\n{self.first_name} {self.last_name}\n" \
+               f"Born: {self.birthday}\n" \
+               f"Gender: {self.gender}\n" \
+               f"Ranking: {self.ranking}"
     
     def save(self):
+        """Saves items in the TinyDB file"""
         PlayerModel.db.insert({"first-name": self.first_name,
                                "last-name": self.last_name,
                                "birthday": self.birthday,
@@ -29,16 +30,13 @@ class PlayerModel:
     
     @staticmethod
     def get_all():
+        """Returns all TinyDB file elements."""
         return PlayerModel.db.all()
     
     def modify(self):
         pass
 
     @staticmethod
-    def remove():
-        player = PlayerModel.db.all()
-        player = player.doc_id
-        return PlayerModel.db.remove(doc_id=player)
-
-
-        # PlayerModel.db.remove(where("ID:") == self.ident)
+    def remove(first_name):
+        """Removes an item from the list"""
+        PlayerModel.db.remove(where('first-name') == first_name)

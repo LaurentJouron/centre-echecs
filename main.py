@@ -24,7 +24,7 @@ if __name__ == '__main__':
         tournament_controller = TournamentController()
         print(str(tournament_controller.new_tournament()))
 
-        tournament_validate = " 1-> validate  2-> Modify "
+        tournament_validate = "> 1 = validate   2 = Modify <"
         print(f"{tournament_validate.center(106, '-')}\n")
         validate = input(f"Select 1 or 2 : ")
         if validate == "1":
@@ -37,7 +37,7 @@ if __name__ == '__main__':
             player_controller = PlayerController()
             print(str(PlayerController.create()))
             while True:
-                add_player = " 1-> new player   2-> show all  3-> remove "
+                add_player = "> 1 = new player   2 = show all   3 = remove <"
                 print(f"{add_player.center(106, '-')}")
 
                 new_players = input(f"Select 1, 2 or 3 : ")
