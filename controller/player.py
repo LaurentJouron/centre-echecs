@@ -2,6 +2,8 @@
 from view.player import PlayerView
 from model.player import PlayerModel
 
+from model.tournament import TournamentModel
+
 
 class PlayerController:
     """Control information player you need to organize a tournament."""
@@ -13,7 +15,6 @@ class PlayerController:
             PlayerView.get_all_information()
         
         player = PlayerModel(first_name, last_name, birthday, gender, ranking)
-
         player.save()
         return player
 
@@ -35,5 +36,13 @@ class PlayerController:
     def remove():
         """Removes an item from the list"""
         player = PlayerView.remove()
-        player_id = PlayerModel.remove(player)
-        return player_id
+        first_name = PlayerModel.remove(player)
+        return first_name
+
+
+def define_players_in_tournament():
+    first_name, last_name, ranking = \
+        PlayerView.define_players_in_tournament()
+    tournament_players = TournamentModel.define_players_in_tournament(
+        first_name, last_name, ranking)
+    return tournament_players

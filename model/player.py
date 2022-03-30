@@ -32,9 +32,6 @@ class PlayerModel:
     def get_all():
         """Returns all TinyDB file elements."""
         return PlayerModel.db.all()
-    
-    def modify(self):
-        pass
 
     @staticmethod
     def remove(first_name):

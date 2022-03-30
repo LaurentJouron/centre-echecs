@@ -8,8 +8,8 @@ class TournamentModel:
         self.place: str = place
         self.start_date: str = start_date
         self.end_date: str = end_date
-        self.players = []
-        self.rounds = []
+        self.players: list = []
+        self.rounds: list = []
     
     def __str__(self):
         """Confirmation phrase of the tournament class."""
@@ -21,9 +21,10 @@ class TournamentModel:
     def modify(self):
         pass
 
-    def append_player(self):
+    def define_players_in_tournament(self, first_name, last_name, ranking):
         """Adds players to the tournament list."""
-        return self.players.append(self.players)
+        player = [first_name, last_name, ranking]
+        self.players.append(player)
     
 """méthode qui permet d'ajouter un player dans le tableau des players"""
 """Une méthode qui ajoute un tour dans le tableau des tours"""

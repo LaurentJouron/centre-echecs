@@ -4,7 +4,7 @@ from datetime import datetime
 
 class PlayerView:
     """The player information you need to organize a tournament."""
-
+    
     @staticmethod
     def define_first_name():
         """Define the first-name of participants.
@@ -17,7 +17,7 @@ class PlayerView:
                 ValueError()
             else:
                 return first_name.capitalize()
-
+    
     @staticmethod
     def define_last_name():
         """Define the last_name of participants.
@@ -30,17 +30,17 @@ class PlayerView:
                 ValueError()
             else:
                 return last_name.capitalize()
-
+    
     @staticmethod
     def define_birthday():
         """Define the birthday of participants.
         Returns:
             date: players birthday """
         birthday = input("Enter date of birth: ")
-        birthday = datetime.strptime(birthday, "%d%m%Y").\
+        birthday = datetime.strptime(birthday, "%d%m%Y"). \
             strftime("%A %d %B %Y")
         return birthday
-
+    
     @staticmethod
     def define_gender():
         """Define the gender of participants.
@@ -57,7 +57,7 @@ class PlayerView:
                 gender = False
                 if not gender:
                     print(f"Input error")
-
+    
     @staticmethod
     def define_ranking():
         """Define the ranking of participants.
@@ -68,14 +68,8 @@ class PlayerView:
             if ranking < "1":
                 print(f"Input error")
                 ValueError()
-            if ranking == "1":
-                return f"{ranking}st"
-            if ranking == "2":
-                return f"{ranking}nd"
-            if ranking == "3":
-                return f"{ranking}rd"
             else:
-                return f"{ranking}th"
+                return ranking
     
     @staticmethod
     def get_all_information():
@@ -90,7 +84,7 @@ class PlayerView:
         gender = PlayerView.define_gender()
         ranking = PlayerView.define_ranking()
         return first_name, last_name, birthday, gender, ranking
-
+    
     @staticmethod
     def display_all(players):
         """
@@ -101,7 +95,7 @@ class PlayerView:
         """
         for player in players:
             print(player)
-
+    
     @staticmethod
     def remove():
         """Define the first-name of participants you want removed.
@@ -109,3 +103,15 @@ class PlayerView:
             str: players first-name """
         player = input("Please select first_name you want to remove: ")
         return player.capitalize()
+    
+    @staticmethod
+    def define_players_in_tournament():
+        """
+        Groups all information players you need for organized tournament.
+        Returns:
+             list: [first_name, last_name, ranking]
+        """
+        first_name = PlayerView.define_first_name()
+        last_name = PlayerView.define_last_name()
+        ranking = PlayerView.define_ranking()
+        return first_name, last_name, ranking

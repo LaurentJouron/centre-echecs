@@ -17,7 +17,7 @@ if __name__ == '__main__':
     print(f"{instruction.center(106, ' ')}\n")
 
     tournament = " Tournament creation "
-    print(f"{tournament.center(106, '-')}\n")
+    print(f"{tournament.center(106, '-')}")
 
     while True:
         # Starting the game
@@ -25,15 +25,15 @@ if __name__ == '__main__':
         print(str(tournament_controller.new_tournament()))
 
         tournament_validate = "> 1 = validate   2 = Modify <"
-        print(f"{tournament_validate.center(106, '-')}\n")
+        print(f"{tournament_validate.center(106, '-')}")
         validate = input(f"Select 1 or 2 : ")
         if validate == "1":
             start_of_tournament = " Start of the tournament "
             print(f"\n{start_of_tournament.center(106, '*')}\n")
             
             player = " -->> Register players <<-- "
-            print(f"{player.center(106, ' ')}\n")
-
+            print(f"{player.center(106, ' ')}")
+            
             player_controller = PlayerController()
             print(str(PlayerController.create()))
             while True:
@@ -42,13 +42,14 @@ if __name__ == '__main__':
 
                 new_players = input(f"Select 1, 2 or 3 : ")
                 if new_players == "1":
-                    new_players = True
+                    player_controller = PlayerController()
                 if new_players == "2":
                     PlayerController.get_all()
-                    new_players = True
                 if new_players == "3":
                     PlayerController.remove()
-                    new_players = True
+                else:
+                    new_players = False
+
 
             if validate == "2":
                 tournament_modification = " Tournament modification "
