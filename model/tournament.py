@@ -3,13 +3,14 @@
 
 class TournamentModel:
     """Builder of the model tournament."""
+    players: list = []
+    rounds: list = []
+    
     def __init__(self, name, place, start_date, end_date):
         self.name: str = name
         self.place: str = place
         self.start_date: str = start_date
         self.end_date: str = end_date
-        self.players: list = []
-        self.rounds: list = []
     
     def __str__(self):
         """Confirmation phrase of the tournament class."""
@@ -18,13 +19,11 @@ class TournamentModel:
                f"{self.end_date} at 6:00 pm.\n" \
                f"He takes place in {self.place}.\n"
 
-    def modify(self):
-        pass
-
-    def define_players_in_tournament(self, first_name, last_name, ranking):
+    @staticmethod
+    def define_tournament_players(players):
         """Adds players to the tournament list."""
-        player = [first_name, last_name, ranking]
-        self.players.append(player)
-    
+        TournamentModel.players.append(players)
+
+
 """méthode qui permet d'ajouter un player dans le tableau des players"""
 """Une méthode qui ajoute un tour dans le tableau des tours"""

@@ -15,7 +15,8 @@ class PlayerModel:
 
     def __str__(self):
         """Displays all items in the TinyDB file"""
-        return f"\n{self.first_name} {self.last_name}\n" \
+        return f"\nFirst-name: {self.first_name}\n" \
+               f"Last-name: {self.last_name}\n" \
                f"Born: {self.birthday}\n" \
                f"Gender: {self.gender}\n" \
                f"Ranking: {self.ranking}"

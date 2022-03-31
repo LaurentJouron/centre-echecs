@@ -3,9 +3,6 @@ from view.tournament import TournamentView
 from model.tournament import TournamentModel
 from controller.player import PlayerController
 
-import constants
-number_of_player = constants.NUMBER_OF_PLAYERS
-
 
 class TournamentController:
     @staticmethod
@@ -19,9 +16,6 @@ class TournamentController:
     @staticmethod
     def append_player():
         """Returns the players to be added to the tournament list."""
-        append_player = PlayerController.create()
-        players = TournamentModel.append_player(append_player)
-        return players
-
+        return PlayerController.define_tournament_players(player)
 
 """players, rounds"""

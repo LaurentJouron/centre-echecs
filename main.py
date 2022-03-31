@@ -29,36 +29,33 @@ if __name__ == '__main__':
         validate = input(f"Select 1 or 2 : ")
         if validate == "1":
             start_of_tournament = " Start of the tournament "
-            print(f"\n{start_of_tournament.center(106, '*')}\n")
+            print(f"\n{start_of_tournament.center(106, '*')}")
             
             player = " -->> Register players <<-- "
             print(f"{player.center(106, ' ')}")
-            
-            player_controller = PlayerController()
-            print(str(PlayerController.create()))
-            while True:
-                add_player = "> 1 = new player   2 = show all   3 = remove <"
-                print(f"{add_player.center(106, '-')}")
+            pass
+         
+        if validate == "2":
+            tournament_modification = " Tournament modification "
+            print(f"{tournament_modification.center(106, '-')}")
 
-                new_players = input(f"Select 1, 2 or 3 : ")
-                if new_players == "1":
-                    player_controller = PlayerController()
-                if new_players == "2":
-                    PlayerController.get_all()
-                if new_players == "3":
-                    PlayerController.remove()
-                else:
-                    new_players = False
-
-
-            if validate == "2":
-                tournament_modification = " Tournament modification "
-                print(f"{tournament_modification.center(106, '-')}")
-
-                tournament_controller = TournamentController()
-                print(str(tournament_controller.new_tournament()))
-
-
+            tournament_controller = TournamentController()
+            print(str(tournament_controller.new_tournament()))
+        
+        while True:
+            add_player = "> 1 = new player   2 = show all   3 = remove <"
+            print(f"{add_player.center(106, '-')}")
+            new_players = input(f"Select 1, 2 or 3 : ")
+    
+            if new_players == "1":
+                PlayerController.create()
+            if new_players == "2":
+                PlayerController.get_all()
+            if new_players == "3":
+                PlayerController.remove()
+            else:
+                new_players = False
+                pass
 
 
 

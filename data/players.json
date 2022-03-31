@@ -1,18 +1,3 @@
 {
-    "_default": {
-        "3": {
-            "first-name": "Thierno",
-            "last-name": "Thiam",
-            "birthday": "Sunday 20 February 2022",
-            "gender": "man",
-            "ranking": "9"
-        },
-        "4": {
-            "first-name": "Louis",
-            "last-name": "Jouron",
-            "birthday": "Thursday 20 May 2010",
-            "gender": "man",
-            "ranking": "1"
-        }
-    }
+    "_default": {}
 }

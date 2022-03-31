@@ -1,13 +1,12 @@
 """Tournament player registration management."""
 from view.player import PlayerView
 from model.player import PlayerModel
-
-from model.tournament import TournamentModel
+from controller.tournament import TournamentController
 
 
 class PlayerController:
     """Control information player you need to organize a tournament."""
-
+    
     @staticmethod
     def create():
         """Imports view data, imports model data and compares accuracy."""
@@ -17,7 +16,7 @@ class PlayerController:
         player = PlayerModel(first_name, last_name, birthday, gender, ranking)
         player.save()
         return player
-
+    
     @staticmethod
     def get_all():
         """Deserializes the database data."""
@@ -31,18 +30,22 @@ class PlayerController:
                                   player["ranking"])
             players_model.append(players)
         return PlayerView.display_all(players_model)
-
+    
     @staticmethod
     def remove():
         """Removes an item from the list"""
         player = PlayerView.remove()
         first_name = PlayerModel.remove(player)
         return first_name
-
-
-def define_players_in_tournament():
-    first_name, last_name, ranking = \
-        PlayerView.define_players_in_tournament()
-    tournament_players = TournamentModel.define_players_in_tournament(
-        first_name, last_name, ranking)
-    return tournament_players
+    
+    @staticmethod
+    def define_tournament_players():
+        """Deserializes the database data."""
+        players = PlayerModel.get_all()
+        for player in players:
+            players = PlayerModel(player["first-name"],
+                                  player["last-name"],
+                                  player["birthday"],
+                                  player["gender"],
+                                  player["ranking"])
+            return TournamentController.append_player(players)

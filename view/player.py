@@ -103,15 +103,3 @@ class PlayerView:
             str: players first-name """
         player = input("Please select first_name you want to remove: ")
         return player.capitalize()
-    
-    @staticmethod
-    def define_players_in_tournament():
-        """
-        Groups all information players you need for organized tournament.
-        Returns:
-             list: [first_name, last_name, ranking]
-        """
-        first_name = PlayerView.define_first_name()
-        last_name = PlayerView.define_last_name()
-        ranking = PlayerView.define_ranking()
-        return first_name, last_name, ranking
