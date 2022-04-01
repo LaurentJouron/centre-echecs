@@ -8,7 +8,7 @@ from controller.player import PlayerController
 number_players = constants.NUMBER_OF_PLAYERS
 
 if __name__ == '__main__':
-
+    TournamentController.append_player()
     # Reception
     welcome = " Welcome to the << CHESS-CENTER >> application "
     print(f"\n{welcome.center(106, ' ')}\n")

@@ -1,10 +1,13 @@
 """Management of the tournament organization"""
+from tinydb import TinyDB, Query, where
+
 from view.tournament import TournamentView
 from model.tournament import TournamentModel
-from controller.player import PlayerController
 
 
 class TournamentController:
+    db = TinyDB(f"data/players.json", indent=4)
+    
     @staticmethod
     def new_tournament():
         """Imports view data, imports model data and compares accuracy."""
@@ -16,6 +19,11 @@ class TournamentController:
     @staticmethod
     def append_player():
         """Returns the players to be added to the tournament list."""
-        return PlayerController.define_tournament_players(player)
+        add_players = []
+        db_players = TournamentController.db.all()
+        for players in db_players:
+            add_players.append(players)
+        add_players = TournamentModel.append_players(add_players)
+        print(add_players)
 
-"""players, rounds"""
+"""round"""
