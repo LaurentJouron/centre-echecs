@@ -19,11 +19,9 @@ class TournamentController:
     @staticmethod
     def append_player():
         """Returns the players to be added to the tournament list."""
-        add_players = []
         db_players = TournamentController.db.all()
         for players in db_players:
-            add_players.append(players)
-        add_players = TournamentModel.append_players(add_players)
-        print(add_players)
+            # add_players = TournamentModel.append_players(players)
+            print(players)
 
 """round"""
