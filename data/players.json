@@ -27,6 +27,13 @@
             "birthday": "Wednesday 02 June 1976",
             "gender": "man",
             "ranking": "8"
+        },
+        "5": {
+            "first-name": "Virginie",
+            "last-name": "Lombard",
+            "birthday": "Friday 29 December 1978",
+            "gender": "woman",
+            "ranking": "6"
         }
     }
 }

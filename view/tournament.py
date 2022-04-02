@@ -68,26 +68,6 @@ class TournamentView:
             return end_date.strftime("%A %d %B %Y")
         
     @staticmethod
-    def append_player():
-        """
-        Take the number of players on the constant file.
-        Returns:
-            int: number of players
-        """
-        players = constants.NUMBER_OF_PLAYERS
-        return players
-    
-    @staticmethod
-    def rounds():
-        """
-        Take the number of rounds on the constant file.
-        Returns:
-            int: number of rounds
-        """
-        rounds = constants.NUMBER_OF_ROUND
-        return rounds
-        
-    @staticmethod
     def get_all():
         """Groups all functions of the class.
         Returns:
@@ -98,4 +78,13 @@ class TournamentView:
         start_date = TournamentView.start_date()
         end_date = TournamentView.end_date()
         return name, place, start_date, end_date
+    
+    @staticmethod
+    def append_player():
+        """Define the first-name of participants you want to add to the
+        tournament.
+        Returns:
+            str: players first-name """
+        player = input("Please select first_name player you append: ").capitalize()
+        return player
         

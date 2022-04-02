@@ -1,8 +1,11 @@
 """Information of the chess tournament."""
+from tinydb import TinyDB, where
 
 
 class TournamentModel:
     """Builder of the model tournament."""
+    db = TinyDB(f"data/players.json", indent=4)
+    
     def __init__(self, name, place, start_date, end_date):
         self.name: str = name
         self.place: str = place
@@ -20,7 +23,9 @@ class TournamentModel:
 
     def append_players(self, player):
         """Adds players to the tournament list."""
+        player = TournamentModel.db.search(where('first-name' == player))
         self.players.append(player)
+        return f"{player} will take part in the {self.name} tournament."
 
 
 """méthode qui permet d'ajouter un player dans le tableau des players"""
