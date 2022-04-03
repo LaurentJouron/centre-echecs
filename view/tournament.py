@@ -85,6 +85,6 @@ class TournamentView:
         tournament.
         Returns:
             str: players first-name """
-        player = input("Please select first_name player you append: ").capitalize()
+        player = input("Please select first_name player you add: """).capitalize()
         return player
         

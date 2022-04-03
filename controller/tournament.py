@@ -14,6 +14,10 @@ class TournamentController:
         return tournament
 
     @staticmethod
+    def len_player_list():
+        TournamentModel.__len__()
+        
+    @staticmethod
     def append_player():
         """Returns the players to be added to the tournament list."""
         player = TournamentView.append_player()

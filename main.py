@@ -25,34 +25,35 @@ if __name__ == '__main__':
             PlayerController.get_all()
         if new_players == "3":
             PlayerController.remove()
-        pass
-    
-        tournament = " Tournament creation "
-        print(f"{tournament.center(106, '-')}")
-        
-        tournament_controller = TournamentController()
-        print(str(tournament_controller.new_tournament()))
-        
-        while True:
-            tournament_validate = "> 1 = validate  /  2 = Modify  /  " \
-                                  "3 = Add player <"
-            print(f"{tournament_validate.center(106, '-')}")
-            validate = input(f"Select 1, 2 or 3 : ")
-            if validate == "1":
-                start_of_tournament = " Start of the tournament "
-                print(f"\n{start_of_tournament.center(106, '*')}")
+        if new_players == "4":
+            tournament = " Tournament creation "
+            print(f"{tournament.center(106, '-')}")
             
-            if validate == "2":
-                tournament_modification = " Tournament modification "
-                print(f"{tournament_modification.center(106, '-')}")
+            tournament_controller = TournamentController()
+            print(str(tournament_controller.new_tournament()))
+
+            while True:
+                tournament_validate = "> 1 = validate  /  2 = Modify <"
+                print(f"{tournament_validate.center(106, '-')}")
+                validate = input(f"Select 1, 2 : ")
+                if validate == "1":
+                    start_of_tournament = " Start of the tournament "
+                    print(f"\n{start_of_tournament.center(106, '*')}")
                 
-                tournament_controller = TournamentController()
-                print(str(tournament_controller.new_tournament()))
-            
-            if validate == "3":
-                tournament_player = " -->> Register tournament players <<-- "
-                print(f"{tournament_player.center(106, ' ')}")
-    
-                append_player = TournamentController.append_player()
-                print(str(tournament_controller.append_player()))
+                if validate == "2":
+                    tournament_modification = " Tournament modification "
+                    print(f"{tournament_modification.center(106, '-')}")
+                    
+                    tournament_controller = TournamentController()
+                    print(str(tournament_controller.new_tournament()))
+
+                while True:
+                    tournament_validate = "> 1 = add player  /  2 = play <"
+                    print(f"{tournament_validate.center(106, '-')}")
+                    validate = input(f"Select 1, 2 : ")
+                    if validate == "1":
+                        tournament_player = " -->> Register tournament players <<-- "
+                        print(f"{tournament_player.center(106, ' ')}")
                 
+                        append_player = TournamentController.append_player()
+                        print(str(tournament_controller.append_player()))
