@@ -38,7 +38,7 @@ if __name__ == '__main__':
                 validate = input(f"Select 1, 2 : ")
                 if validate == "1":
                     start_of_tournament = " Start of the tournament "
-                    print(f"\n{start_of_tournament.center(106, '*')}")
+                    print(f"\n{start_of_tournament.center(106, '*')}\n")
                 
                 if validate == "2":
                     tournament_modification = " Tournament modification "
@@ -52,8 +52,8 @@ if __name__ == '__main__':
                     print(f"{tournament_validate.center(106, '-')}")
                     validate = input(f"Select 1, 2 : ")
                     if validate == "1":
-                        tournament_player = " -->> Register tournament players <<-- "
-                        print(f"{tournament_player.center(106, ' ')}")
+                        tournament_player = "> Register tournament players <"
+                        print(f"{tournament_player.center(106, '-')}")
                 
                         append_player = TournamentController.append_player()
                         print(str(tournament_controller.append_player()))

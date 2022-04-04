@@ -20,16 +20,21 @@ class TournamentModel:
                f"{self.start_date} at 9:00 am, and end, on " \
                f"{self.end_date} at 6:00 pm.\n" \
                f"He takes place in {self.place}.\n"
-    
+
     def __len__(self):
+        """Number of player in tournament list."""
         return len(self.players)
 
     def append_players(self, player):
         """Adds players to the tournament list."""
         player = TournamentModel.db.search(where('first-name' == player))
         self.players.append(player)
-        return f"{player} will take part in the {self.name} tournament."
+
+    def remove_player(self, player):
+        self.players.remove(player)
 
 
-"""méthode qui permet d'ajouter un player dans le tableau des players"""
+"""méthode qui permet d'ajouter un player dans le tableau des players
+OK WITH: LEN and APPEND_PLAYER but need correction in controller"""
+
 """Une méthode qui ajoute un tour dans le tableau des tours"""

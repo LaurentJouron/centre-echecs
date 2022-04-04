@@ -2,7 +2,6 @@
 from datetime import date, timedelta
 
 import constants
-
 number_of_day = constants.NUMBER_OF_DAY
 
 
