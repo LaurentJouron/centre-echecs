@@ -86,4 +86,12 @@ class TournamentView:
             str: players first-name """
         player = input("Please select first_name player you add: """).capitalize()
         return player
-        
+
+    @staticmethod
+    def remove_player():
+        """Define the first-name of participants you want to remove to the
+        tournament.
+        Returns:
+            str: players first-name """
+        player = input("Please select first_name player you remove: """).capitalize()
+        return player

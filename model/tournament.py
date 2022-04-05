@@ -24,17 +24,30 @@ class TournamentModel:
     def __len__(self):
         """Number of player in tournament list."""
         return len(self.players)
+    # return __len__
 
     def append_players(self, player):
         """Adds players to the tournament list."""
         player = TournamentModel.db.search(where('first-name' == player))
         self.players.append(player)
+    # __add__
 
     def remove_player(self, player):
+        """Remove player in tournament list."""
         self.players.remove(player)
 
+    def display_players_list(self):
+        """Display players from tournament list."""
+        return self.players[:]
+    # return TournamentModel.__class__.__dict__
 
-"""méthode qui permet d'ajouter un player dans le tableau des players
-OK WITH: LEN and APPEND_PLAYER but need correction in controller"""
+    def alphabetical_order(self):
+        """Sort players alphabetically"""
+        self.players.sort()
+
+    def ranking_order(self):
+        """Sort players ranking"""
+        self.players.sort(key=lambda ranking: self.players)
+
 
 """Une méthode qui ajoute un tour dans le tableau des tours"""

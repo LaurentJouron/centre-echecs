@@ -12,20 +12,29 @@ class TournamentController:
     def new_tournament():
         """Imports view data, imports model data and compares accuracy."""
         name, place, start_date, end_date = TournamentView.get_all()
-        
+
         tournament = TournamentModel(name, place, start_date, end_date)
         return tournament
-        
+
     @staticmethod
     def append_player():
         """Returns the players to be added to the tournament list."""
-        len_player = TournamentModel.__len__()
+        player: str = TournamentView.append_player()
+        len_player: int = TournamentModel.__len__()
         if len_player < constants_players:
-            player = TournamentView.append_player()
             first_name = TournamentModel.append_players(player)
             return first_name
         else:
             return f"The number of players is reached for this tournament."
 
+    @staticmethod
+    def remove_player():
+        """Remove player un tournament list"""
+        player = TournamentView.remove_player()
+        if player in TournamentModel.remove_player(player):
+            return player
 
-"""round"""
+    @staticmethod
+    def display_players_list():
+        players_list = TournamentModel.display_players_list()
+        return players_list

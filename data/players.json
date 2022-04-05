@@ -27,6 +27,13 @@
             "birthday": "Friday 29 December 1978",
             "gender": "woman",
             "ranking": "6"
+        },
+        "6": {
+            "first-name": "Laurent",
+            "last-name": "Jouron",
+            "birthday": "Wednesday 02 June 1976",
+            "gender": "man",
+            "ranking": "8"
         }
     }
 }
