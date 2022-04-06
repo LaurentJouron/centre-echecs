@@ -48,12 +48,21 @@ if __name__ == '__main__':
                     print(str(tournament_controller.new_tournament()))
 
                 while True:
-                    tournament_validate = "> 1 = add player  /  2 = play <"
+                    tournament_validate = "> 1 = add player  /  " \
+                                          "2 = Display players  /  3 = play <"
                     print(f"{tournament_validate.center(106, '-')}")
-                    validate = input(f"Select 1, 2 : ")
+                    validate = input(f"Select 1, 2 , 3: ")
                     if validate == "1":
-                        tournament_player = "> Register tournament players <"
+                        tournament_player = " Register tournament players "
                         print(f"{tournament_player.center(106, '-')}")
                 
                         append_player = TournamentController.append_player()
                         print(str(tournament_controller.append_player()))
+
+                    if validate == "2":
+                        display_players_list = \
+                            TournamentController.display_players_list()
+
+                    if validate == "3":
+                        pass
+

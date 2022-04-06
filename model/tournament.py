@@ -1,5 +1,7 @@
 """Information of the chess tournament."""
 from tinydb import TinyDB, where
+import constants
+nb_party = constants.NUMBER_OF_PLAYERS//2
 
 
 class TournamentModel:
@@ -49,5 +51,17 @@ class TournamentModel:
         """Sort players ranking"""
         self.players.sort(key=lambda ranking: self.players)
 
+    def first_party(self):
+        """Organize the first round player-to-player."""
+        first_player = 0
+        second_player = 4
+        for _ in range(nb_party):
+            first_game = self.players[first_player::second_player]
+            first_player += 1
+            second_player += 1
+            self.rounds.append([first_game])
 
-"""Une méthode qui ajoute un tour dans le tableau des tours"""
+    def other_party(self):
+        """Organizes player-to-player games for the remainder of the
+        tournament """
+        pass
