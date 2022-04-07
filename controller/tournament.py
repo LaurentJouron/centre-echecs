@@ -36,5 +36,18 @@ class TournamentController:
 
     @staticmethod
     def display_players_list():
+        """Display all participants of the tournament."""
         players_list = TournamentModel.display_players_list()
         return players_list
+
+    @staticmethod
+    def alphabetical_order():
+        """Display all participants in alphabetical order."""
+        alphabetical_players = TournamentModel.alphabetical_order()
+        return alphabetical_players
+
+    @staticmethod
+    def ranking_order():
+        """Display all participants in ranking order."""
+        ranking_players = TournamentModel.ranking_order()
+        return ranking_players

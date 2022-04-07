@@ -1,7 +1,10 @@
 """Information of the chess tournament."""
 from tinydb import TinyDB, where
 import constants
-nb_party = constants.NUMBER_OF_PLAYERS//2
+
+nb_game: int = constants.NUMBER_OF_PLAYERS//2   # Number of game in one round
+nb_player: int = constants.NUMBER_OF_PLAYERS
+nb_round: int = constants.NUMBER_OF_ROUND
 
 
 class TournamentModel:
@@ -53,9 +56,9 @@ class TournamentModel:
 
     def first_party(self):
         """Organize the first round player-to-player."""
-        first_player = 0
-        second_player = 4
-        for _ in range(nb_party):
+        first_player: int = 0
+        second_player: int = 4
+        for _ in range(nb_game):
             first_game = self.players[first_player::second_player]
             first_player += 1
             second_player += 1

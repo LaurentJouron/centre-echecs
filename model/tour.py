@@ -4,10 +4,9 @@ from tinydb import TinyDB
 
 class TourModel:
     """Manages the results of the chess tournament."""
-    db = TinyDB(f"data/tour.json", indent=4)
     
     def __init__(self):
-        self.matchs = []
+        pass
 
 
 """algorithme Suisse"""
