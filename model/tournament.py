@@ -1,5 +1,4 @@
 """Information of the chess tournament."""
-from tinydb import TinyDB, where
 import constants
 
 nb_game: int = constants.NUMBER_OF_PLAYERS//2   # Number of game in one round
@@ -9,8 +8,6 @@ nb_round: int = constants.NUMBER_OF_ROUND
 
 class TournamentModel:
     """Builder of the model tournament."""
-    db = TinyDB(f"data/players.json", indent=4)
-    
     def __init__(self, name, place, start_date, end_date):
         self.name: str = name
         self.place: str = place
@@ -26,16 +23,9 @@ class TournamentModel:
                f"{self.end_date} at 6:00 pm.\n" \
                f"He takes place in {self.place}.\n"
 
-    def __len__(self):
-        """Number of player in tournament list."""
-        return len(self.players)
-    # return __len__
-
     def append_players(self, player):
         """Adds players to the tournament list."""
-        player = TournamentModel.db.search(where('first-name' == player))
         self.players.append(player)
-    # __add__
 
     def remove_player(self, player):
         """Remove player in tournament list."""
@@ -44,7 +34,6 @@ class TournamentModel:
     def display_players_list(self):
         """Display players from tournament list."""
         return self.players[:]
-    # return TournamentModel.__class__.__dict__
 
     def alphabetical_order(self):
         """Sort players alphabetically"""
