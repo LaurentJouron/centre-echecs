@@ -4,6 +4,7 @@ from tinydb import TinyDB, where
 
 class PlayerModel:
     db = TinyDB(f"data/players.json", indent=4)
+    players = db.table('players')
     
     """Builder of the model player."""
     def __init__(self, first_name, last_name, birthday, gender, ranking):
@@ -23,18 +24,23 @@ class PlayerModel:
     
     def save(self):
         """Saves items in the TinyDB file"""
-        PlayerModel.db.insert({"first-name": self.first_name,
-                               "last-name": self.last_name,
-                               "birthday": self.birthday,
-                               "gender": self.gender,
-                               "ranking": self.ranking})
+        PlayerModel.players.insert({"first-name": self.first_name,
+                                    "last-name": self.last_name,
+                                    "birthday": self.birthday,
+                                    "gender": self.gender,
+                                    "ranking": self.ranking})
     
     @staticmethod
     def get_all():
         """Returns all TinyDB file elements."""
-        return PlayerModel.db.all()
+        return PlayerModel.players.all()
 
     @staticmethod
     def remove(first_name):
         """Removes an item from the list"""
-        PlayerModel.db.remove(where('first-name') == first_name)
+        PlayerModel.players.remove(where('first-name') == first_name)
+        
+    @staticmethod
+    def get_one_player(first_name):
+        """Return just one item from the list"""
+        PlayerModel.players.get(where('first-name') == first_name)

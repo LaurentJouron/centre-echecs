@@ -1,7 +1,6 @@
 """Tournament player registration management."""
 from view.player import PlayerView
 from model.player import PlayerModel
-# from controller.tournament import TournamentController
 
 
 class PlayerController:
@@ -37,3 +36,15 @@ class PlayerController:
         player = PlayerView.remove()
         first_name = PlayerModel.remove(player)
         return first_name
+
+    @staticmethod
+    def get_player_by_name(player_name):
+        """Get a player with his first-name"""
+        player = PlayerModel.get_one_player(player_name)
+        add_player = player(player["first-name"],
+                            player["last-name"],
+                            player["birthday"],
+                            player["gender"],
+                            player["ranking"])
+        return add_player
+        

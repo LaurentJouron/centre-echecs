@@ -33,8 +33,7 @@ class TournamentView:
         while True:
             place: str = input("Place of the tournament: ").capitalize()
             if not place.isalpha():
-                print("Invalid place name")
-                ValueError()
+                print("\nInvalid name!\nPlease input another name.\n")
             else:
                 return place
 
