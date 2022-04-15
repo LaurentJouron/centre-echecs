@@ -1,19 +1,20 @@
 """Information for participants in chess tournaments."""
 from tinydb import TinyDB, where
+from dataclasses import dataclass
 
 
+@dataclass
 class PlayerModel:
     db = TinyDB(f"data/players.json", indent=4)
     players = db.table('players')
     
     """Builder of the model player."""
-    def __init__(self, first_name, last_name, birthday, gender, ranking):
-        self.first_name: str = first_name
-        self.last_name: str = last_name
-        self.birthday = birthday
-        self.gender: str = gender
-        self.ranking: int = ranking
-
+    first_name: str
+    last_name: str
+    birthday: float
+    gender: str
+    ranking: int
+        
     def __str__(self):
         """Displays all items in the TinyDB file"""
         return f"\nFirst-name: {self.first_name}\n" \
@@ -43,4 +44,4 @@ class PlayerModel:
     @staticmethod
     def get_one_player(first_name):
         """Return just one item from the list"""
-        PlayerModel.players.get(where('first-name') == first_name)
+        return PlayerModel.players.get(where('first-name') == first_name)

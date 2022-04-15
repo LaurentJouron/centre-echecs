@@ -13,8 +13,7 @@ if __name__ == '__main__':
     national_player_list = " Add player to the national list "
     print(f"{national_player_list.center(106, '-')}\n")
     
-    new_players = "> 1 = new player  /  2 = show all  /  3 = remove  /" \
-                  "  4 = begin party <"
+    new_players = "> 1 = new player  /  2 = show all  /  3 = remove  /  4 = begin party <"
     print(f"{new_players.center(106, '-')}")
     
     new_players = input(f"Select 1, 2, 3 or 4 : ")
@@ -54,8 +53,7 @@ if __name__ == '__main__':
                     start_of_tournament = " Start of the tournament "
                     print(f"\n{start_of_tournament.center(106, '*')}\n")
                     
-                    tournament_player = "> 1 = add player  / " \
-                                        " 2 = Display players  /  3 = play <"
+                    tournament_player = "> 1 = add player  /  2 = Display players  /  3 = play <"
                     print(f"{tournament_player.center(106, '-')}")
                     
                     tournament_player = input(f"Select 1, 2 , 3: ")
@@ -64,19 +62,16 @@ if __name__ == '__main__':
                         if tournament_player == 1:
                             tournament_player = " Register tournament players "
                             print(f"{tournament_player.center(106, '-')}")
-                        
-                            append_player = TournamentController.append_player()
-                            print(str(tournament_controller.append_player()))
+
+                            append_player = TournamentController.append_player(tournament)
                     
-                    # if tournament_player == 2:
-                    #     display_players_list = \
-                    #         TournamentController.display_players_list()
-                    #
-                    # if tournament_player == 3:
-                    #     pass
+                        if tournament_player == 2:
+                            display_players_list = TournamentController.display_players_list(tournament)
+
+                        # if tournament_player == 3:
+                        #     pass
                         
-                        tournament_player = "> 1 = add player  /  2 = " \
-                                            "Display players  /  3 = play <"
+                        tournament_player = "> 1 = add player  /  2 = Display players  /  3 = play <"
                         print(f"{tournament_player.center(106, '-')}")
                         tournament_player = input(f"Select 1, 2 , 3: ")
                         tournament_player = int(tournament_player)
@@ -86,8 +81,8 @@ if __name__ == '__main__':
                 tournament_start = input(f"Select 1, 2 : ")
                 tournament_start = int(tournament_start)
                 
-        new_players = "> 1 = new player  /  2 = show all  /  3 = remove  /" \
-                      "  4 = begin party <"
+        new_players = "> 1 = new player  /  2 = show all  /  3 = remove  /  " \
+                      "4 = begin party <"
         print(f"{new_players.center(106, '-')}")
         new_players = input(f"\nSelect 1, 2, 3 or 4 : ")
         new_players = int(new_players)

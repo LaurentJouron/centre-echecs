@@ -28,13 +28,13 @@ class TournamentController:
     #     """Remove player un tournament list"""
     #     player = TournamentView.remove_player()
     #     TournamentModel.append_players()
-    #
-    # @staticmethod
-    # def display_players_list():
-    #     """Display all participants of the tournament."""
-    #     players_list = TournamentModel.display_players_list()
-    #     return players_list
-    #
+
+    @staticmethod
+    def display_players_list(tournament):
+        """Display all participants of the tournament."""
+        players_list = TournamentModel.display_players_list(tournament)
+        return players_list
+
     # @staticmethod
     # def alphabetical_order():
     #     """Display all participants in alphabetical order."""

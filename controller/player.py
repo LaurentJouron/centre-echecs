@@ -40,11 +40,6 @@ class PlayerController:
     @staticmethod
     def get_player_by_name(player_name):
         """Get a player with his first-name"""
-        player = PlayerModel.get_one_player(player_name)
-        add_player = player(player["first-name"],
-                            player["last-name"],
-                            player["birthday"],
-                            player["gender"],
-                            player["ranking"])
+        add_player = PlayerModel.get_one_player(player_name)
         return add_player
         
