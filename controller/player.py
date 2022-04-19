@@ -34,12 +34,11 @@ class PlayerController:
     def remove():
         """Removes an item from the list"""
         player = PlayerView.remove()
-        first_name = PlayerModel.remove(player)
-        return first_name
-
+        return PlayerModel.remove(player)
+    
     @staticmethod
     def get_player_by_name(player_name):
         """Get a player with his first-name"""
-        add_player = PlayerModel.get_one_player(player_name)
-        return add_player
-        
+        player = PlayerModel.get_one_player(player_name)
+        return player.items()
+
