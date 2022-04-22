@@ -37,7 +37,7 @@ if __name__ == '__main__':
             
             tournament_validate = "> 1 = Modify  /  2 = validate <"
             print(f"{tournament_validate.center(106, '-')}")
-            
+
             tournament_start = input(f"Select 1, 2 : ")
             tournament_start = int(tournament_start)
             
@@ -58,6 +58,7 @@ if __name__ == '__main__':
                     
                     tournament_player = input(f"Select 1, 2 , 3: ")
                     tournament_player = int(tournament_player)
+
                     while tournament_player != 3:
                         if tournament_player == 1:
                             tournament_player = " Register tournament players "
@@ -65,8 +66,8 @@ if __name__ == '__main__':
 
                             append_player = TournamentController.append_player(tournament)
                     
-                        if tournament_player == 2:
-                            display_players_list = TournamentController.display_players_list(tournament)
+                        # if tournament_player == 2:
+                        #     display_players_list = TournamentController.display_players_list(tournament)
 
                         # if tournament_player == 3:
                         #     pass

@@ -23,7 +23,7 @@ class TournamentModel:
                f"{self.end_date} at 6:00 pm.\n" \
                f"He takes place in {self.place}.\n"
 
-    def append_players(self, player):
+    def append_player(self, player):
         """Adds players to the tournament list."""
         self.players.append(player)
 
@@ -48,10 +48,10 @@ class TournamentModel:
         first_player: int = 0
         second_player: int = 4
         for _ in range(nb_game):
-            first_game = self.players[first_player::second_player]
+            first_tour = self.players[first_player::second_player]
             first_player += 1
             second_player += 1
-            self.rounds.append([first_game])
+            self.rounds.append([first_tour])
 
     def other_party(self):
         """Organizes player-to-player games for the remainder of the
