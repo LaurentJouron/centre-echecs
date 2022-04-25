@@ -2,6 +2,7 @@
 from controller.tournament import TournamentController
 from controller.player import PlayerController
 
+TOURNAMENT = ""
 
 if __name__ == '__main__':
     welcome = " Welcome to the << CHESS-CENTER >> application "
@@ -47,7 +48,8 @@ if __name__ == '__main__':
                     print(f"{tournament_modification.center(106, '-')}")
                     
                     tournament_controller = TournamentController()
-                    print(str(tournament_controller.new_tournament()))
+                    tournament = tournament_controller.new_tournament()
+                    print(str(tournament))
                 
                 if tournament_start == 2:
                     players_tournament = " Select players for this tournament "
@@ -64,10 +66,12 @@ if __name__ == '__main__':
                             tournament_player = " Register tournament players "
                             print(f"{tournament_player.center(106, '-')}")
 
-                            append_player = TournamentController.append_player(tournament)
+                            append_player = \
+                                TournamentController.append_player(TOURNAMENT)
                     
-                        # if tournament_player == 2:
-                        #     display_players_list = TournamentController.display_players_list(tournament)
+                        if tournament_player == 2:
+                            display_players_list = \
+                                TournamentController.display_players_list(TOURNAMENT)
 
                         # if tournament_player == 3:
                         #     pass
