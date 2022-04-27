@@ -2,9 +2,10 @@
 from controller.tournament import TournamentController
 from controller.player import PlayerController
 
-TOURNAMENT: str = ""
+global_tournament: str = "Tournament"
 
 if __name__ == '__main__':
+    """Decoration text"""
     welcome = " Welcome to the << CHESS-CENTER >> application "
     print(f"\n{welcome.center(106, ' ')}\n")
     
@@ -13,7 +14,8 @@ if __name__ == '__main__':
     
     national_player_list = " Add player to the national list "
     print(f"{national_player_list.center(106, '*')}\n")
-    
+
+    """Management of players on the national list"""
     new_players = "> 1 = new player  /  2 = show all  /  3 = remove  /  4 = begin party <"
     print(f"{new_players.center(106, '-')}")
     
@@ -36,7 +38,8 @@ if __name__ == '__main__':
             tournament_controller = TournamentController()
             tournament = tournament_controller.new_tournament()
             print(str(tournament))
-            TOURNAMENT = tournament.name
+            global global_tournament
+            global_tournament = tournament.name
 
             tournament_validate = "> 1 = Modify  /  2 = validate <"
             print(f"{tournament_validate.center(106, '-')}")
@@ -52,6 +55,8 @@ if __name__ == '__main__':
                     tournament_controller = TournamentController()
                     tournament = tournament_controller.new_tournament()
                     print(str(tournament))
+                    global global_tournament
+                    global_tournament = tournament.name
                 
                 if tournament_start == 2:
                     players_tournament = " Select players for this tournament "
@@ -68,10 +73,10 @@ if __name__ == '__main__':
                             tournament_player = " Register tournament players "
                             print(f"{tournament_player.center(106, '-')}")
 
-                            append_player = TournamentController.append_player(TOURNAMENT)
+                            append_player = TournamentController.append_player(global_tournament)
                     
                         # if tournament_player == 2:
-                        #     display_players_list = TournamentController.display_players_list(TOURNAMENT)
+                        #     display_players_list = TournamentController.display_players_list(global_tournament)
 
                         # if tournament_player == 3:
                         #     pass
