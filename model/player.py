@@ -23,6 +23,13 @@ class PlayerModel:
                f"Gender: {self.gender}\n" \
                f"Ranking: {self.ranking}"
     
+    def __repr__(self):
+        return f"Player({self.first_name}, {self.last_name})"
+    
+    @property
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
+    
     def save(self):
         """Saves items in the TinyDB file"""
         PlayerModel.players.insert({"first-name": self.first_name,

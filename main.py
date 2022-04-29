@@ -2,7 +2,7 @@
 from controller.tournament import TournamentController
 from controller.player import PlayerController
 
-global_tournament = "Tournament"
+global_tournament = None
 
 if __name__ == '__main__':
     """Decoration text"""
@@ -39,8 +39,8 @@ if __name__ == '__main__':
             tournament_controller = TournamentController()
             tournament = tournament_controller.new_tournament()
             print(str(tournament))
-            global global_tournament
-            global_tournament = tournament.name
+            
+            global_tournament = tournament
 
             tournament_validate = "> 1 = Modify / 2 = validate <"
             print(f"{tournament_validate.center(106, '-')}")
@@ -56,8 +56,8 @@ if __name__ == '__main__':
                     tournament_controller = TournamentController()
                     tournament = tournament_controller.new_tournament()
                     print(str(tournament))
-                    global global_tournament
-                    global_tournament = tournament.name
+                    
+                    global_tournament = tournament
 
                 if tournament_start == 2:
                     players_tournament = " Select players for this tournament "
@@ -78,10 +78,10 @@ if __name__ == '__main__':
                             append_player = TournamentController.\
                                 append_player(global_tournament)
 
-                        # if tournament_player == 2:
-                        #     display_players_list = TournamentController.
-                        #     display_players_list(global_tournament)
-
+                        if tournament_player == 2:
+                            display_players_list = TournamentController.display_players_list(global_tournament)
+                            print(display_players_list)
+                            
                         # if tournament_player == 3:
                         #     pass
 
