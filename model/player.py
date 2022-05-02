@@ -24,7 +24,7 @@ class PlayerModel:
                f"Ranking: {self.ranking}"
     
     def __repr__(self):
-        return f"Player({self.first_name}, {self.last_name})"
+        return f"\nPlayer {self.full_name} is register.\n"
     
     @property
     def full_name(self):

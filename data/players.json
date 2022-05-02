@@ -41,6 +41,13 @@
             "birthday": "Saturday 21 March 1953",
             "gender": "woman",
             "ranking": "6"
+        },
+        "7": {
+            "first-name": "Stephane",
+            "last-name": "Jouron",
+            "birthday": "Friday 22 March 1974",
+            "gender": "man",
+            "ranking": "7"
         }
     }
 }
