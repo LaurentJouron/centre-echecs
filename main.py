@@ -17,7 +17,7 @@ class Reception:
         to_do = "> [1]Player list  [2]Tournament  [3]Match  [4]Quit <"
         print(f"\n{to_do.center(106, '-')}")
 
-        """Management of players on the national list"""
+        """Management reception"""
         order = input(f"Please enter an order : ").capitalize()
         order = int(order)
         return order
@@ -33,14 +33,14 @@ class Reception:
         list_of_choice = "> [1]Add  [2]Show  [3]Remove  [4]Quit <"
         print(f"\n{list_of_choice.center(106, '-')}")
 
-        """Management of players on the national list"""
+        """Management player reception"""
         order = input(f"Please enter an order : ").capitalize()
         order = int(order)
         return order
 
     @staticmethod
     def tournament_reception():
-        """Text decoration"""
+        """Management tournament reception"""
         tournament_reception = " TOURNAMENT RECEPTION "
         print(f"\n{tournament_reception.center(106, '~')}")
 
@@ -54,6 +54,14 @@ class Reception:
         order = input(f"Please enter an order : ").capitalize()
         order = int(order)
         return order
+
+    @staticmethod
+    def tournament_validation():
+        validate = "> [1]Modify  [2]Validate <"
+        print(f"{validate.center(106, '-')}")
+        validate = input(f"Please enter an order : ")
+        validate = int(validate)
+        return validate
 
 
 
@@ -84,23 +92,22 @@ def tournament():
 
             # global_tournament = tournament_controller
 
-            validate = "> [1]Modify  [2]Validate <"
-            print(f"{validate.center(106, '-')}")
-            validate = input(f"Please enter an order : ")
-            validate = int(validate)
+            validate = Reception.tournament_validation()
             while validate == 1:
                 tournament_controller = TC.new_tournament()
                 print(str(tournament_controller))
-
-                validate = "> [1]Modify  [2]Validate <"
-                print(f"{validate.center(106, '-')}")
-                validate = input(f"Please enter an order : ")
-                validate = int(validate)
+            if validate == 2:
+                Reception.tournament_reception()
+            else:
+                print("Value error.")
 
         if order == 2:
             tournament_player = " Register tournament players "
             print(f"{tournament_player.center(106, '-')}")
             TC.append_player(global_tournament)
+
+        if order == 4:
+            Reception.reception()
 
 
 if __name__ == '__main__':
