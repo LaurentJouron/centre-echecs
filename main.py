@@ -5,7 +5,7 @@ from controller.player import PlayerController as PC
 global_tournament = None
 
 
-class Reception:
+class GlobalAppli:
     @staticmethod
     def start_app():
         welcome = " Welcome to the << CHESS-CENTER >> application "
@@ -14,125 +14,134 @@ class Reception:
         print(f"\n{instruction.center(106, ' ')}")
 
     @staticmethod
-    def reception():
-        reception_name = " RECEPTION "
-        print(f"\n{reception_name.center(106, '~')}")
-
-        Reception.choice()
-
-        to_do = "> [1]Player list  [2]Tournament  [3]Match  [4]Quit <"
-        print(f"\n{to_do.center(106, '-')}")
-
-        """Management reception"""
-        order = Reception.input()
+    def input():
+        order = input(f"Please enter an order : ").capitalize()
+        order = int(order)
         return order
 
     @staticmethod
     def choice():
         choice = " Make your choice "
         print(f"{choice.center(106, '*')}")
-        
+
     @staticmethod
-    def input():
-        order = input(f"Please enter an order : ").capitalize()
-        order = int(order)
+    def information():
+        choice = " Enter information "
+        print(f"{choice.center(106, '*')}")
+
+
+class Reception:
+    @staticmethod
+    def reception():
+        reception_name = " RECEPTION "
+        print(f"\n{reception_name.center(106, '~')}")
+        GlobalAppli.choice()
+        to_do = "> [1]Player list  [2]Tournament  [3]Match  [4]Quit <"
+        print(f"\n{to_do.center(106, '-')}")
+        order = GlobalAppli.input()
         return order
-        
+
+
+class Player:
     @staticmethod
     def player_reception():
         player_reception = " PLAYER RECEPTION "
         print(f"\n{player_reception.center(106, '~')}")
-        Reception.choice()
+        GlobalAppli.choice()
         list_of_choice = "> [1]Add  [2]Show  [3]Remove  [4]Quit <"
         print(f"\n{list_of_choice.center(106, '-')}")
-        """Management player reception"""
-        order = Reception.input()
+        order = GlobalAppli.input()
         return order
 
+    @staticmethod
+    def create():
+        player_reception = " PLAYER CREATION "
+        print(f"\n{player_reception.center(106, '~')}")
+        GlobalAppli.information()
+        create = PC.create()
+        print(repr(create))
+
+    @staticmethod
+    def all():
+        player_reception = " GET ALL PLAYERS "
+        print(f"\n{player_reception.center(106, '~')}")
+        PC.get_all()
+
+    @staticmethod
+    def remove():
+        player_reception = " PLAYER REMOVED "
+        print(f"\n{player_reception.center(106, '~')}")
+        GlobalAppli.information()
+        PC.remove()
+
+
+class Tournament:
     @staticmethod
     def tournament_reception():
         """Management tournament reception"""
         tournament_reception = " TOURNAMENT RECEPTION "
         print(f"\n{tournament_reception.center(106, '~')}")
-        Reception.choice()
+        GlobalAppli.choice()
         list_of_choice = "> [1]Create  [2]Add player  [3]Join  [4]Quit <"
         print(f"\n{list_of_choice.center(106, '-')}")
-        """Management of players on the national list"""
-        order = Reception.input()
+        order = GlobalAppli.input()
         return order
 
     @staticmethod
     def tournament_validation():
+        tournament_reception = " TOURNAMENT VALIDATION "
+        print(f"\n{tournament_reception.center(106, '~')}")
         validate = "> [1]Modify  [2]Validate <"
         print(f"{validate.center(106, '-')}")
-        order = input(f"Please enter an order : ")
-        order = int(order)
+        order = GlobalAppli.input()
         return order
 
+    @staticmethod
+    def new_tounament():
+        tournament_reception = " TOURNAMENT CREATION "
+        print(f"\n{tournament_reception.center(106, '~')}")
+        GlobalAppli.information()
+        tournament_controller = TC.new_tournament()
+        print(str(tournament_controller))
 
-def player():
-    order = None
-    while order == 1 or 2 or 3 or 4:
-        order = Reception.player_reception()
-        if order == 1:
-            create = PC.create()
-            print(repr(create))
-        if order == 2:
-            PC.get_all()
-        if order == 3:
-            PC.remove()
-        if order == 4:
-            break
-
-
-def tournament():
-    order = None
-    while order == 1 or 2 or 3 or 4:
-        order = Reception.tournament_reception()
-        if order == 1:
-            tournament_controller = TC.new_tournament()
-            print(str(tournament_controller))
-
-            # global_tournament = tournament_controller
-
-            validate = Reception.tournament_validation()
-            while validate == 1:
-                tournament_controller = TC.new_tournament()
-                print(str(tournament_controller))
-            if validate == 2:
-                Reception.tournament_reception()
-            else:
-                print("Value error.")
-
-        if order == 2:
-            tournament_player = " Register tournament players "
-            print(f"{tournament_player.center(106, '-')}")
-            TC.append_player(global_tournament)
-            
-        if order == 3:
-            players_tournament = " Select players for this tournament "
-            print(f"\n{players_tournament.center(106, '*')}\n")
-            tournament_player = "> [1]add player [2]Display players [3]play <"
-            print(f"{tournament_player.center(106, '-')}")
-            Reception.input()
-
-        if order == 4:
-            break
+    @staticmethod
+    def player_tournament():
+        tournament_reception = " REGISTER TOURNAMENT PLAYERS "
+        print(f"\n{tournament_reception.center(106, '~')}")
+        GlobalAppli.information()
+        TC.append_player(global_tournament)
 
 
 if __name__ == '__main__':
 
-    Reception.start_app()
-    reception = Reception.reception()
-    int(reception)
+    GlobalAppli.start_app()
+    reception = None
     while reception == 1 or 2 or 3 or 4:
+        reception = Reception.reception()
+        reception = int(reception)
         if reception == 1:
-            player()
+            order = None
+            while order == 1 or 2 or 3:
+                order = Player.player_reception()
+                if order == 1:
+                    Player.create()
+                if order == 2:
+                    Player.all()
+                if order == 3:
+                    Player.remove()
+                if order == 4:
+                    continue
         if reception == 2:
-            tournament()
-        if reception == 3:
-            pass
-        if reception == 4:
-            pass
-        else:
-            print("Value error.")
+            tournament = Tournament.tournament_reception()
+            tournament = int(tournament)
+            while tournament == 1:
+                Tournament.new_tounament()
+                validation = Tournament.tournament_validation()
+                while validation == 1:
+                    tournament_controller = TC.new_tournament()
+                    print(str(tournament_controller))
+                    validation = Tournament.tournament_validation()
+                if validation == 2:
+                    continue
+            if tournament == 2:
+                Tournament.player_tournament()
