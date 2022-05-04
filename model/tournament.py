@@ -25,9 +25,9 @@ class TournamentModel:
 
     def append_player(self, player):
         """Adds players to the tournament list."""
-        player = nb_player
+        players = nb_player
         player_list = len(self.players)
-        while player_list < player:
+        while player_list < players:
             self.players.append(player)
         else:
             print("Registration is complete for this tournament.")

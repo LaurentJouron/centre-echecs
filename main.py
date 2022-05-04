@@ -82,7 +82,8 @@ class Tournament:
         tournament_reception = " TOURNAMENT RECEPTION "
         print(f"\n{tournament_reception.center(106, '~')}")
         GlobalAppli.choice()
-        list_of_choice = "> [1]Create  [2]Add player  [3]Join  [4]Quit <"
+        list_of_choice = "> [1]Create  [2]Add player  [3]Display player  " \
+                         "[4]Quit <"
         print(f"\n{list_of_choice.center(106, '-')}")
         order = GlobalAppli.input()
         return order
@@ -101,16 +102,25 @@ class Tournament:
         tournament_reception = " TOURNAMENT CREATION "
         print(f"\n{tournament_reception.center(106, '~')}")
         GlobalAppli.information()
-        tournament_controller = TC.new_tournament()
-        print(str(tournament_controller))
+        tournament_controller = TC()
+        tournament = tournament_controller.new_tournament()
+        print(str(tournament))
+        global_tournament = tournament
+        return global_tournament
 
     @staticmethod
-    def player_tournament():
+    def append_player():
         tournament_reception = " REGISTER TOURNAMENT PLAYERS "
         print(f"\n{tournament_reception.center(106, '~')}")
         GlobalAppli.information()
         TC.append_player(global_tournament)
 
+    @staticmethod
+    def display_player():
+        tournament_reception = " DISPLAY TOURNAMENT PLAYERS "
+        print(f"\n{tournament_reception.center(106, '~')}")
+        GlobalAppli.information()
+        TC.display_players_list(global_tournament)
 
 if __name__ == '__main__':
 
@@ -144,4 +154,8 @@ if __name__ == '__main__':
                 if validation == 2:
                     continue
             if tournament == 2:
-                Tournament.player_tournament()
+                Tournament.append_player()
+            if tournament == 3:
+                Tournament.display_player()
+            if tournament == 4:
+                continue
