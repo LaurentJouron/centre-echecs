@@ -1,7 +1,7 @@
 """Entry point."""
 import constants
-from controller.tournament import TournamentController as TC
-from controller.player import PlayerController as PC
+from controller.tournament import TournamentController
+from controller.player import PlayerController
 
 nb_day = constants.NUMBER_OF_DAY
 nb_round = constants.NUMBER_OF_ROUND
@@ -62,21 +62,21 @@ class Player:
         player_reception = " PLAYER CREATION "
         print(f"\n{player_reception.center(106, '~')}")
         GlobalAppli.information()
-        create = PC.create()
+        create = PlayerController.create()
         print(repr(create))
 
     @staticmethod
     def all():
         player_reception = " PLAYER LIST "
         print(f"\n{player_reception.center(106, '~')}")
-        PC.get_all()
+        PlayerController.get_all()
 
     @staticmethod
     def remove():
         player_reception = " PLAYER REMOVED "
         print(f"\n{player_reception.center(106, '~')}")
         GlobalAppli.information()
-        PC.remove()
+        PlayerController.remove()
 
 
 class Tournament:
@@ -106,7 +106,7 @@ class Tournament:
         tournament_reception = " TOURNAMENT CREATION "
         print(f"\n{tournament_reception.center(106, '~')}")
         GlobalAppli.information()
-        tournament_controller = TC()
+        tournament_controller = TournamentController()
         tournament = tournament_controller.new_tournament()
         print(str(tournament))
         global_tournament = tournament
@@ -117,14 +117,15 @@ class Tournament:
         tournament_reception = " REGISTER TOURNAMENT PLAYERS "
         print(f"\n{tournament_reception.center(106, '~')}")
         GlobalAppli.information()
-        TC.append_player(global_tournament)
+        TournamentController.append_player(global_tournament)
 
     @staticmethod
     def display_player():
         tournament_reception = " DISPLAY TOURNAMENT PLAYERS "
         print(f"\n{tournament_reception.center(106, '~')}")
         GlobalAppli.information()
-        TC.display_players_list(global_tournament)
+        TournamentController.display_players_list(global_tournament)
+
 
 if __name__ == '__main__':
 
@@ -155,7 +156,7 @@ if __name__ == '__main__':
                 validation = Tournament.validation()
                 
                 while validation == 1:
-                    tournament_controller = TC.new_tournament()
+                    tournament_controller = TournamentController.new_tournament()
                     print(str(tournament_controller))
                     validation = Tournament.validation()
                 
