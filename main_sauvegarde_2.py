@@ -30,8 +30,8 @@ class GlobalAppli:
         print(f"{choice.center(106, '*')}")
 
 
-# class Reception:
-#     pass
+class Reception:
+    pass
     # @staticmethod
     # def reception():
     #     reception_name = " RECEPTION "
@@ -43,37 +43,37 @@ class GlobalAppli:
     #     return order
 
 
-# class Player:
-#     @staticmethod
-#     def reception():
-#         player_reception = " PLAYER RECEPTION "
-#         print(f"\n{player_reception.center(106, '~')}")
-#         GlobalAppli.choice()
-#         list_of_choice = "> [1]Add  [2]Show  [3]Remove  [4]Quit <"
-#         print(f"\n{list_of_choice.center(106, '-')}")
-#         order = GlobalAppli.input()
-#         return order
-#
-#     @staticmethod
-#     def create():
-#         player_reception = " PLAYER CREATION "
-#         print(f"\n{player_reception.center(106, '~')}")
-#         GlobalAppli.information()
-#         create = PlayerController.create()
-#         print(repr(create))
-#
-#     @staticmethod
-#     def all():
-#         player_reception = " GET ALL PLAYERS "
-#         print(f"\n{player_reception.center(106, '~')}")
-#         PlayerController.get_all()
-#
-#     @staticmethod
-#     def remove():
-#         player_reception = " PLAYER REMOVED "
-#         print(f"\n{player_reception.center(106, '~')}")
-#         GlobalAppli.information()
-#         PlayerController.remove()
+class Player:
+    @staticmethod
+    def reception():
+        player_reception = " PLAYER RECEPTION "
+        print(f"\n{player_reception.center(106, '~')}")
+        GlobalAppli.choice()
+        list_of_choice = "> [1]Add  [2]Show  [3]Remove  [4]Quit <"
+        print(f"\n{list_of_choice.center(106, '-')}")
+        order = GlobalAppli.input()
+        return order
+
+    @staticmethod
+    def create():
+        player_reception = " PLAYER CREATION "
+        print(f"\n{player_reception.center(106, '~')}")
+        GlobalAppli.information()
+        create = PlayerController.create()
+        print(repr(create))
+
+    @staticmethod
+    def all():
+        player_reception = " GET ALL PLAYERS "
+        print(f"\n{player_reception.center(106, '~')}")
+        PlayerController.get_all()
+
+    @staticmethod
+    def remove():
+        player_reception = " PLAYER REMOVED "
+        print(f"\n{player_reception.center(106, '~')}")
+        GlobalAppli.information()
+        PlayerController.remove()
 
 
 class Tournament:
