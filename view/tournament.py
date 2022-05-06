@@ -94,3 +94,66 @@ class TournamentView:
             str: players first-name """
         player = input("Select first_name player you remove: """).capitalize()
         return player
+
+# Decoration text
+    @staticmethod
+    def tournament_reception():
+        """Management tournament reception"""
+        tournament_reception = " TOURNAMENT RECEPTION "
+        print(f"\n{tournament_reception.center(106, '~')}")
+
+    @staticmethod
+    def tournament_menu():
+        tournament_list = "> [1]Create  [2]Add player  [3]Display player  " \
+                          "[4]Quit <"
+        print(f"\n{tournament_list.center(106, '-')}")
+
+    @staticmethod
+    def tournament_validation():
+        tournament_validation = " TOURNAMENT VALIDATION "
+        print(f"\n{tournament_validation.center(106, '~')}")
+
+    @staticmethod
+    def validate_list():
+        validate_list = "> [1]Modify  [2]Validate <"
+        print(f"{validate_list.center(106, '-')}")
+
+    @staticmethod
+    def tournament_creation():
+        tournament_creation = " TOURNAMENT CREATION "
+        print(f"\n{tournament_creation.center(106, '~')}")
+
+    @staticmethod
+    def add_player():
+        add_players = " REGISTER TOURNAMENT PLAYERS "
+        print(f"\n{add_players.center(106, '~')}")
+
+    @staticmethod
+    def display_player():
+        display_player = " DISPLAY TOURNAMENT PLAYERS "
+        print(f"\n{display_player.center(106, '~')}")
+
+    @staticmethod
+    def choice():
+        choice = " Make your choice "
+        print(f"{choice.center(106, '*')}")
+
+    @staticmethod
+    def input():
+        choice = input(f"Please enter an choice : ").capitalize()
+        choice = int(choice)
+        return choice
+
+    @staticmethod
+    def reception_tournament():
+        TournamentView.tournament_reception()
+        TournamentView.choice()
+        TournamentView.tournament_menu()
+        TournamentView.input()
+
+    @staticmethod
+    def tournament_validate():
+        TournamentView.tournament_validation()
+        TournamentView.choice()
+        TournamentView.validate_list()
+        TournamentView.input()

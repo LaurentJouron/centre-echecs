@@ -1,5 +1,5 @@
 """Information for participants in chess tournaments."""
-from tinydb import TinyDB, where
+from tinydb import TinyDB, where, table
 
 
 class PlayerModel:
@@ -24,12 +24,17 @@ class PlayerModel:
                f"Ranking: {self.ranking}"
     
     def __repr__(self):
-        return f"\nPlayer {self.full_name} is register.\n"
+        return f"\nPlayer {self.full_name} is register."
     
     @property
     def full_name(self):
         return f"{self.first_name} {self.last_name}"
-    
+
+    @property
+    def db_instance(self) ->  table.Document:
+        return PlayerModel.db.get((where('first-name') == self.first_name)
+                                  & (where('last-name') == self.last_name))
+
     def save(self):
         """Saves items in the TinyDB file"""
         PlayerModel.players.insert({"first-name": self.first_name,

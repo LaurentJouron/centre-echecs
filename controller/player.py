@@ -9,16 +9,20 @@ class PlayerController:
     @staticmethod
     def create():
         """Imports view data, imports model data and compares accuracy."""
+        PlayerView.create()
+        PlayerView.information()
         first_name, last_name, birthday, gender, ranking = \
             PlayerView.get_all_information()
         
         player = PlayerModel(first_name, last_name, birthday, gender, ranking)
         player.save()
+        PlayerView.confirmation(player)
         return player
     
     @staticmethod
     def get_all():
         """Deserializes the database data."""
+        PlayerView.all()
         players_model = []
         players = PlayerModel.get_all()
         for player in players:
@@ -33,6 +37,7 @@ class PlayerController:
     @staticmethod
     def remove():
         """Removes an item from the list"""
+        PlayerView.delete()
         player = PlayerView.remove()
         return PlayerModel.remove(player)
     
@@ -46,3 +51,11 @@ class PlayerController:
                                  player["gender"],
                                  player["ranking"])
         return one_player
+
+    @staticmethod
+    def start_player_menu():
+        PlayerView.start_player_reception()
+        PlayerView.choice()
+        PlayerView.player_menu()
+        input = PlayerView.input()
+        return input

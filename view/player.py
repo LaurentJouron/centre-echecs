@@ -101,5 +101,50 @@ class PlayerView:
         """Define the first-name of participants you want removed.
         Returns:
             str: players first-name """
-        player = input("Please select first_name you want to remove: ")
-        return player.capitalize()
+        player = PlayerView.define_first_name()
+        return player
+
+    @staticmethod
+    def start_player_reception():
+        player_reception = " PLAYER RECEPTION "
+        print(f"\n{player_reception.center(106, '~')}")
+
+    @staticmethod
+    def choice():
+        choice = " Make your choice "
+        print(f"{choice.center(106, '*')}")
+
+    @staticmethod
+    def player_menu():
+        list_of_choice = "> [1]Add  [2]Show  [3]Remove  [4]Quit <"
+        print(f"\n{list_of_choice.center(106, '-')}")
+
+    @staticmethod
+    def input():
+        choice = input(f"Please enter an choice : ").capitalize()
+        choice = int(choice)
+        return choice
+
+    @staticmethod
+    def create():
+        player_creation = " PLAYER CREATION "
+        print(f"\n{player_creation.center(106, '~')}")
+
+    @staticmethod
+    def information():
+        choice = " Enter information "
+        print(f"{choice.center(106, '*')}")
+
+    @staticmethod
+    def confirmation(player):
+        print(repr(player))
+
+    @staticmethod
+    def all():
+        all_player = " ALL PLAYERS IN LIST "
+        print(f"\n{all_player.center(106, '~')}")
+
+    @staticmethod
+    def delete():
+        delete_player = " PLAYER DELETE "
+        print(f"\n{delete_player.center(106, '~')}")
