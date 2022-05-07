@@ -1,18 +1,12 @@
 from view.global_app import GlobalApp
 
 
-def first_run():
-    GlobalApp.start_app()
-    GlobalApp.reception()
-    GlobalApp.choice()
-    GlobalApp.start_menu()
-    input: int = GlobalApp.input()
-    return input
+class StartApp:
+    @staticmethod
+    def first_run():
+        GlobalApp.start_app()
 
-
-def next_run():
-    GlobalApp.reception()
-    GlobalApp.choice()
-    GlobalApp.start_menu()
-    input: int = GlobalApp.input()
-    return input
+    @staticmethod
+    def next_run():
+        choice = GlobalApp.next_run()
+        return choice

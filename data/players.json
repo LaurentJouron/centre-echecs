@@ -48,20 +48,6 @@
             "birthday": "Friday 22 March 1974",
             "gender": "man",
             "ranking": "7"
-        },
-        "8": {
-            "first-name": "Marc",
-            "last-name": "Foucault",
-            "birthday": "Wednesday 20 February 1991",
-            "gender": "man",
-            "ranking": "9"
-        },
-        "9": {
-            "first-name": "Marc",
-            "last-name": "Durant",
-            "birthday": "Tuesday 23 March 1993",
-            "gender": "man",
-            "ranking": "10"
         }
     }
 }

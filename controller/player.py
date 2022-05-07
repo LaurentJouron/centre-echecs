@@ -9,8 +9,6 @@ class PlayerController:
     @staticmethod
     def create():
         """Imports view data, imports model data and compares accuracy."""
-        PlayerView.create()
-        PlayerView.information()
         first_name, last_name, birthday, gender, ranking = \
             PlayerView.get_all_information()
         
@@ -54,8 +52,4 @@ class PlayerController:
 
     @staticmethod
     def start_player_menu():
-        PlayerView.start_player_reception()
-        PlayerView.choice()
-        PlayerView.player_menu()
-        input = PlayerView.input()
-        return input
+        return PlayerView.start_player_menu()

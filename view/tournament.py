@@ -2,7 +2,9 @@
 from datetime import date, timedelta
 
 import constants
-number_of_day = constants.NUMBER_OF_DAY
+nb_day = constants.NUMBER_OF_DAY
+nb_player: int = constants.NUMBER_OF_PLAYERS
+nb_round: int = constants.NUMBER_OF_ROUND
 
 
 class TournamentView:
@@ -59,7 +61,7 @@ class TournamentView:
             or
             date: end date
         """
-        end_date = date.today() + timedelta(number_of_day)
+        end_date = date.today() + timedelta(nb_day)
         if end_date == date.today():
             return "same day"
         else:
@@ -94,14 +96,58 @@ class TournamentView:
             str: players first-name """
         player = input("Select first_name player you remove: """).capitalize()
         return player
+    
+    @staticmethod
+    def number_of_day():
+        number_day = constants.NUMBER_OF_DAY + 1
+        TournamentView.number_days()
+        TournamentView.choice()
+        print(f"\nThe tournament is planned on {number_day} day(s).")
+        TournamentView.validate_list()
+        choice = input(f"Please enter an choice : ")
+        choice = int(choice)
+        if choice == 1:
+            new_number_day = input("How many days ? ")
+            nbr_day = int(new_number_day) - 1
+            print(f"The tournament will last {new_number_day} days ")
+            return nbr_day
+        return number_day - 1
+    
+    @staticmethod
+    def number_of_player():
+        number_players = constants.NUMBER_OF_PLAYERS
+        TournamentView.number_players()
+        TournamentView.choice()
+        print(f"\nThe tournament is planned with {number_players} players.")
+        TournamentView.validate_list()
+        choice = input(f"Please enter an choice : ")
+        choice = int(choice)
+        if choice == 1:
+            new_number_players = input("How many players ? ")
+            new_number_players = int(new_number_players)
+            print(f"The tournament will be held with {new_number_players} "
+                  f"players ")
+            return new_number_players
+        return number_players
+
+    @staticmethod
+    def number_of_round():
+        number_round = constants.NUMBER_OF_ROUND
+        TournamentView.number_rounds()
+        TournamentView.choice()
+        print(f"\nThe tournament is planned in {number_round} rounds.")
+        TournamentView.validate_list()
+        choice = input(f"Please enter an choice : ")
+        choice = int(choice)
+        if choice == 1:
+            new_number_rounds = input("How many rounds ? ")
+            new_number_rounds = int(new_number_rounds)
+            print(f"The tournament will take place over {new_number_rounds} "
+                  f"rounds. ")
+            return new_number_rounds
+        return number_round
 
 # Decoration text
-    @staticmethod
-    def tournament_reception():
-        """Management tournament reception"""
-        tournament_reception = " TOURNAMENT RECEPTION "
-        print(f"\n{tournament_reception.center(106, '~')}")
-
     @staticmethod
     def tournament_menu():
         tournament_list = "> [1]Create  [2]Add player  [3]Display player  " \
@@ -109,14 +155,15 @@ class TournamentView:
         print(f"\n{tournament_list.center(106, '-')}")
 
     @staticmethod
-    def tournament_validation():
-        tournament_validation = " TOURNAMENT VALIDATION "
-        print(f"\n{tournament_validation.center(106, '~')}")
-
-    @staticmethod
     def validate_list():
         validate_list = "> [1]Modify  [2]Validate <"
-        print(f"{validate_list.center(106, '-')}")
+        print(f"\n{validate_list.center(106, '-')}")
+
+    @staticmethod
+    def tournament_reception():
+        """Management tournament reception"""
+        tournament_reception = " TOURNAMENT RECEPTION "
+        print(f"\n{tournament_reception.center(106, '~')}")
 
     @staticmethod
     def tournament_creation():
@@ -124,36 +171,71 @@ class TournamentView:
         print(f"\n{tournament_creation.center(106, '~')}")
 
     @staticmethod
+    def tournament_validation():
+        tournament_validation = " TOURNAMENT VALIDATION "
+        print(f"\n{tournament_validation.center(106, '~')}")
+
+    @staticmethod
     def add_player():
-        add_players = " REGISTER TOURNAMENT PLAYERS "
+        add_players = " APPEND TOURNAMENT PLAYERS "
         print(f"\n{add_players.center(106, '~')}")
 
     @staticmethod
     def display_player():
-        display_player = " DISPLAY TOURNAMENT PLAYERS "
+        display_player = " DISPLAY TOURNAMENT ROUNDS "
         print(f"\n{display_player.center(106, '~')}")
 
+    @staticmethod
+    def number_days():
+        number_days = " VALIDATE THE NUMBER DAYS "
+        print(f"\n{number_days.center(106, '~')}")
+
+    @staticmethod
+    def number_players():
+        number_player = " VALIDATE THE NUMBER PLAYERS "
+        print(f"\n{number_player.center(106, '~')}")
+        
+    @staticmethod
+    def number_rounds():
+        number_rounds = " VALIDATE THE NUMBER PLAYERS "
+        print(f"\n{number_rounds.center(106, '~')}")
+        
     @staticmethod
     def choice():
         choice = " Make your choice "
         print(f"{choice.center(106, '*')}")
+        
+    @staticmethod
+    def information():
+        choice = " Enter information "
+        print(f"{choice.center(106, '*')}")
 
     @staticmethod
-    def input():
-        choice = input(f"Please enter an choice : ").capitalize()
-        choice = int(choice)
-        return choice
+    def input_int():
+        input_int = input(f"Please enter an choice : ").capitalize()
+        input_int = int(input_int)
+        return input_int
 
+    @staticmethod
+    def input_str():
+        input_str = input(f"Please enter an information : ").capitalize()
+        return input_str
+    
     @staticmethod
     def reception_tournament():
         TournamentView.tournament_reception()
         TournamentView.choice()
         TournamentView.tournament_menu()
-        TournamentView.input()
+        TournamentView.input_int()
 
     @staticmethod
     def tournament_validate():
         TournamentView.tournament_validation()
         TournamentView.choice()
         TournamentView.validate_list()
-        TournamentView.input()
+        TournamentView.input_int()
+
+    @staticmethod
+    def creation():
+        TournamentView.tournament_creation()
+        TournamentView.information()

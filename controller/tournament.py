@@ -10,17 +10,30 @@ constants_players = constants.NUMBER_OF_PLAYERS
 class TournamentController:
     
     @staticmethod
+    def tournament_reception():
+        TournamentView.reception_tournament()
+    
+    @staticmethod
     def new_tournament():
         """Imports view data, imports model data and compares accuracy."""
-        TournamentView.reception_tournament()
+        TournamentView.creation()
         name, place, start_date, end_date = TournamentView.get_all()
         tournament = TournamentModel(name, place, start_date, end_date)
+        TournamentController.days_players_rounds()
         return tournament
 
     @staticmethod
+    def days_players_rounds():
+        nb_days = TournamentView.number_of_day()
+        nb_players = TournamentView.number_of_player()
+        nb_rounds = TournamentView.number_of_round()
+        return nb_days, nb_players, nb_rounds
+    
+    @staticmethod
     def tournament_validate():
-        TournamentView.tournament_validate()
-
+        validate = TournamentView.tournament_validate()
+        return validate
+    
     @staticmethod
     def append_player(tournament):
         """Returns the players to be added to the tournament list."""

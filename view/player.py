@@ -5,6 +5,7 @@ from datetime import datetime
 class PlayerView:
     """The player information you need to organize a tournament."""
     
+# player function
     @staticmethod
     def define_first_name():
         """Define the first-name of participants.
@@ -72,20 +73,6 @@ class PlayerView:
                 return ranking
     
     @staticmethod
-    def get_all_information():
-        """
-        Groups all fonction of the class.
-        Returns:
-             list: [first_name, last_name, birthday, gender, ranking]
-        """
-        first_name = PlayerView.define_first_name()
-        last_name = PlayerView.define_last_name()
-        birthday = PlayerView.define_birthday()
-        gender = PlayerView.define_gender()
-        ranking = PlayerView.define_ranking()
-        return first_name, last_name, birthday, gender, ranking
-    
-    @staticmethod
     def display_all(players):
         """
         Display all players of the tournament.
@@ -103,48 +90,126 @@ class PlayerView:
             str: players first-name """
         player = PlayerView.define_first_name()
         return player
-
+    
+# Header and footer decoration
+# Title page
     @staticmethod
     def start_player_reception():
+        """Reception to the player area title.
+        Print:
+            str: player_reception """
         player_reception = " PLAYER RECEPTION "
         print(f"\n{player_reception.center(106, '~')}")
-
-    @staticmethod
-    def choice():
-        choice = " Make your choice "
-        print(f"{choice.center(106, '*')}")
-
-    @staticmethod
-    def player_menu():
-        list_of_choice = "> [1]Add  [2]Show  [3]Remove  [4]Quit <"
-        print(f"\n{list_of_choice.center(106, '-')}")
-
-    @staticmethod
-    def input():
-        choice = input(f"Please enter an choice : ").capitalize()
-        choice = int(choice)
-        return choice
-
+        
     @staticmethod
     def create():
+        """Player creation title.
+        Print:
+            str: player_creation """
         player_creation = " PLAYER CREATION "
         print(f"\n{player_creation.center(106, '~')}")
-
-    @staticmethod
-    def information():
-        choice = " Enter information "
-        print(f"{choice.center(106, '*')}")
-
-    @staticmethod
-    def confirmation(player):
-        print(repr(player))
-
+        
     @staticmethod
     def all():
+        """All list players display title.
+        Print:
+            str: all_player """
         all_player = " ALL PLAYERS IN LIST "
         print(f"\n{all_player.center(106, '~')}")
 
     @staticmethod
     def delete():
+        """Remove player to list players title.
+        Print:
+            str: delete_player """
         delete_player = " PLAYER DELETE "
         print(f"\n{delete_player.center(106, '~')}")
+
+# Choice or information
+    @staticmethod
+    def choice():
+        """Explains that you must choose between several options.
+        Print:
+            str: * choice * """
+        choice = " Make your choice "
+        print(f"{choice.center(106, '*')}")
+
+    @staticmethod
+    def information():
+        """Explains that you must choose to enter the information.
+        Print:
+            str: * information * """
+        information = " Enter information "
+        print(f"{information.center(106, '*')}")
+
+# List of choice
+    @staticmethod
+    def player_menu():
+        """lists of choices.
+        Print:
+            str: player_menu """
+        player_menu = "> [1]Add  [2]Show  [3]Remove  [4]Quit <"
+        print(f"\n{player_menu.center(106, '-')}")
+
+    @staticmethod
+    def validate_player():
+        """lists of choices.
+        Print:
+            str: validate_player """
+        validate_player = "> [1]Modify  [2]Validate <"
+        print(f"\n{validate_player.center(106, '-')}")
+
+# Input answer
+    @staticmethod
+    def input_str():
+        """Select information what the manager need for organisation.
+        Return:
+            str: input_str """
+        input_str = input(f"Please enter an information : ").capitalize()
+        return input_str
+
+    @staticmethod
+    def input_int():
+        """Selects the choice to access from the following menu.
+        Return:
+            int: input_int """
+        input_int = input(f"Please enter an choice : ").capitalize()
+        input_int = int(input_int)
+        return input_int
+
+# Print validation
+    @staticmethod
+    def confirmation(player):
+        """Displays a confirmation phrase at the creation of the player.
+        Arg: player
+        Return:
+            int: input_int """
+        print(repr(player))
+        
+# Integration of functions
+    @staticmethod
+    def get_all_information():
+        """
+        Groups fonction for create player.
+        Returns:
+             list: [first_name, last_name, birthday, gender, ranking]
+        """
+        PlayerView.create()
+        PlayerView.choice()
+        information = True
+        while information:
+            first_name = PlayerView.define_first_name()
+            last_name = PlayerView.define_last_name()
+            birthday = PlayerView.define_birthday()
+            gender = PlayerView.define_gender()
+            ranking = PlayerView.define_ranking()
+            return first_name, last_name, birthday, gender, ranking
+    
+    @staticmethod
+    def start_player_menu():
+        PlayerView.start_player_reception()
+        PlayerView.choice()
+        PlayerView.player_menu()
+        choice = PlayerView.input_int()
+        choice = int(choice)
+        return choice
