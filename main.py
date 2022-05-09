@@ -30,21 +30,15 @@ if __name__ == '__main__':
         if reception == 2:
             tournament_reception = True
             while tournament_reception:
-                TournamentController.tournament_reception()
+                tournament_reception = TournamentController.tournament_reception()
+                if tournament_reception >= 5:
+                    print("Value error.")
                 if tournament_reception == 1:
-                    tournament = TournamentController.new_tournament()
-                    global_tournament = tournament
-                    validate = True
-                    while validate:
-                        validate = TournamentController.tournament_validate()
-                        if validate == 1:
-                            tournament = TournamentController.new_tournament()
-                            global_tournament = tournament
-                        if validate == 2:
-                            break
-                        break
+                    TournamentController.new_tournament()
                 if tournament_reception == 2:
                     TournamentController.append_player(global_tournament)
+                if tournament_reception == 3:
+                    TournamentController.display_players_list(global_tournament)
                 if tournament_reception == 4:
                     break
         # if reception == 3:

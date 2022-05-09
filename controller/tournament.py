@@ -11,8 +11,9 @@ class TournamentController:
         TournamentView.tournament_reception()
         TournamentView.choice()
         TournamentView.tournament_menu()
-        TournamentView.input_int()
-
+        choice = TournamentView.input_int()
+        return choice
+        
     @staticmethod
     def new_tournament():
         """
@@ -30,13 +31,6 @@ class TournamentController:
         tournament = TournamentModel(name, place, start_date, end_date)
         print(str(tournament))
         return tournament
-
-    @staticmethod
-    def tournament_validate():
-        TournamentView.tournament_validation()
-        TournamentView.choice()
-        TournamentView.validate_list()
-        TournamentView.input_int()
 
     @staticmethod
     def append_player(tournament):

@@ -198,7 +198,7 @@ class TournamentView:
 # Decoration enter integer for the command line game.
     @staticmethod
     def input_int():
-        input_int = input(f"Please enter an choice : ")
+        input_int = input(f"Please select number from menu : ")
         input_int = int(input_int)
         return input_int
 

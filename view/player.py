@@ -173,6 +173,6 @@ class PlayerView:
         """Selects the choice to access from the following menu.
         Return:
             int: input_int """
-        input_int = input(f"Please enter an choice : ").capitalize()
+        input_int = input(f"Please select number from menu : ").capitalize()
         input_int = int(input_int)
         return input_int
