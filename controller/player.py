@@ -5,16 +5,31 @@ from model.player import PlayerModel
 
 class PlayerController:
     """Control information player you need to organize a tournament."""
-    
+
+    @staticmethod
+    def start_player_menu():
+        PlayerView.start_player_reception()
+        PlayerView.choice()
+        PlayerView.player_menu()
+        choice = PlayerView.input_int()
+        choice = int(choice)
+        return choice
+
     @staticmethod
     def create():
         """Imports view data, imports model data and compares accuracy."""
-        first_name, last_name, birthday, gender, ranking = \
-            PlayerView.get_all_information()
+        PlayerView.create()
+        PlayerView.information()
+
+        first_name = PlayerView.define_first_name()
+        last_name = PlayerView.define_last_name()
+        birthday = PlayerView.define_birthday()
+        gender = PlayerView.define_gender()
+        ranking = PlayerView.define_ranking()
         
         player = PlayerModel(first_name, last_name, birthday, gender, ranking)
         player.save()
-        PlayerView.confirmation(player)
+        print(repr(player))
         return player
     
     @staticmethod
@@ -36,6 +51,7 @@ class PlayerController:
     def remove():
         """Removes an item from the list"""
         PlayerView.delete()
+        PlayerView.information()
         player = PlayerView.remove()
         return PlayerModel.remove(player)
     
@@ -49,7 +65,3 @@ class PlayerController:
                                  player["gender"],
                                  player["ranking"])
         return one_player
-
-    @staticmethod
-    def start_player_menu():
-        return PlayerView.start_player_menu()

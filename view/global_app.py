@@ -16,7 +16,7 @@ class GlobalApp:
         Print:
             str: reception_name """
         reception_name = " RECEPTION "
-        print(f"\n{reception_name.center(106, '~')}")
+        print(f"\n{reception_name.center(106, ' ')}")
 
     @staticmethod
     def choice():
@@ -42,13 +42,3 @@ class GlobalApp:
         input_int = input(f"Please enter an choice : ").capitalize()
         input_int = int(input_int)
         return input_int
-
-# Integration of functions
-    @staticmethod
-    def next_run():
-        GlobalApp.reception()
-        GlobalApp.choice()
-        GlobalApp.start_menu()
-        choice = GlobalApp.input_int()
-        choice = int(choice)
-        return choice

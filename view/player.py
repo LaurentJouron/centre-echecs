@@ -99,7 +99,7 @@ class PlayerView:
         Print:
             str: player_reception """
         player_reception = " PLAYER RECEPTION "
-        print(f"\n{player_reception.center(106, '~')}")
+        print(f"\n{player_reception.center(106, ' ')}")
         
     @staticmethod
     def create():
@@ -107,7 +107,7 @@ class PlayerView:
         Print:
             str: player_creation """
         player_creation = " PLAYER CREATION "
-        print(f"\n{player_creation.center(106, '~')}")
+        print(f"\n{player_creation.center(106, ' ')}")
         
     @staticmethod
     def all():
@@ -123,7 +123,7 @@ class PlayerView:
         Print:
             str: delete_player """
         delete_player = " PLAYER DELETE "
-        print(f"\n{delete_player.center(106, '~')}")
+        print(f"\n{delete_player.center(106, ' ')}")
 
 # Choice or information
     @staticmethod
@@ -176,40 +176,3 @@ class PlayerView:
         input_int = input(f"Please enter an choice : ").capitalize()
         input_int = int(input_int)
         return input_int
-
-# Print validation
-    @staticmethod
-    def confirmation(player):
-        """Displays a confirmation phrase at the creation of the player.
-        Arg: player
-        Return:
-            int: input_int """
-        print(repr(player))
-        
-# Integration of functions
-    @staticmethod
-    def get_all_information():
-        """
-        Groups fonction for create player.
-        Returns:
-             list: [first_name, last_name, birthday, gender, ranking]
-        """
-        PlayerView.create()
-        PlayerView.choice()
-        information = True
-        while information:
-            first_name = PlayerView.define_first_name()
-            last_name = PlayerView.define_last_name()
-            birthday = PlayerView.define_birthday()
-            gender = PlayerView.define_gender()
-            ranking = PlayerView.define_ranking()
-            return first_name, last_name, birthday, gender, ranking
-    
-    @staticmethod
-    def start_player_menu():
-        PlayerView.start_player_reception()
-        PlayerView.choice()
-        PlayerView.player_menu()
-        choice = PlayerView.input_int()
-        choice = int(choice)
-        return choice

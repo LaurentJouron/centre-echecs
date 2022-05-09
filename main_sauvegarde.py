@@ -75,11 +75,12 @@ if __name__ == '__main__':
                             tournament_player = " Register tournament players "
                             print(f"{tournament_player.center(106, '-')}")
 
-                            append_player = TournamentController. \
-                                append_player(global_tournament)
+                            append_player = TournamentController \
+                                .append_player(global_tournament)
 
                         if tournament_player == 2:
-                            display_players_list = TournamentController.display_players_list(global_tournament)
+                            display_players_list = TournamentController\
+                                .display_players_list(global_tournament)
                             print(display_players_list)
 
                         # if tournament_player == 3:

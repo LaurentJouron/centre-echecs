@@ -9,19 +9,19 @@ nb_round: int = constants.NUMBER_OF_ROUND
 
 class TournamentView:
     """What information is needed for the tournament."""
-    
+
+# Function to create information from view.
     @staticmethod
     def name():
         """
-        Generate a name the tournament.
+        Generate a name tournament.
         Returns:
-            str: Tournament name
+            str: name
         """
         while True:
             name: str = input("Enter the tournament name: ").capitalize()
             if not name.isalpha():
                 print(f"Invalid name")
-                ValueError()
             else:
                 return name
 
@@ -30,7 +30,7 @@ class TournamentView:
         """
         Generate place of the tournament.
         Returns:
-            str: Tournament place
+            str: place
         """
         while True:
             place: str = input("Place of the tournament: ").capitalize()
@@ -44,7 +44,7 @@ class TournamentView:
         """
         Generate the date the tournament begins.
         Returns:
-            date: start tournament
+            date: start
         """
         start_date = date.today()
         start_date = start_date.strftime("%A %d %B %Y")
@@ -66,19 +66,7 @@ class TournamentView:
             return "same day"
         else:
             return end_date.strftime("%A %d %B %Y")
-        
-    @staticmethod
-    def get_all():
-        """Groups all functions of the class.
-        Returns:
-            list: [name, place, start_date, end_date, players, rounds]
-        """
-        name = TournamentView.name()
-        place = TournamentView.place()
-        start_date = TournamentView.start_date()
-        end_date = TournamentView.end_date()
-        return name, place, start_date, end_date
-    
+
     @staticmethod
     def append_player():
         """Define the first-name of participants you want to add to the
@@ -100,8 +88,6 @@ class TournamentView:
     @staticmethod
     def number_of_day():
         number_day = constants.NUMBER_OF_DAY + 1
-        TournamentView.number_days()
-        TournamentView.choice()
         print(f"\nThe tournament is planned on {number_day} day(s).")
         TournamentView.validate_list()
         choice = input(f"Please enter an choice : ")
@@ -111,13 +97,11 @@ class TournamentView:
             nbr_day = int(new_number_day) - 1
             print(f"The tournament will last {new_number_day} days ")
             return nbr_day
-        return number_day - 1
+        return number_day
     
     @staticmethod
     def number_of_player():
         number_players = constants.NUMBER_OF_PLAYERS
-        TournamentView.number_players()
-        TournamentView.choice()
         print(f"\nThe tournament is planned with {number_players} players.")
         TournamentView.validate_list()
         choice = input(f"Please enter an choice : ")
@@ -133,21 +117,20 @@ class TournamentView:
     @staticmethod
     def number_of_round():
         number_round = constants.NUMBER_OF_ROUND
-        TournamentView.number_rounds()
-        TournamentView.choice()
         print(f"\nThe tournament is planned in {number_round} rounds.")
         TournamentView.validate_list()
         choice = input(f"Please enter an choice : ")
         choice = int(choice)
         if choice == 1:
             new_number_rounds = input("How many rounds ? ")
-            new_number_rounds = int(new_number_rounds)
-            print(f"The tournament will take place over {new_number_rounds} "
+            number_round = int(new_number_rounds)
+            print(f"The tournament will take place over {number_round} "
                   f"rounds. ")
-            return new_number_rounds
-        return number_round
+            return number_round
+        if choice == 2:
+            return number_round
 
-# Decoration text
+# Decoration list of choice for the command line game.
     @staticmethod
     def tournament_menu():
         tournament_list = "> [1]Create  [2]Add player  [3]Display player  " \
@@ -159,47 +142,49 @@ class TournamentView:
         validate_list = "> [1]Modify  [2]Validate <"
         print(f"\n{validate_list.center(106, '-')}")
 
+# Decoration title for the command line game.
     @staticmethod
     def tournament_reception():
         """Management tournament reception"""
         tournament_reception = " TOURNAMENT RECEPTION "
-        print(f"\n{tournament_reception.center(106, '~')}")
+        print(f"\n{tournament_reception.center(106, ' ')}")
 
     @staticmethod
     def tournament_creation():
         tournament_creation = " TOURNAMENT CREATION "
-        print(f"\n{tournament_creation.center(106, '~')}")
+        print(f"\n{tournament_creation.center(106, ' ')}")
 
     @staticmethod
     def tournament_validation():
         tournament_validation = " TOURNAMENT VALIDATION "
-        print(f"\n{tournament_validation.center(106, '~')}")
+        print(f"\n{tournament_validation.center(106, ' ')}")
 
     @staticmethod
     def add_player():
         add_players = " APPEND TOURNAMENT PLAYERS "
-        print(f"\n{add_players.center(106, '~')}")
+        print(f"\n{add_players.center(106, ' ')}")
 
     @staticmethod
     def display_player():
         display_player = " DISPLAY TOURNAMENT ROUNDS "
-        print(f"\n{display_player.center(106, '~')}")
+        print(f"\n{display_player.center(106, ' ')}")
 
     @staticmethod
     def number_days():
         number_days = " VALIDATE THE NUMBER DAYS "
-        print(f"\n{number_days.center(106, '~')}")
+        print(f"\n{number_days.center(106, ' ')}")
 
     @staticmethod
     def number_players():
         number_player = " VALIDATE THE NUMBER PLAYERS "
-        print(f"\n{number_player.center(106, '~')}")
+        print(f"\n{number_player.center(106, ' ')}")
         
     @staticmethod
     def number_rounds():
-        number_rounds = " VALIDATE THE NUMBER PLAYERS "
-        print(f"\n{number_rounds.center(106, '~')}")
-        
+        number_rounds = " VALIDATE THE NUMBER ROUNDS "
+        print(f"\n{number_rounds.center(106, ' ')}")
+
+# Decoration need to do for the command line game.
     @staticmethod
     def choice():
         choice = " Make your choice "
@@ -210,32 +195,15 @@ class TournamentView:
         choice = " Enter information "
         print(f"{choice.center(106, '*')}")
 
+# Decoration enter integer for the command line game.
     @staticmethod
     def input_int():
-        input_int = input(f"Please enter an choice : ").capitalize()
+        input_int = input(f"Please enter an choice : ")
         input_int = int(input_int)
         return input_int
 
+# Decoration enter string for the command line game.
     @staticmethod
     def input_str():
         input_str = input(f"Please enter an information : ").capitalize()
         return input_str
-    
-    @staticmethod
-    def reception_tournament():
-        TournamentView.tournament_reception()
-        TournamentView.choice()
-        TournamentView.tournament_menu()
-        TournamentView.input_int()
-
-    @staticmethod
-    def tournament_validate():
-        TournamentView.tournament_validation()
-        TournamentView.choice()
-        TournamentView.validate_list()
-        TournamentView.input_int()
-
-    @staticmethod
-    def creation():
-        TournamentView.tournament_creation()
-        TournamentView.information()

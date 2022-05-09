@@ -21,7 +21,7 @@ class TournamentModel:
         return f"\nThe {self.name} chess tournament starts on " \
                f"{self.start_date} at 9:00 am, and end on " \
                f"{self.end_date} at 6:00 pm.\n" \
-               f"He takes place in {self.place}."
+               f"He takes place in {self.place}.\n"
 
     def append_player(self, player):
         """Adds players to the tournament list."""

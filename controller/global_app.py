@@ -8,5 +8,9 @@ class StartApp:
 
     @staticmethod
     def next_run():
-        choice = GlobalApp.next_run()
+        GlobalApp.reception()
+        GlobalApp.choice()
+        GlobalApp.start_menu()
+        choice = GlobalApp.input_int()
+        choice = int(choice)
         return choice
