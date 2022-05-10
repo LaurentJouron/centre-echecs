@@ -46,11 +46,11 @@ class TournamentController:
         """Display all participants of the tournament."""
         return tournament.display_players_list()
 
-    # @staticmethod
-    # def remove_player(tournament):
-    #     """Remove player un tournament list"""
-    #     player = TournamentView.remove_player()
-    #     tournament.remove_player(player)
+    @staticmethod
+    def remove_player(tournament):
+        """Remove player un tournament list"""
+        player = TournamentView.remove_player()
+        tournament.remove_player(player)
 
     # @staticmethod
     # def alphabetical_order(tournament):

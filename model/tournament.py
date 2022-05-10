@@ -1,10 +1,6 @@
 """Information of the chess tournament."""
 import constants
 
-nb_game: int = constants.NUMBER_OF_PLAYERS//2   # Number of game in one round
-nb_player: int = constants.NUMBER_OF_PLAYERS
-nb_round: int = constants.NUMBER_OF_ROUND
-
 
 class TournamentModel:
     """Builder of the model tournament."""
@@ -25,7 +21,7 @@ class TournamentModel:
 
     def append_player(self, player):
         """Adds players to the tournament list."""
-        players = nb_player
+        players = constants.NUMBER_OF_PLAYERS
         player_list = len(self.players)
         while player_list < players:
             self.players.append(player)
@@ -41,25 +37,25 @@ class TournamentModel:
         """Display players from tournament list."""
         return self.players[:]
 
-    def alphabetical_order(self):
-        """Sort players alphabetically"""
-        self.players.sort()
-
-    def ranking_order(self):
-        """Sort players ranking"""
-        self.players.sort(key=lambda ranking: self.players)
-
-    def first_party(self):
-        """Organize the first round player-to-player."""
-        first_player: int = 0
-        second_player: int = 4
-        for _ in range(nb_game):
-            first_tour = self.players[first_player::second_player]
-            first_player += 1
-            second_player += 1
-            self.rounds.append([first_tour])
-
-    def other_party(self):
-        """Organizes player-to-player games for the remainder of the
-        tournament """
-        pass
+    # def alphabetical_order(self):
+    #     """Sort players alphabetically"""
+    #     self.players.sort()
+    #
+    # def ranking_order(self):
+    #     """Sort players ranking"""
+    #     self.players.sort(key=lambda ranking: self.players)
+    #
+    # def first_party(self):
+    #     """Organize the first round player-to-player."""
+    #     first_player: int = 0
+    #     second_player: int = 4
+    #     for _ in range(nb_game):
+    #         first_tour = self.players[first_player::second_player]
+    #         first_player += 1
+    #         second_player += 1
+    #         self.rounds.append([first_tour])
+    #
+    # def other_party(self):
+    #     """Organizes player-to-player games for the remainder of the
+    #     tournament """
+    #     pass

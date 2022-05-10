@@ -151,23 +151,7 @@ class PlayerView:
         player_menu = "> [1]Add  [2]Show  [3]Remove  [4]Quit <"
         print(f"\n{player_menu.center(106, '-')}")
 
-    @staticmethod
-    def validate_player():
-        """lists of choices.
-        Print:
-            str: validate_player """
-        validate_player = "> [1]Modify  [2]Validate <"
-        print(f"\n{validate_player.center(106, '-')}")
-
 # Input answer
-    @staticmethod
-    def input_str():
-        """Select information what the manager need for organisation.
-        Return:
-            str: input_str """
-        input_str = input(f"Please enter an information : ").capitalize()
-        return input_str
-
     @staticmethod
     def input_int():
         """Selects the choice to access from the following menu.

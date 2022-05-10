@@ -34,7 +34,7 @@ if __name__ == '__main__':
                 if tournament_reception >= 5:
                     print("Value error.")
                 if tournament_reception == 1:
-                    TournamentController.new_tournament()
+                    global_tournament = TournamentController.new_tournament()
                 if tournament_reception == 2:
                     TournamentController.append_player(global_tournament)
                 if tournament_reception == 3:
