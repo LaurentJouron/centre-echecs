@@ -54,7 +54,7 @@ class TournamentView:
     def end_date():
         """
         Tournament end date.
-        Agrs:
+        :arguments:
             date: start date
         Returns:
             str: same day
@@ -127,8 +127,7 @@ class TournamentView:
             print(f"The tournament will take place over {number_round} "
                   f"rounds. ")
             return number_round
-        if choice == 2:
-            return number_round
+        return number_round
 
 # Decoration list of choice for the command line game.
     @staticmethod
