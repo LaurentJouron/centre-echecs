@@ -24,14 +24,14 @@ class PlayerModel:
                f"Ranking: {self.ranking}"
     
     def __repr__(self):
-        return f"\nPlayer {self.full_name} is register."
+        return f"\n{self.full_name} is register."
     
     @property
     def full_name(self):
         return f"{self.first_name} {self.last_name}"
 
     @property
-    def db_instance(self) ->  table.Document:
+    def db_instance(self) -> table.Document:
         return PlayerModel.db.get((where('first-name') == self.first_name)
                                   & (where('last-name') == self.last_name))
 

@@ -3,14 +3,14 @@
         "1": {
             "first-name": "Thierno",
             "last-name": "Thiam",
-            "birthday": "Thursday 31 March 1994",
+            "birthday": "Wednesday 31 March 1993",
             "gender": "man",
             "ranking": "1"
         },
         "2": {
-            "first-name": "Antoine",
+            "first-name": "Laurent",
             "last-name": "Jouron",
-            "birthday": "Thursday 17 November 2011",
+            "birthday": "Wednesday 02 June 1976",
             "gender": "man",
             "ranking": "2"
         },
@@ -22,17 +22,17 @@
             "ranking": "3"
         },
         "4": {
+            "first-name": "Antoine",
+            "last-name": "Jouron",
+            "birthday": "Thursday 17 November 2011",
+            "gender": "man",
+            "ranking": "4"
+        },
+        "5": {
             "first-name": "Virginie",
             "last-name": "Lombard",
             "birthday": "Friday 29 December 1978",
             "gender": "woman",
-            "ranking": "4"
-        },
-        "5": {
-            "first-name": "Laurent",
-            "last-name": "Jouron",
-            "birthday": "Wednesday 02 June 1976",
-            "gender": "man",
             "ranking": "5"
         },
         "6": {
@@ -43,11 +43,25 @@
             "ranking": "6"
         },
         "7": {
+            "first-name": "Julia",
+            "last-name": "Pertin",
+            "birthday": "Tuesday 09 June 1992",
+            "gender": "woman",
+            "ranking": "7"
+        },
+        "8": {
             "first-name": "Stephane",
             "last-name": "Jouron",
             "birthday": "Friday 22 March 1974",
             "gender": "man",
-            "ranking": "7"
+            "ranking": "8"
+        },
+        "9": {
+            "first-name": "Severine",
+            "last-name": "Wilhelm",
+            "birthday": "Tuesday 14 June 1977",
+            "gender": "woman",
+            "ranking": "9"
         }
     }
 }

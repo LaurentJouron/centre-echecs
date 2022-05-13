@@ -21,19 +21,16 @@ class TournamentModel:
 
     def append_player(self, player):
         """Adds players to the tournament list."""
-        players = constants.NUMBER_OF_PLAYERS
-        player_list = len(self.players)
-        while player_list < players:
+        if len(self.players) < constants.NUMBER_OF_PLAYERS:
             self.players.append(player)
         else:
-            print("Registration is complete for this tournament.")
-
+            print("This tournament is completed")
 
     def remove_player(self, player):
         """Remove player in tournament list."""
         self.players.remove(player)
 
-    def display_players_list(self):
+    def get_players_list(self):
         """Display players from tournament list."""
         return self.players[:]
 
