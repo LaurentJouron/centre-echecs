@@ -4,8 +4,7 @@ from datetime import datetime
 
 class PlayerView:
     """The player information you need to organize a tournament."""
-    
-# player function
+
     @staticmethod
     def define_first_name():
         """Define the first-name of participants.
@@ -15,7 +14,6 @@ class PlayerView:
             first_name = input("Please enter the player’s first name: ")
             if not first_name.isalpha():
                 print("Invalid first name")
-                ValueError()
             else:
                 return first_name.capitalize()
     
@@ -28,7 +26,6 @@ class PlayerView:
             last_name = input("Enter the last name: ")
             if not last_name.isalpha():
                 print("Invalid name")
-                ValueError()
             else:
                 return last_name.capitalize()
     
@@ -71,22 +68,3 @@ class PlayerView:
                 ValueError()
             else:
                 return ranking
-    
-    @staticmethod
-    def display_all(players):
-        """
-        Display all players of the tournament.
-        Param players: list of players
-        return:
-            print: information of players
-        """
-        for player in players:
-            print(player)
-    
-    @staticmethod
-    def remove():
-        """Define the first-name of participants you want removed.
-        Returns:
-            str: players first-name """
-        player = PlayerView.define_first_name()
-        return player

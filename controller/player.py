@@ -15,31 +15,43 @@ class PlayerController:
         gender = PlayerView.define_gender()
         ranking = PlayerView.define_ranking()
         
-        player = PlayerModel(first_name, last_name, birthday, gender, ranking)
+        player = PlayerModel(first_name=first_name,
+                             last_name=last_name,
+                             birthday=birthday,
+                             gender=gender,
+                             ranking=ranking)
         player.save()
-        print(repr(player))
+        print(str(player))
         return player
-    
+
     @staticmethod
     def get_all():
-        """Deserializes the database data."""
-        players_model = []
-        players = PlayerModel.get_all()
-        for player in players:
-            players = PlayerModel(player["first-name"],
-                                  player["last-name"],
-                                  player["birthday"],
-                                  player["gender"],
-                                  player["ranking"])
-            players_model.append(players)
-        return PlayerView.display_all(players_model)
-    
+        """Deserializes the database data in list comprehension."""
+        return PlayerModel.get_all()
+
+    # @staticmethod
+    # def get_all():
+    #     """Deserializes the database data."""
+    #     players_model = []
+    #     players = PlayerModel.get_all()
+    #     for player in players:
+    #         players = PlayerModel(player["first-name"],
+    #                               player["last-name"],
+    #                               player["birthday"],
+    #                               player["gender"],
+    #                               player["ranking"])
+    #         players_model.append(players)
+    #     return PlayerView.display_all(players_model)
+
     @staticmethod
     def remove():
         """Removes an item from the list"""
-        player = PlayerView.remove()
-        return PlayerModel.remove(player)
-    
+        first_name = PlayerView.define_first_name()
+        last_name = PlayerView.define_last_name()
+        player = PlayerModel(first_name=first_name,
+                             last_name=last_name)
+        return player.remove(player)
+
     @staticmethod
     def get_player_by_name(player_name):
         """Get a player with his first-name"""
