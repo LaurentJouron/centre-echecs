@@ -19,11 +19,11 @@ class PlayerModel:
 
     def __repr__(self):
         """Displays all items in the players file"""
-        return f"\nFirst-name: {self.first_name}\n" \
-               f"Last-name: {self.last_name}\n" \
-               f"Born: {self.birthday}\n" \
-               f"Gender: {self.gender}\n" \
-               f"Ranking: {self.ranking}\n"
+        return f"\n{self.first_name}\n" \
+               f"{self.last_name}\n" \
+               f"{self.birthday}\n" \
+               f"{self.gender}\n" \
+               f"{self.ranking}\n"
     
     def __str__(self):
         """Display confirmation when the player is register in players file"""
@@ -50,6 +50,7 @@ class PlayerModel:
         self._check_names()
 
     def _check_names(self):
+        """Checks if the player’s characters are correct and completed"""
         if not (self.first_name and self.first_name):
             raise ValueError("First and last name cannot be blank.")
         special_characters = string.punctuation + string.digits
@@ -58,6 +59,7 @@ class PlayerModel:
                 raise ValueError(f"Value error {self.full_name}.")
 
     def exists(self):
+        """Check if the player is already registered"""
         return bool(self.db_instance)
     
     @staticmethod
@@ -73,6 +75,6 @@ class PlayerModel:
         return [PlayerModel(**player) for player in PlayerModel.players.all()]
         
     @staticmethod
-    def get_one_player(first_name):
+    def get_one(first_name):
         """Return just one item from the list"""
         return PlayerModel.players.get(where('first-name') == first_name)

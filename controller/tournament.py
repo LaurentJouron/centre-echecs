@@ -17,7 +17,10 @@ class TournamentController:
         start_date = TournamentView.start_date()
         end_date = TournamentView.end_date()
 
-        tournament = TournamentModel(name, place, start_date, end_date)
+        tournament = TournamentModel(name=name,
+                                     place=place,
+                                     start_date=start_date,
+                                     end_date=end_date)
         print(str(tournament))
         return tournament
 
