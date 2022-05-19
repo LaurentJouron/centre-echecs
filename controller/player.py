@@ -45,7 +45,9 @@ class PlayerController:
         last_name = PlayerView.get_last_name()
         player = PlayerModel(first_name=first_name,
                              last_name=last_name)
-        return player.get_one
+        player = player.get_one
+        for key, value in player.items():
+            return f"{key}: {value}"
 
     @staticmethod
     def remove_player_list():
