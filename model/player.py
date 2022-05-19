@@ -61,8 +61,7 @@ class PlayerModel:
     def exists(self):
         """Check if the player is already registered"""
         return bool(self.db_instance)
-    
-    @staticmethod
+
     def remove(self) -> list[int]:
         """Removes an item from the list"""
         if self.exists():
@@ -71,10 +70,13 @@ class PlayerModel:
 
     @staticmethod
     def get_all():
-        """Returns all TinyDB file elements."""
+        """
+        Returns all Players file elements with unpacking in
+        comprehension list.
+        """
         return [PlayerModel(**player) for player in PlayerModel.players.all()]
         
-    @staticmethod
-    def get_one(first_name):
-        """Return just one item from the list"""
-        return PlayerModel.players.get(where('first-name') == first_name)
+    @property
+    def get_one(self) -> table.Document:
+        return PlayerModel.players.get((where('first_name') == self.first_name)
+                                    & (where('last_name') == self.last_name))

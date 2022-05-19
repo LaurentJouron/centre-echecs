@@ -64,21 +64,3 @@ class TournamentView:
             return "same day"
         else:
             return end_date.strftime("%A %d %B %Y")
-
-    @staticmethod
-    def append_player():
-        """Define the first-name of participants you want to add to the
-        tournament.
-        Returns:
-            str: players first-name """
-        player = input("Select first_name player you add: """).capitalize()
-        return player
-
-    @staticmethod
-    def remove_player():
-        """Define the first-name of participants you want to remove to the
-        tournament.
-        Returns:
-            str: players first-name """
-        player = input("Select first_name player you remove: """).capitalize()
-        return player

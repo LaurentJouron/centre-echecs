@@ -27,8 +27,7 @@ class TournamentController:
     @staticmethod
     def append_player(tournament):
         """Returns the players to be added to the tournament list."""
-        player_name = TournamentView.append_player()
-        player = PlayerController.get_player_by_name(player_name)
+        player = PlayerController.get_player_by_name()
         tournament.append_player(player)
 
     @staticmethod
@@ -39,5 +38,5 @@ class TournamentController:
     @staticmethod
     def remove_player(tournament):
         """Remove player un tournament list"""
-        player = TournamentView.remove_player()
+        player = PlayerController.remove_player_list()
         tournament.remove_player(player)

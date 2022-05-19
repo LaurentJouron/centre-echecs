@@ -14,14 +14,14 @@ class PlayerController:
         birthday = PlayerView.get_birthday()
         gender = PlayerView.get_gender()
         ranking = PlayerView.get_ranking()
-        
+
         player = PlayerModel(first_name=first_name,
                              last_name=last_name,
                              birthday=birthday,
                              gender=gender,
                              ranking=ranking)
         player.save()
-        PlayerView.append_confirmation(first_name, last_name)
+        print(str(player))
         return player
 
     @staticmethod
@@ -36,16 +36,22 @@ class PlayerController:
         last_name = PlayerView.get_last_name()
         player = PlayerModel(first_name=first_name,
                              last_name=last_name)
-        PlayerView.remove_confirmation(first_name, last_name)
-        return player.remove(player)
+        player.remove()
 
     @staticmethod
-    def get_player_by_name(player_name):
+    def get_player_by_name():
         """Get a player with his first-name"""
-        player = PlayerModel.get_one(player_name)
-        one_player = PlayerModel(player["first-name"],
-                                 player["last-name"],
-                                 player["birthday"],
-                                 player["gender"],
-                                 player["ranking"])
-        return one_player
+        first_name = PlayerView.get_first_name()
+        last_name = PlayerView.get_last_name()
+        player = PlayerModel(first_name=first_name,
+                             last_name=last_name)
+        return player.get_one
+
+    @staticmethod
+    def remove_player_list():
+        """Removes an item from the list"""
+        first_name = PlayerView.get_first_name()
+        last_name = PlayerView.get_last_name()
+        player = PlayerModel(first_name=first_name,
+                             last_name=last_name)
+        return player
