@@ -1,7 +1,7 @@
 """Entry point."""
 from controller.tournament import TournamentController
 from controller.player import PlayerController
-# from controller.round import RoundController
+from controller.round import RoundController
 
 global_tournament = None
 global_players = None
@@ -10,7 +10,7 @@ global_day = None
 
 
 if __name__ == '__main__':
-    PlayerController.get_one_player()
+    RoundController.append_player()
     # Open application
     welcome_application = " Welcome to the << CHESS-CENTER >> application "
     print(f"\n{welcome_application.center(106, ' ')}")

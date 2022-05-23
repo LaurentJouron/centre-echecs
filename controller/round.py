@@ -1,16 +1,17 @@
-from model.player import PlayerModel
-from view.round import RoundView
-from model.round import RoundModel
+# from model.player import PlayerModel
+# from view.round import RoundView
+# from model.round import RoundModel
 from controller.player import PlayerController
 
 
 class RoundController:
     @staticmethod
-    def append_player(tournament):
+    def append_player():
         """Returns the players to be added to the tournament list."""
         player = PlayerController.get_one_player()
-        one_player = RoundModel.append_player(tournament.player)
-        return one_player
+        print(player[2])
+        # one_player = RoundModel.append_player(player)
+        # return one_player
 
     @staticmethod
     def get_players_list(tournament):
