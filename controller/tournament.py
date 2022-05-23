@@ -1,7 +1,6 @@
 """Management of the tournament organization"""
 from view.tournament import TournamentView
 from model.tournament import TournamentModel
-from controller.player import PlayerController
 
 
 class TournamentController:
@@ -25,18 +24,13 @@ class TournamentController:
         return tournament
 
     @staticmethod
-    def append_player(tournament):
-        """Returns the players to be added to the tournament list."""
-        player = PlayerController.get_player_by_name()
-        tournament.append_player(player)
+    def number_players():
+        """Get the number of players of this tournament."""
+        number_of_players = TournamentView.number_players()
+        return number_of_players
 
     @staticmethod
-    def get_players_list(tournament):
-        """Display all participants of the tournament."""
-        print(tournament.get_players_list())
-
-    @staticmethod
-    def remove_player(tournament):
-        """Remove player un tournament list"""
-        player = PlayerController.remove_player_list()
-        tournament.remove_player(player)
+    def number_rounds():
+        """Get the number of rounds of this tournament."""
+        number_of_rounds = TournamentView.number_rounds()
+        return number_of_rounds

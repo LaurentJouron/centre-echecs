@@ -76,7 +76,7 @@ class PlayerModel:
         """
         return [PlayerModel(**player) for player in PlayerModel.players.all()]
         
-    @property
-    def get_one(self) -> table.Document:
-        return PlayerModel.players.get((where('first_name') == self.first_name)
-                                    & (where('last_name') == self.last_name))
+    @staticmethod
+    def get_one_player(first_name, last_name):
+        return PlayerModel.players.get((where('first_name') == first_name)
+                                    & (where('last_name') == last_name))

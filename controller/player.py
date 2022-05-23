@@ -38,16 +38,15 @@ class PlayerController:
                              last_name=last_name)
         player.remove()
 
-    @staticmethod
-    def get_player_by_name():
-        """Get a player with his first-name"""
-        first_name = PlayerView.get_first_name()
-        last_name = PlayerView.get_last_name()
-        player = PlayerModel(first_name=first_name,
-                             last_name=last_name)
-        player = player.get_one
-        for key, value in player.items():
-            return f"{key}: {value}"
+    # @staticmethod
+    # def get_one_player():
+    #     """Get a player with his first-name"""
+    #     first_name = PlayerView.get_first_name()
+    #     last_name = PlayerView.get_last_name()
+    #     player = PlayerModel(first_name=first_name,
+    #                          last_name=last_name)
+    #     print(player.gender)
+    #     # return player.get_one_player
 
     @staticmethod
     def remove_player_list():
@@ -57,3 +56,18 @@ class PlayerController:
         player = PlayerModel(first_name=first_name,
                              last_name=last_name)
         return player
+
+    @staticmethod
+    def get_player_by_name():
+        """Get a player with his first-name"""
+        first_name = PlayerView.get_first_name()
+        last_name = PlayerView.get_last_name()
+        player = PlayerModel.get_one_player(first_name, last_name)
+        one_player = PlayerModel(player["first_name"],
+                                 player["last_name"],
+                                 player["birthday"],
+                                 player["gender"],
+                                 player["ranking"])
+        print(player)
+        return one_player
+
