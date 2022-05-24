@@ -1,25 +1,8 @@
-from main import global_players
 
 
 class RoundModel:
     def __init__(self):
-        self.players: list = []
-        self.rounds: list = []
-
-    def append_player(self, player):
-        """Adds players to the tournament list."""
-        if len(self.players) < global_players:
-            self.players.append(player)
-        else:
-            print("This tournament is completed")
-
-    # def remove_player(self, player):
-    #     """Remove player in tournament list."""
-    #     self.players.remove(player)
-    #
-    # def get_players_list(self):
-    #     """Display players from tournament list."""
-    #     return self.players[:]
+        pass
 
     # def alphabetical_order(self):
     #     """Sort players alphabetically"""

@@ -3,9 +3,6 @@ from controller.tournament import TournamentController
 from controller.player import PlayerController
 
 global_tournament = None
-global_players = None
-global_rounds = None
-global_day = None
 
 
 if __name__ == '__main__':
@@ -127,8 +124,6 @@ if __name__ == '__main__':
 
                     # Input information for create tournament.
                     global_tournament = TournamentController.new_tournament()
-                    global_players = TournamentController.number_players()
-                    global_rounds = TournamentController.number_rounds()
 
                 if choice_tournament_menu == 2:
 
@@ -214,4 +209,22 @@ if __name__ == '__main__':
 
             # exit game
         if reception_choice_menu == 4:
-            reception = False
+            # Decoration text display all players in this tournament.
+            exit_programme = " EXIT CHESS CENTER "
+            print(f"\n{exit_programme.center(106, ' ')}")
+
+            information_decoration = " Exiting the program "
+            print(f"{information_decoration.center(106, '*')}")
+
+            exit_list = "> [1]Non  [2]Yes <"
+            print(f"\n{exit_list.center(106, '-')}")
+
+            # Input the number choice of the reception menu
+            select_start_menu = input(f"Select the menu number : ")
+            exit_choice_menu = int(select_start_menu)
+            if exit_choice_menu >= 3:
+                print("Value error")
+            if exit_choice_menu == 1:
+                reception = True
+            if exit_choice_menu == 2:
+                reception = False

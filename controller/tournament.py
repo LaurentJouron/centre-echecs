@@ -16,11 +16,15 @@ class TournamentController:
         place = TournamentView.place()
         start_date = TournamentView.start_date()
         end_date = TournamentView.end_date()
+        nb_rounds = TournamentView.number_rounds()
+        nb_players = TournamentView.number_players()
 
         tournament = TournamentModel(name=name,
                                      place=place,
                                      start_date=start_date,
-                                     end_date=end_date)
+                                     end_date=end_date,
+                                     nb_rounds=nb_rounds,
+                                     nb_players=nb_players)
         print(str(tournament))
         return tournament
 
@@ -39,8 +43,12 @@ class TournamentController:
     @staticmethod
     def append_player(tournament):
         """Returns the players to be added to the tournament list."""
-        player = PlayerController.get_one_player()
-        tournament.append_player(player)
+        if tournament is None:
+            print("You need to create tournament before to add players.")
+            return
+        if tournament != "":
+            player = PlayerController.get_one_player()
+            tournament.append_player(player)
 
     @staticmethod
     def get_players_list(tournament):

@@ -73,13 +73,13 @@ class TournamentView:
         validate_days = "> [1]Validate  [2]Change <"
         print(f"\n{validate_days.center(106, '-')}")
 
-        today = date.today()
+        today = TournamentView.start_date()
 
         validate = input("Do you want to change the number of days ? ")
         validate = int(validate)
         if validate == 1:
             print(f"\nThis tournament will play in {nb_day + 1} days.")
-            end_date = today + timedelta(nb_day)
+            end_date = date.today() + timedelta(nb_day)
             if end_date == date.today():
                 return "same day"
         if validate == 2:
