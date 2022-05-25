@@ -11,7 +11,6 @@ nb_round = constants.NUMBER_OF_ROUND
 class TournamentView:
     """What information is needed for the tournament."""
 
-# Function to create information from view.
     @staticmethod
     def name():
         """
@@ -75,7 +74,7 @@ class TournamentView:
 
         today = TournamentView.start_date()
 
-        validate = input("Do you want to change the number of days ? ")
+        validate = input("Select menu number : ")
         validate = int(validate)
         if validate == 1:
             print(f"\nThis tournament will play in {nb_day + 1} days.")
@@ -108,7 +107,7 @@ class TournamentView:
         validate_players = "> [1]Validate  [2]Change <"
         print(f"\n{validate_players.center(106, '-')}")
 
-        validate = input("Do you want to change the number of player ? ")
+        validate = input("Select menu number : ")
         validate = int(validate)
         if validate == 1:
             print(f"\nThis tournament will play with {nb_players} players.")
@@ -138,7 +137,7 @@ class TournamentView:
         validate_rounds = "> [1]Validate  [2]Change <"
         print(f"\n{validate_rounds.center(106, '-')}")
 
-        validate = input("Do you want to change the number of rounds ? ")
+        validate = input("Select menu number : ")
         validate = int(validate)
         if validate == 1:
             print(f"\nThis tournament will play in {nb_round} rounds.")

@@ -53,7 +53,7 @@ class TournamentController:
     @staticmethod
     def get_players_list(tournament):
         """Display all participants of the tournament."""
-        print(tournament.get_players_list())
+        return tournament.get_players_list()
 
     @staticmethod
     def remove_player(tournament):

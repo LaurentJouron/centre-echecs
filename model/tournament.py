@@ -23,10 +23,6 @@ class TournamentModel:
                f"It will be played with {self.nb_players} players in " \
                f"{self.nb_rounds} rounds."
 
-    @property
-    def half_nb_players(self):
-        return int(self.nb_players/2)
-
     def append_player(self, player):
         """Adds players to the tournament list."""
         if len(self.players) < self.nb_players:
@@ -41,14 +37,3 @@ class TournamentModel:
     def remove_player(self, player):
         """Remove player in tournament list."""
         self.players.remove(player)
-
-    # def first_party(self):
-    #     """Organize the first round player-to-player."""
-    #     first_player: int = 0
-    #     second_player: int = self.half_nb_players
-    #     for _ in range(self.half_nb_players):
-    #         first_tour = self.players[first_player::second_player]
-    #         first_player += 1
-    #         second_player += 1
-    #         self.rounds.append([first_tour])
-    #     print(self.rounds)

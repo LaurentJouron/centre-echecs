@@ -1,6 +1,7 @@
 """Entry point."""
 from controller.tournament import TournamentController
 from controller.player import PlayerController
+# from controller.round import RoundController
 
 global_tournament = None
 
@@ -103,7 +104,7 @@ if __name__ == '__main__':
                 print(f"{choice_decoration.center(106, '*')}")
 
                 tournament_list = "> [1]Create  [2]Add player  " \
-                                  "[3]Display player  [4]Remove player " \
+                                  "[3]Display player  [4]Remove player  " \
                                   "[5]Quit <"
                 print(f"\n{tournament_list.center(106, '-')}")
 
@@ -111,7 +112,7 @@ if __name__ == '__main__':
                 select_tournament_menu = input(f"Select the menu number : ")
                 choice_tournament_menu = int(select_tournament_menu)
 
-                if choice_tournament_menu >= 6:
+                if choice_tournament_menu >= 6 :
                     print("Value error.")
 
                 if choice_tournament_menu == 1:
@@ -145,7 +146,8 @@ if __name__ == '__main__':
                     print(f"{information_decoration.center(106, '*')}")
 
                     # Display all players in this tournament.
-                    TournamentController.get_players_list(global_tournament)
+                    all_players = TournamentController
+                    print(all_players.get_players_list(global_tournament))
 
                 if choice_tournament_menu == 4:
                     # Decoration text delete player in this tournament.
@@ -161,23 +163,23 @@ if __name__ == '__main__':
                 if choice_tournament_menu == 5:
                     tournament = False
 
-        # if reception_choice_menu == 3:
-        #     rounds = True
-        #     while rounds:
-        #
-        #         # Decoration text round reception in line game.
-        #         round_reception = " ROUND RECEPTION "
-        #         print(f"\n{round_reception.center(106, ' ')}")
-        #
-        #         choice_decoration = " Make your choice "
-        #         print(f"{choice_decoration.center(106, '*')}")
-        #
-        #         round_menu = "> [1]Add_player  [2]Show_player_list  [3]Remove_player  [4]First_round  [5]Quit <"
-        #         print(f"\n{round_menu.center(106, '-')}")
-        #
-        #         # Input the number choice of the players menu
-        #         select_round_menu = input(f"Select the menu number : ")
-        #         choice_round_menu = int(select_round_menu)
+        if reception_choice_menu == 3:
+            rounds = True
+            while rounds:
+
+                # Decoration text round reception in line game.
+                round_reception = " ROUND RECEPTION "
+                print(f"\n{round_reception.center(106, ' ')}")
+
+                choice_decoration = " Make your choice "
+                print(f"{choice_decoration.center(106, '*')}")
+
+                round_menu = "> [1]First_round  [5]Quit <"
+                print(f"\n{round_menu.center(106, '-')}")
+
+                # Input the number choice of the players menu
+                select_round_menu = input(f"Select the menu number : ")
+                choice_round_menu = int(select_round_menu)
 
                 # if choice_round_menu == 1:
 
@@ -203,8 +205,8 @@ if __name__ == '__main__':
                 #     # Input information for delete player in this tournament.
                 #     TournamentController.remove_player(global_tournament)
 
-                # if choice_round_menu == 5:
-                #     rounds = False
+                if choice_round_menu == 5:
+                    rounds = False
 
 
             # exit game
