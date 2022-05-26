@@ -37,6 +37,7 @@ class PlayerController:
         player = PlayerModel(first_name=first_name,
                              last_name=last_name)
         player.remove()
+        PlayerView.remove_confirmation(first_name, last_name)
 
     @staticmethod
     def get_one_player():
