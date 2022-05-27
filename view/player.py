@@ -1,9 +1,9 @@
-"""Enter the information of the players who will participate."""
+"""All views informations for the players will participate."""
 from datetime import datetime
 
 
 class PlayerView:
-    """The player information you need to organize a tournament."""
+    """The player information."""
 
     @staticmethod
     def get_first_name():
