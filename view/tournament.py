@@ -147,3 +147,70 @@ class TournamentView:
             new_number = int(new_number)
             print(f"\nThis tournament will play in {new_number} rounds.")
             return new_number
+
+    # Title decoration text for tournament in line game.
+    @staticmethod
+    def tournament_reception():
+        """Display the title decoration for tournament reception"""
+        tournament_reception = " TOURNAMENT RECEPTION "
+        print(f"\n{tournament_reception.center(106, ' ')}")
+
+    @staticmethod
+    def tournament_creation():
+        """Display the title decoration for tournament creation"""
+        tournament_creation = " TOURNAMENT CREATION "
+        print(f"\n{tournament_creation.center(106, ' ')}")
+
+    @staticmethod
+    def append_tournament_player():
+        """Display the title decoration for tournament append player"""
+        add_players = " APPEND TOURNAMENT PLAYERS "
+        print(f"\n{add_players.center(106, ' ')}")
+
+    @staticmethod
+    def all_tournament_player():
+        """Display the title decoration for tournament append player"""
+        all_player = " ALL PLAYERS IN TOURNAMENT "
+        print(f"\n{all_player.center(106, ' ')}")
+
+    @staticmethod
+    def remove_tournament_player():
+        """Display the title decoration remove tournament player"""
+        tournament_creation = " REMOVE PLAYERS TOURNAMENT "
+        print(f"\n{tournament_creation.center(106, ' ')}")
+
+    @staticmethod
+    def tournament_menu():
+        """Display menu tournament decoration"""
+        tournament_list = "> [1]Create  [2]Add player  [3]Display player  " \
+                          "[4]Remove player  [5]Quit <"
+        print(f"\n{tournament_list.center(106, '-')}")
+
+    @staticmethod
+    def select_player_menu():
+        """Define the number of the menu you want.
+        Returns:
+            int: number that corresponds to the choice of the menu"""
+        return input(f"Select the menu number : ")
+
+    @staticmethod
+    def enter_information():
+        """Display information decoration for player"""
+        information_decoration = " Enter information "
+        print(f"{information_decoration.center(106, '*')}")
+
+    @staticmethod
+    def select_choice():
+        """Display choice decoration for tournament"""
+        choice = " Make your choice "
+        print(f"{choice.center(106, '*')}")
+
+    @staticmethod
+    def list_tournament_player():
+        """Display the title decoration for tournament all player"""
+        information_decoration = " Display all players in tournament list "
+        print(f"{information_decoration.center(106, '*')}")
+
+    @staticmethod
+    def value_error():
+        print("Value error.")

@@ -84,3 +84,63 @@ class PlayerView:
         Print:
             str: player append """
         print(f"\n{first_name} {last_name} is register.")
+
+    # Title decoration text for players in line game.
+    @staticmethod
+    def player_reception():
+        """Display the title decoration for player reception"""
+        player_reception = " PLAYER RECEPTION "
+        print(f"\n{player_reception.center(106, ' ')}")
+
+    @staticmethod
+    def player_creation():
+        """Display the title decoration for player creation"""
+        player_creation = " PLAYER CREATION "
+        print(f"\n{player_creation.center(106, ' ')}")
+
+    @staticmethod
+    def all_players():
+        """Display the title decoration for all players"""
+        all_player = " ALL PLAYERS IN LIST "
+        print(f"\n{all_player.center(106, ' ')}")
+
+    @staticmethod
+    def delete_players():
+        """Display the title decoration for delete player"""
+        delete_player = " PLAYER DELETE "
+        print(f"\n{delete_player.center(106, ' ')}")
+
+    @staticmethod
+    def player_menu():
+        """Display menu players decoration"""
+        player_menu = "> [1]Add  [2]Show  [3]Remove  [4]Quit <"
+        print(f"\n{player_menu.center(106, '-')}")
+
+    @staticmethod
+    def select_player_menu():
+        """Define the number of the menu you want.
+        Returns:
+            int: number that corresponds to the choice of the menu"""
+        return input(f"Select the menu number : ")
+
+    @staticmethod
+    def enter_information():
+        """Display information decoration for player"""
+        information_decoration = " Enter information "
+        print(f"{information_decoration.center(106, '*')}")
+
+    @staticmethod
+    def select_choice():
+        """Display choice decoration for player"""
+        choice = " Make your choice "
+        print(f"{choice.center(106, '*')}")
+
+    @staticmethod
+    def display_all_players():
+        """Display all players decoration"""
+        information_decoration = " Display all players in list "
+        print(f"{information_decoration.center(106, '*')}")
+
+    @staticmethod
+    def value_error():
+        print("Value error.")

@@ -5,7 +5,60 @@ from controller.player import PlayerController
 
 
 class TournamentController:
-        
+
+    @staticmethod
+    def tournament_menu():
+        global_tournament = None
+        tournament = True
+        while tournament:
+            TournamentView.tournament_reception()
+            TournamentView.select_choice()
+            TournamentView.tournament_menu()
+
+            """Input the number choice of the tournament menu"""
+            select_tournament_menu = TournamentView.select_player_menu()
+            choice_tournament_menu = int(select_tournament_menu)
+
+            if choice_tournament_menu >= 6:
+                TournamentView.value_error()
+
+            if choice_tournament_menu == 1:
+                """Decoration text creation tournament for in line game."""
+                TournamentView.tournament_creation()
+                TournamentView.enter_information()
+
+                """Input information for create tournament."""
+                global_tournament = TournamentController.new_tournament()
+
+            if choice_tournament_menu == 2:
+                """Decoration text creation tournament for in line game."""
+                TournamentView.append_tournament_player()
+                TournamentView.enter_information()
+
+                """Enter the information for a new tournament and assign 
+                the global variable"""
+                TournamentController.append_player(global_tournament)
+
+            if choice_tournament_menu == 3:
+                """Decoration text display all players in this tournament."""
+                TournamentView.all_tournament_player()
+                TournamentView.list_tournament_player()
+
+                """Display all players in this tournament."""
+                all_players = TournamentController
+                print(all_players.get_players_list(global_tournament))
+
+            if choice_tournament_menu == 4:
+                """Decoration text delete player in this tournament."""
+                TournamentView.remove_tournament_player()
+                TournamentView.enter_information()
+
+                """Input information for delete player in this tournament."""
+                TournamentController.remove_player(global_tournament)
+
+            if choice_tournament_menu == 5:
+                tournament = False
+
     @staticmethod
     def new_tournament():
         """
