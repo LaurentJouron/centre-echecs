@@ -12,14 +12,13 @@ class ChessCenterController:
     reception = True
     while reception:
 
-        # Decoration text reception for in line game.
+        """Decoration text reception for in line game"""
         ChessCenterView.reception_name()
         ChessCenterView.choice_decoration()
         ChessCenterView.start_menu()
 
-        # Input the number choice of the reception menu
+        """Input the number choice of the reception menu"""
         reception_choice_menu = int(ChessCenterView.select_reception_menu())
-        # reception_choice_menu = int(select_start_menu)
 
         if reception_choice_menu >= 5:
             ChessCenterView.value_error()
@@ -27,23 +26,23 @@ class ChessCenterController:
         if reception_choice_menu == 1:
             PlayerController.player_menu()
 
-        # Reception of tournament menu
+        """Reception of tournament menu"""
         if reception_choice_menu == 2:
             TournamentController.tournament_menu()
 
-            # exit game
+        """exit game"""
         if reception_choice_menu == 4:
-            # Decoration text display all players in this tournament.
+            """Decoration text display all players in this tournament."""
             ChessCenterView.exit_program()
             ChessCenterView.exiting_program()
             ChessCenterView.exit_confirmation_menu()
 
-            # Input the number choice of the reception menu
-            select_start_menu = ChessCenterView.select_reception_menu()
-            exit_choice_menu = int(select_start_menu)
-            if exit_choice_menu >= 3:
+            """Input the number choice of the reception menu"""
+            select_start_menu = int(ChessCenterView.select_reception_menu())
+
+            if select_start_menu >= 3:
                 ChessCenterView.value_error()
-            if exit_choice_menu == 1:
+            if select_start_menu == 1:
                 reception = True
-            if exit_choice_menu == 2:
+            if select_start_menu == 2:
                 reception = False
