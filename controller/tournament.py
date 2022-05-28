@@ -16,7 +16,7 @@ class TournamentController:
             TournamentView.tournament_menu()
 
             """Input the number choice of the tournament menu"""
-            select_tournament_menu = TournamentView.select_player_menu()
+            select_tournament_menu = TournamentView.select_menu()
             choice_tournament_menu = int(select_tournament_menu)
 
             if choice_tournament_menu >= 6:

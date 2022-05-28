@@ -28,7 +28,7 @@ class ChessCenterView:
         print(f"\n{start_menu.center(106, '-')}")
 
     @staticmethod
-    def select_reception_menu():
+    def input_menu():
         """Define the number of the menu you want.
         Returns:
             int: number that corresponds to the choice of the menu"""

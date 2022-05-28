@@ -5,6 +5,7 @@ from datetime import datetime
 class PlayerView:
     """The player information."""
 
+# Function
     @staticmethod
     def get_first_name():
         """Define the first-name of participants.
@@ -85,7 +86,7 @@ class PlayerView:
             str: player append """
         print(f"\n{first_name} {last_name} is register.")
 
-    # Title decoration text for players in line game.
+# Title decoration text for players in line game.
     @staticmethod
     def player_reception():
         """Display the title decoration for player reception"""
@@ -110,12 +111,14 @@ class PlayerView:
         delete_player = " PLAYER DELETE "
         print(f"\n{delete_player.center(106, ' ')}")
 
+# Player menu
     @staticmethod
     def player_menu():
         """Display menu players decoration"""
         player_menu = "> [1]Add  [2]Show  [3]Remove  [4]Quit <"
         print(f"\n{player_menu.center(106, '-')}")
 
+# Input
     @staticmethod
     def select_player_menu():
         """Define the number of the menu you want.
@@ -123,6 +126,7 @@ class PlayerView:
             int: number that corresponds to the choice of the menu"""
         return input(f"Select the menu number : ")
 
+# Instruction
     @staticmethod
     def enter_information():
         """Display information decoration for player"""
@@ -141,6 +145,7 @@ class PlayerView:
         information_decoration = " Display all players in list "
         print(f"{information_decoration.center(106, '*')}")
 
+# Error
     @staticmethod
     def value_error():
         print("Value error.")

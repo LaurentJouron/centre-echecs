@@ -11,6 +11,7 @@ nb_round = constants.NUMBER_OF_ROUND
 class TournamentView:
     """What information is needed for the tournament."""
 
+# Function
     @staticmethod
     def name():
         """
@@ -61,21 +62,15 @@ class TournamentView:
             or
             date: end date
         """
-        number_days = " NUMBER DAYS "
-        print(f"\n{number_days.center(106, ' ')}")
-
-        choice_decoration = " Make your choice "
-        print(f"{choice_decoration.center(106, '*')}")
+        TournamentView.number_of_days()
+        TournamentView.select_choice()
 
         print(f"\nThis tournament will play in {nb_day + 1} day(s).")
 
-        validate_days = "> [1]Validate  [2]Change <"
-        print(f"\n{validate_days.center(106, '-')}")
+        TournamentView.validate_menu()
 
         today = TournamentView.start_date()
-
-        validate = input("Select menu number : ")
-        validate = int(validate)
+        validate = int(TournamentView.select_menu())
         if validate == 1:
             print(f"\nThis tournament will play in {nb_day + 1} days.")
             end_date = date.today() + timedelta(nb_day)
@@ -95,20 +90,14 @@ class TournamentView:
         Returns:
             int: number of player
         """
-
-        number_players = " NUMBER PLAYERS "
-        print(f"\n{number_players.center(106, ' ')}")
-
-        choice_decoration = " Make your choice "
-        print(f"{choice_decoration.center(106, '*')}")
+        TournamentView.number_of_player()
+        TournamentView.select_choice()
 
         print(f"\nThis tournament will play with {nb_players} players")
 
-        validate_players = "> [1]Validate  [2]Change <"
-        print(f"\n{validate_players.center(106, '-')}")
+        TournamentView.validate_menu()
 
-        validate = input("Select menu number : ")
-        validate = int(validate)
+        validate = int(TournamentView.select_menu())
         if validate == 1:
             print(f"\nThis tournament will play with {nb_players} players.")
             return nb_players
@@ -125,20 +114,14 @@ class TournamentView:
         Returns:
             int: number of rounds
         """
-
-        number_rounds = " NUMBER ROUNDS "
-        print(f"\n{number_rounds.center(106, ' ')}")
-
-        choice_decoration = " Make your choice "
-        print(f"{choice_decoration.center(106, '*')}")
+        TournamentView.number_of_round()
+        TournamentView.select_choice()
 
         print(f"\nThis tournament will play in {nb_round} rounds.")
 
-        validate_rounds = "> [1]Validate  [2]Change <"
-        print(f"\n{validate_rounds.center(106, '-')}")
-
-        validate = input("Select menu number : ")
-        validate = int(validate)
+        TournamentView.validate_menu()
+        
+        validate = int(TournamentView.select_menu())
         if validate == 1:
             print(f"\nThis tournament will play in {nb_round} rounds.")
             return nb_round
@@ -148,7 +131,7 @@ class TournamentView:
             print(f"\nThis tournament will play in {new_number} rounds.")
             return new_number
 
-    # Title decoration text for tournament in line game.
+# Title decoration text for tournament in line game.
     @staticmethod
     def tournament_reception():
         """Display the title decoration for tournament reception"""
@@ -180,6 +163,25 @@ class TournamentView:
         print(f"\n{tournament_creation.center(106, ' ')}")
 
     @staticmethod
+    def number_of_round():
+        """Display the title decoration number round of this tournament"""
+        number_rounds = " NUMBER ROUNDS "
+        print(f"\n{number_rounds.center(106, ' ')}")
+
+    @staticmethod
+    def number_of_days():
+        """Display the title decoration number days of this tournament"""
+        number_days = " NUMBER DAYS "
+        print(f"\n{number_days.center(106, ' ')}")
+
+    @staticmethod
+    def number_of_player():
+        """Display the title decoration number players of this tournament"""
+        number_players = " NUMBER PLAYERS "
+        print(f"\n{number_players.center(106, ' ')}")
+        
+# Tournament reception menu
+    @staticmethod
     def tournament_menu():
         """Display menu tournament decoration"""
         tournament_list = "> [1]Create  [2]Add player  [3]Display player  " \
@@ -187,12 +189,20 @@ class TournamentView:
         print(f"\n{tournament_list.center(106, '-')}")
 
     @staticmethod
-    def select_player_menu():
+    def validate_menu():
+        """Display menu validate or change"""
+        validate = "> [1]Validate  [2]Change <"
+        print(f"\n{validate.center(106, '-')}")
+
+# Input
+    @staticmethod
+    def select_menu():
         """Define the number of the menu you want.
         Returns:
             int: number that corresponds to the choice of the menu"""
         return input(f"Select the menu number : ")
 
+# Instruction
     @staticmethod
     def enter_information():
         """Display information decoration for player"""
@@ -208,9 +218,10 @@ class TournamentView:
     @staticmethod
     def list_tournament_player():
         """Display the title decoration for tournament all player"""
-        information_decoration = " Display all players in tournament list "
+        information_decoration = " All players in the tournament"
         print(f"{information_decoration.center(106, '*')}")
 
+# Error
     @staticmethod
     def value_error():
         print("Value error.")

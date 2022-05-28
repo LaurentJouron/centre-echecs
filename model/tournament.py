@@ -38,6 +38,11 @@ class TournamentModel:
         """Remove player in tournament list."""
         self.players.remove(player)
 
+    def random_time(self):
+        pass
+    
+# generate round
+
     # def first_party(self):
     #     """Organize the first round player-to-player."""
     #     first_player: int = 0

@@ -9,8 +9,8 @@ class PlayerModel:
     players = db.table('players')
     
     """Builder of the model player."""
-    def __init__(self, first_name: str, last_name: str, birthday: str ="",
-                 gender: str ="", ranking: int =""):
+    def __init__(self, first_name: str, last_name: str, birthday: str = "",
+                 gender: str = "", ranking: int = ""):
         self.first_name = first_name
         self.last_name = last_name
         self.birthday = birthday
@@ -82,8 +82,8 @@ class PlayerModel:
         return PlayerModel.players.get((where('first_name') == first_name)
                                        & (where('last_name') == last_name))
 
-    def alphabetical_order(self):
-        sorted(self.get_all, key=lambda PlayerModel: PlayerModel.last_name)
-
-    def ranking_order(self):
-        sorted(self.get_all, key=lambda PlayerModel: PlayerModel.ranking)
+    # def alphabetical_order(self):
+    #     sorted(self.get_all, key=lambda PlayerModel: PlayerModel.last_name)
+    #
+    # def ranking_order(self):
+    #     sorted(self.get_all, key=lambda PlayerModel: PlayerModel.ranking)
