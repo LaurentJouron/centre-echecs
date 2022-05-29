@@ -1,4 +1,5 @@
 """Information of the chess tournament."""
+from tinydb import TinyDB, where, table
 
 
 class TournamentModel:
@@ -38,22 +39,8 @@ class TournamentModel:
         """Remove player in tournament list."""
         self.players.remove(player)
 
-    def random_time(self):
-        pass
+    def tournament_table(self):
+        db = TinyDB(f"data/{self.name}.json", indent=4)
+        tournament = db.table(f'{self.name}')
+        return tournament
     
-# generate round
-
-    # def first_party(self):
-    #     """Organize the first round player-to-player."""
-    #     first_player: int = 0
-    #     second_player: int = 4
-    #     for _ in range(nb_game):
-    #         first_tour = self.players[first_player::second_player]
-    #         first_player += 1
-    #         second_player += 1
-    #         self.rounds.append([first_tour])
-
-    # def other_party(self):
-    #     """Organizes player-to-player games for the remainder of the
-    #     tournament """
-    #     pass

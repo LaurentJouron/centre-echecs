@@ -5,7 +5,7 @@ from view.chess_center import ChessCenterView
 
 
 class ChessCenter:
-
+    """Decoration text when opening the application."""
     ChessCenterView.welcome_application()
     ChessCenterView.instruction()
 
@@ -23,24 +23,24 @@ class ChessCenter:
         if input_menu >= 5:
             ChessCenterView.value_error()
 
-        """Reception of player menu"""
         if input_menu == 1:
+            """Reception of player menu"""
             PlayerController.player_menu()
 
-        """Reception of tournament menu"""
         if input_menu == 2:
+            """Reception of tournament menu"""
             TournamentController.tournament_menu()
 
-        """exit game"""
         if input_menu == 4:
+            """exit game"""
             """Decoration text display all players in this tournament."""
             ChessCenterView.exit_program()
             ChessCenterView.exiting_program()
             ChessCenterView.exit_confirmation_menu()
-
-            """Input the number choice of the reception menu"""
+    
+            """Input the number choice of the exit menu"""
             exit_menu = int(ChessCenterView.input_menu())
-
+    
             if exit_menu >= 3:
                 ChessCenterView.value_error()
             if exit_menu == 1:
