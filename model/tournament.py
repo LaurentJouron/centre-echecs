@@ -1,5 +1,7 @@
 """Information of the chess tournament."""
-from tinydb import TinyDB, where, table
+import json
+
+from tinydb import TinyDB
 
 
 class TournamentModel:
@@ -39,8 +41,17 @@ class TournamentModel:
         """Remove player in tournament list."""
         self.players.remove(player)
 
+# New script
     def tournament_table(self):
-        db = TinyDB(f"data/{self.name}.json", indent=4)
-        tournament = db.table(f'{self.name}')
+        """Create a file for each new tournament."""
+        name_table = self.name.lower()
+        db = TinyDB(f"data/{name_table}.json", indent=4)
+        tournament = db.table(f'{name_table}')
         return tournament
-    
+
+    def openning_tournament_table(self):
+        """Open the file that corresponds to a tournament."""
+        name_table = self.name.lower()
+        with open(f"data/{name_table}.json") as tournament_file:
+            data = json.load(tournament_file)
+            return data
