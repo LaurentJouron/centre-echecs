@@ -28,8 +28,12 @@ class TournamentModel:
 
     def append_player(self, player):
         """Adds players to the tournament list."""
-        if len(self.players) < self.nb_players:
+        len_players = len(self.players)
+        if len_players < self.nb_players:
             self.players.append(player)
+            print(f"\nThere are {len_players  + 1} remains place.")
+            remains_place = self.nb_players - len_players
+            print(f"There are {remains_place - 1} places left.")
         else:
             print("This tournament is completed")
 
@@ -55,3 +59,19 @@ class TournamentModel:
         with open(f"data/{name_table}.json") as tournament_file:
             data = json.load(tournament_file)
             return data
+
+    def first_rounds(self):
+        players = self.players
+        len_players = len(players)
+        if len_players == self.nb_players:
+            for rounds in range(self.nb_players//2):
+                self.rounds.extend(players[rounds::4])
+                rounds += 1
+
+    def alphabetical_order(self):
+        players = self.players
+        players.sort()
+        return players
+
+    def ranking_order(self):
+        sorted(self.players, key=lambda ranking: ranking[4])

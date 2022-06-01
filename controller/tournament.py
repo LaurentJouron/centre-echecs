@@ -94,7 +94,6 @@ class TournamentController:
                                      nb_rounds=nb_rounds,
                                      nb_players=nb_players)
         print(str(tournament))
-        TournamentModel.tournament_table(tournament)
         return tournament
 
     @staticmethod

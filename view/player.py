@@ -68,7 +68,7 @@ class PlayerView:
         while True:
             ranking = input("Indicate your place in the national ranking: ")
             if not ranking.isdigit() or ranking <= "1":
-                print(f"Input error.\nSelect number only")
+                print(f"Input error.\nSelect positif number only")
             else:
                 return ranking
 

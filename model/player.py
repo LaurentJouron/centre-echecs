@@ -81,9 +81,3 @@ class PlayerModel:
         """Return all information of player by name"""
         return PlayerModel.players.get((where('first_name') == first_name)
                                        & (where('last_name') == last_name))
-
-    # def alphabetical_order(self):
-    #     sorted(self.get_all, key=lambda PlayerModel: PlayerModel.last_name)
-    #
-    # def ranking_order(self):
-    #     sorted(self.get_all, key=lambda PlayerModel: PlayerModel.ranking)
