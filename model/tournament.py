@@ -1,5 +1,7 @@
 """Information of the chess tournament."""
+import csv
 import json
+import os
 
 from tinydb import TinyDB
 
@@ -68,6 +70,13 @@ class TournamentModel:
                 self.rounds.extend(players[rounds::4])
                 rounds += 1
 
+    # players = ["Thierno", "Laurent", "Louis", "Antoine", "Virginie", "Marie", "Stephane", "Julia"]
+    # len_players = len(players)
+    # if len_players == 8:
+    #     for rounds in range(8 // 2):
+    #         print(players[rounds::4])
+    #         rounds += 1
+
     def alphabetical_order(self):
         players = self.players
         players.sort()
@@ -75,3 +84,30 @@ class TournamentModel:
 
     def ranking_order(self):
         sorted(self.players, key=lambda ranking: ranking[4])
+
+    def create_csv_files(self):
+        headers = "first_name, last_name, birthday, gender, ranking, score\n"
+        tournament_files = "./tournament_files"
+        os.makedirs(tournament_files, exist_ok=True)
+        csv_name = f"{self.name}.csv"
+        if not os.path.isfile(f"tournament_files/{csv_name}"):
+            with open(csv_name, "w", newline="", encoding="utf8") as file:
+                csv_writer = csv.writer(file)
+                csv_writer.writerow(headers)
+
+    def write_csv_files(self):
+        write_files = open(f"{self.name}", "w", newline="", encoding="utf8")
+        headers = "first_name, last_name, birthday, gender, ranking, score\n"
+        write_files.write(headers)
+        write_files.close()
+
+    def read_csv_files(self):
+        if not os.path.isfile(f"data/{self.name}.json"):
+            tournament_files = open(f"{self.name}", "r", encoding="utf8")
+            header_line = tournament_files.readline()
+            print(header_line)
+            file = tournament_files.readlines()
+            for players in file:
+                player = players[:-1].split(",")
+                print(player)
+            tournament_files.close()
