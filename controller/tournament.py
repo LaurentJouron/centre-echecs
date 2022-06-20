@@ -9,7 +9,7 @@ class TournamentController:
     @staticmethod
     def tournament_menu():
         global_tournament = None
-        
+
         tournament = True
         while tournament:
             """Decoration text reception tournament for in line game."""
@@ -37,7 +37,7 @@ class TournamentController:
                 """
                 global_tournament = TournamentController.new_tournament()
 
-            if choice_tournament_menu == 2:
+            elif choice_tournament_menu == 2:
                 """Decoration to add players tournament for in line game."""
                 TournamentView.append_tournament_player()
                 TournamentView.enter_information()
@@ -48,7 +48,7 @@ class TournamentController:
                 """
                 TournamentController.append_player(global_tournament)
 
-            if choice_tournament_menu == 3:
+            elif choice_tournament_menu == 3:
                 """Decoration text display all players in this tournament."""
                 TournamentView.all_tournament_player()
                 TournamentView.list_tournament_player()
@@ -60,7 +60,7 @@ class TournamentController:
                 all_players = TournamentController
                 print(all_players.get_players_list(global_tournament))
 
-            if choice_tournament_menu == 4:
+            elif choice_tournament_menu == 4:
                 """Decoration text delete player in this tournament."""
                 TournamentView.remove_tournament_player()
                 TournamentView.enter_information()
@@ -71,7 +71,7 @@ class TournamentController:
                 """
                 TournamentController.remove_player(global_tournament)
 
-            if choice_tournament_menu == 5:
+            elif choice_tournament_menu == 5:
                 tournament = False
 
     @staticmethod
@@ -93,20 +93,18 @@ class TournamentController:
                                      end_date=end_date,
                                      nb_rounds=nb_rounds,
                                      nb_players=nb_players)
-        print(str(tournament))
+        print(tournament)
         return tournament
 
     @staticmethod
     def number_players():
         """Get the number of players of this tournament."""
-        number_of_players = TournamentView.number_players()
-        return number_of_players
+        return TournamentView.number_players()
 
     @staticmethod
     def number_rounds():
         """Get the number of rounds of this tournament."""
-        number_of_rounds = TournamentView.number_rounds()
-        return number_of_rounds
+        return TournamentView.number_rounds()
 
     @staticmethod
     def append_player(tournament):

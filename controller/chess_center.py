@@ -1,4 +1,5 @@
 """Entry point."""
+
 from controller.tournament import TournamentController
 from controller.player import PlayerController
 from view.chess_center import ChessCenterView
@@ -27,23 +28,23 @@ class ChessCenter:
             """Reception of player menu"""
             PlayerController.player_menu()
 
-        if input_menu == 2:
+        elif input_menu == 2:
             """Reception of tournament menu"""
             TournamentController.tournament_menu()
 
-        if input_menu == 4:
+        elif input_menu == 4:
             """exit game"""
             """Decoration text display all players in this tournament."""
             ChessCenterView.exit_program()
             ChessCenterView.exiting_program()
             ChessCenterView.exit_confirmation_menu()
-    
+
             """Input the number choice of the exit menu"""
             exit_menu = int(ChessCenterView.input_menu())
-    
+
             if exit_menu >= 3:
                 ChessCenterView.value_error()
             if exit_menu == 1:
                 reception = True
-            if exit_menu == 2:
+            elif exit_menu == 2:
                 reception = False

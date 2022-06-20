@@ -24,16 +24,16 @@ class PlayerController:
                 """Input information for create player in data file."""
                 PlayerController.create()
 
-            if choice_players_menu == 2:
+            elif choice_players_menu == 2:
                 """Display all players in data file."""
                 all_players = PlayerController
-                print(str(all_players.get_all()))
+                print(all_players.get_all())
 
-            if choice_players_menu == 3:
+            elif choice_players_menu == 3:
                 """Input information for delete player in data file."""
                 PlayerController.remove()
 
-            if choice_players_menu == 4:
+            elif choice_players_menu == 4:
                 """Input information for exit the players menu."""
                 players = False
 
@@ -55,7 +55,7 @@ class PlayerController:
                              gender=gender,
                              ranking=ranking)
         player.save()
-        print(str(player))
+        print(player)
         return player
 
     @staticmethod
@@ -86,18 +86,12 @@ class PlayerController:
         last_name = PlayerView.get_last_name()
         player = PlayerModel.get_one_player(first_name=first_name,
                                             last_name=last_name)
-        one_player = (player["first_name"],
-                      player["last_name"],
-                      player["birthday"],
-                      player["gender"],
-                      player["ranking"])
-        return one_player
+        return player["first_name"], player["last_name"], player["birthday"], \
+            player["gender"], player["ranking"]
 
     @staticmethod
     def remove_player_list():
         """Removes an item from the list"""
         first_name = PlayerView.get_first_name()
         last_name = PlayerView.get_last_name()
-        player = PlayerModel(first_name=first_name,
-                             last_name=last_name)
-        return player
+        return PlayerModel(first_name=first_name, last_name=last_name)

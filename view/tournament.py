@@ -13,7 +13,7 @@ class TournamentView:
 
 # Function
     @staticmethod
-    def name():
+    def name() -> str:
         """
         Generate a name tournament.
         Returns:
@@ -22,12 +22,12 @@ class TournamentView:
         while True:
             name: str = input("Enter the tournament name: ").capitalize()
             if not name.isalpha():
-                print(f"Invalid name")
+                print("Invalid name")
             else:
                 return name
 
     @staticmethod
-    def place():
+    def place() -> str:
         """
         Generate place of the tournament.
         Returns:
@@ -41,7 +41,7 @@ class TournamentView:
                 return place
 
     @staticmethod
-    def start_date():
+    def start_date() -> str:
         """
         Generate the date the tournament begins.
         Returns:
@@ -52,7 +52,7 @@ class TournamentView:
         return start_date
 
     @staticmethod
-    def end_date():
+    def end_date() -> str:
         """
         Tournament end date.
         :arguments:
@@ -76,7 +76,7 @@ class TournamentView:
             end_date = date.today() + timedelta(nb_day)
             if end_date == date.today():
                 return "same day"
-        if validate == 2:
+        elif validate == 2:
             new_days = input("\nHow many days ? ")
             new_number = int(new_days)
             print(f"\nThis tournament will play in {new_number} days.")
@@ -84,7 +84,31 @@ class TournamentView:
             return end_date.strftime("%A %d %B %Y")
 
     @staticmethod
-    def number_players():
+    def number_rounds() -> int:
+        """
+        Generate number of rounds for the tournament.
+        Returns:
+            int: number of rounds
+        """
+        TournamentView.number_of_round()
+        TournamentView.select_choice()
+
+        print(f"\nThis tournament will play in {nb_round} rounds.")
+
+        TournamentView.validate_menu()
+
+        validate = int(TournamentView.select_menu())
+        if validate == 1:
+            print(f"\nThis tournament will play in {nb_round} rounds.")
+            return nb_round
+        if validate == 2:
+            new_number = input("\nHow many round ? ")
+            new_number = int(new_number)
+            print(f"\nThis tournament will play in {new_number} rounds.")
+            return new_number
+
+    @staticmethod
+    def number_players() -> int:
         """
         Generate number of player for the tournament.
         Returns:
@@ -105,30 +129,6 @@ class TournamentView:
             new_number = input("\nHow many players ? ")
             new_number = int(new_number)
             print(f"\nThis tournament will play with {new_number} players.")
-            return new_number
-
-    @staticmethod
-    def number_rounds():
-        """
-        Generate number of rounds for the tournament.
-        Returns:
-            int: number of rounds
-        """
-        TournamentView.number_of_round()
-        TournamentView.select_choice()
-
-        print(f"\nThis tournament will play in {nb_round} rounds.")
-
-        TournamentView.validate_menu()
-        
-        validate = int(TournamentView.select_menu())
-        if validate == 1:
-            print(f"\nThis tournament will play in {nb_round} rounds.")
-            return nb_round
-        if validate == 2:
-            new_number = input("\nHow many round ? ")
-            new_number = int(new_number)
-            print(f"\nThis tournament will play in {new_number} rounds.")
             return new_number
 
 # Title decoration text for tournament in line game.
@@ -200,7 +200,7 @@ class TournamentView:
         """Define the number of the menu you want.
         Returns:
             int: number that corresponds to the choice of the menu"""
-        return input(f"Select the menu number : ")
+        return input("Select the menu number : ")
 
 # Instruction
     @staticmethod
