@@ -6,7 +6,7 @@ import string
 class PlayerModel:
     """Class attribut for players file"""
     db = TinyDB(f"data/players.json", indent=4)
-    players = db.table('players')
+    players_db = db.table('players')
     
     """Builder of the model player."""
     def __init__(self, first_name: str, last_name: str, birthday: str = "",
@@ -35,7 +35,7 @@ class PlayerModel:
 
     @property
     def db_instance(self) -> table.Document:
-        return PlayerModel.players.get((where('first_name') == self.first_name)
+        return PlayerModel.players_db.get((where('first_name') == self.first_name)
                                     & (where('last_name') == self.last_name))
 
     def save(self, validate_data: bool = False) -> int:
@@ -44,14 +44,14 @@ class PlayerModel:
             self._checks()
         if self.exists():
             return -1
-        return PlayerModel.players.insert(self.__dict__)
+        return PlayerModel.players_db.insert(self.__dict__)
 
     def _checks(self):
         self._check_names()
 
     def _check_names(self):
         """Checks if the player’s characters are correct and completed"""
-        if not (self.first_name and self.first_name):
+        if not self.first_name:
             raise ValueError("First and last name cannot be blank.")
         special_characters = string.punctuation + string.digits
         for character in self.first_name + self.last_name + self.gender:
@@ -65,7 +65,8 @@ class PlayerModel:
     def remove(self) -> list[int]:
         """Removes an item from the list"""
         if self.exists():
-            return PlayerModel.players.remove(doc_ids=[self.db_instance.doc_id])
+            return PlayerModel.players_db\
+                .remove(doc_ids=[self.db_instance.doc_id])
         return []
 
     @staticmethod
@@ -74,10 +75,10 @@ class PlayerModel:
         Returns all Players file elements with unpacking in
         comprehension list.
         """
-        return [PlayerModel(**player) for player in PlayerModel.players.all()]
+        return [PlayerModel(**player) for player in PlayerModel.players_db.all()]
 
     @staticmethod
     def get_one_player(first_name, last_name):
         """Return all information of player by name"""
-        return PlayerModel.players.get((where('first_name') == first_name)
+        return PlayerModel.players_db.get((where('first_name') == first_name)
                                        & (where('last_name') == last_name))

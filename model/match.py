@@ -8,6 +8,3 @@ class MatchModel:
         self.player2 = player2
         self.score1 = 0
         self.score2 = 0
-        
-
-

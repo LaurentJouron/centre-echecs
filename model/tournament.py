@@ -52,15 +52,13 @@ class TournamentModel:
         """Create a file for each new tournament."""
         name_table = self.name.lower()
         db = TinyDB(f"data/{name_table}.json", indent=4)
-        tournament = db.table(f'{name_table}')
-        return tournament
+        return db.table(f'{name_table}')
 
     def openning_tournament_table(self):
         """Open the file that corresponds to a tournament."""
         name_table = self.name.lower()
         with open(f"data/{name_table}.json") as tournament_file:
-            data = json.load(tournament_file)
-            return data
+            return json.load(tournament_file)
 
     def first_rounds(self):
         players = self.players
@@ -84,30 +82,3 @@ class TournamentModel:
 
     def ranking_order(self):
         sorted(self.players, key=lambda ranking: ranking[4])
-
-    def create_csv_files(self):
-        headers = "first_name, last_name, birthday, gender, ranking, score\n"
-        tournament_files = "./tournament_files"
-        os.makedirs(tournament_files, exist_ok=True)
-        csv_name = f"{self.name}.csv"
-        if not os.path.isfile(f"tournament_files/{csv_name}"):
-            with open(csv_name, "w", newline="", encoding="utf8") as file:
-                csv_writer = csv.writer(file)
-                csv_writer.writerow(headers)
-
-    def write_csv_files(self):
-        write_files = open(f"{self.name}", "w", newline="", encoding="utf8")
-        headers = "first_name, last_name, birthday, gender, ranking, score\n"
-        write_files.write(headers)
-        write_files.close()
-
-    def read_csv_files(self):
-        if not os.path.isfile(f"data/{self.name}.json"):
-            tournament_files = open(f"{self.name}", "r", encoding="utf8")
-            header_line = tournament_files.readline()
-            print(header_line)
-            file = tournament_files.readlines()
-            for players in file:
-                player = players[:-1].split(",")
-                print(player)
-            tournament_files.close()
