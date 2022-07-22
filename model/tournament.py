@@ -1,7 +1,5 @@
 """Information of the chess tournament."""
-import csv
 import json
-import os
 
 from tinydb import TinyDB
 

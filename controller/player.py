@@ -123,7 +123,7 @@ class PlayerController:
                              gender=gender,
                              ranking=ranking)
         player.save()
-        print(player)
+        PlayerView.player_register(f"{first_name} {last_name}")
         return player
 
     @staticmethod
@@ -149,7 +149,7 @@ class PlayerController:
     def get_one_player():
         """Get a player with his first-name"""
         first_name = PlayerView.get_first_name()
-        last_name = PlayerView.get_last_name
+        last_name = PlayerView.get_last_name()
         player = PlayerModel.get_one_player(first_name=first_name, last_name=last_name)
         return player["first_name"], player["last_name"], player["birthday"], player["gender"], player["ranking"]
 

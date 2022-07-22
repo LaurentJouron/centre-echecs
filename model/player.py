@@ -24,11 +24,7 @@ class PlayerModel:
                f"{self.birthday}\n" \
                f"{self.gender}\n" \
                f"{self.ranking}\n"
-    
-    def __str__(self):
-        """Display confirmation when the player is register in players file"""
-        return f"\n{self.full_name} is register"
-    
+
     @property
     def full_name(self):
         return f"{self.first_name} {self.last_name}"

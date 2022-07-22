@@ -31,8 +31,8 @@ class PlayerView:
         print(f"\n{first_name} {last_name} has been deleted from the list.")
 
     @staticmethod
-    def append_confirmation(first_name, last_name):
-        print(f"\n{first_name} {last_name} is register.")
+    def player_register(full_name):
+        print(f'{full_name} is register.')
 
     @staticmethod
     def player_reception():
@@ -82,7 +82,7 @@ class PlayerView:
     @staticmethod
     def value_error():
         print("Value error.")
-        
+
     @staticmethod
     def input_error(var):
-        print(f"Invalid input: {var}.\nPlease try again.")
+        print(f"Invalid input: {var}. Please try again.")
