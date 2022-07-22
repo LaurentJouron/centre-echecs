@@ -82,30 +82,3 @@ class TournamentModel:
 
     def ranking_order(self):
         sorted(self.players, key=lambda ranking: ranking[4])
-
-    def create_csv_files(self):
-        tournament_files = "./tournament_files"
-        os.makedirs(tournament_files, exist_ok=True)
-        csv_name = f"{self.name}.csv"
-        if not os.path.isfile(f"tournament_files/{csv_name}"):
-            headers = "first_name, last_name, birthday, gender, " \
-                      "ranking, score\n"
-            with open(csv_name, "w", newline="", encoding="utf8") as file:
-                csv_writer = csv.writer(file)
-                csv_writer.writerow(headers)
-
-    def write_csv_files(self):
-        with open(f"{self.name}", "w", newline="", encoding="utf8") as f:
-            headers = "first_name, last_name, birthday, gender, " \
-                      "ranking, score\n"
-            f.write(headers)
-
-    def read_csv_files(self):
-        if not os.path.isfile(f"data/{self.name}.json"):
-            with open(f"{self.name}", "r", encoding="utf8") as f:
-                header_line = f.readline()
-                print(header_line)
-                file = f.readlines()
-                for players in file:
-                    player = players[:-1].split(",")
-                    print(player)

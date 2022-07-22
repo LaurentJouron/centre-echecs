@@ -29,9 +29,6 @@ class ChessCenterView:
 
     @staticmethod
     def input_menu():
-        """Define the number of the menu you want.
-        Returns:
-            int: number that corresponds to the choice of the menu"""
         return input("Select the menu number : ")
 
     @staticmethod
