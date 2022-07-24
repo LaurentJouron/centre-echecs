@@ -17,15 +17,6 @@ class TournamentModel:
         self.players: list = []
         self.rounds: list = []
 
-    def __str__(self):
-        """Confirmation phrase of the tournament class."""
-        return f"\nThe {self.name} chess tournament starts on " \
-               f"{self.start_date} at 9:00 am, and end on " \
-               f"{self.end_date} at 6:00 pm.\n" \
-               f"He takes place in {self.place}.\n" \
-               f"It will be played with {self.nb_players} players in " \
-               f"{self.nb_rounds} rounds."
-
     def append_player(self, player):
         """Adds players to the tournament list."""
         len_players = len(self.players)

@@ -3,7 +3,7 @@ from datetime import date, timedelta
 
 from view.tournament import TournamentView as View
 from model.tournament import TournamentModel as Model
-from controller.player import PlayerController as Player
+from controller.player import Player
 
 import constants
 nb_of_day = constants.NUMBER_OF_DAY
@@ -11,7 +11,7 @@ nb_of_players = constants.NUMBER_OF_PLAYERS
 nb_of_round = constants.NUMBER_OF_ROUND
 
 
-class TournamentController:
+class Tournament:
 
     @staticmethod
     def tournament_menu():
@@ -42,7 +42,7 @@ class TournamentController:
                 Input information for create tournament
                 and assign the global variable.
                 """
-                global_tournament = TournamentController.new_tournament()
+                global_tournament = Tournament.new_tournament()
 
             elif choice_tournament_menu == 2:
                 """Decoration to add players tournament for in line game."""
@@ -53,7 +53,7 @@ class TournamentController:
                 Enter the players information for add to the tournament.
                 :parameter global variable tournament.
                 """
-                TournamentController.append_player(global_tournament)
+                Tournament.append_player(global_tournament)
 
             elif choice_tournament_menu == 3:
                 """Decoration text display all players in this tournament."""
@@ -64,7 +64,7 @@ class TournamentController:
                 Display all players in this tournament.
                 :parameter global variable tournament.
                 """
-                all_players = TournamentController
+                all_players = Tournament
                 print(all_players.get_players_list(global_tournament))
 
             elif choice_tournament_menu == 4:
@@ -76,7 +76,7 @@ class TournamentController:
                 Input information for delete player in this tournament.
                 :parameter global variable tournament.
                 """
-                TournamentController.remove_player(global_tournament)
+                Tournament.remove_player(global_tournament)
 
             elif choice_tournament_menu == 5:
                 tournament = False
@@ -135,7 +135,7 @@ class TournamentController:
         View.instruction_select_choice()
         View.number_of_the_day(nb_of_day + 1)
         View.list_decoration_validate_menu()
-        today = TournamentController.start_date()
+        today = Tournament.start_date()
         validate = int(View.input_number_form_list_decoration())
 
         if validate == 1:
@@ -202,19 +202,21 @@ class TournamentController:
         """
         name = View.name()
         place = View.place()
-        start_date = TournamentController.start_date()
-        end_date = TournamentController.end_date()
-        nb_rounds = TournamentController.number_rounds()
-        nb_players = TournamentController.number_players()
+        start_date = Tournament.start_date()
+        end_date = Tournament.end_date()
+        nb_rounds = Tournament.number_rounds()
+        nb_players = Tournament.number_players()
 
-        tournament = Model(name=name,
-                           place=place,
-                           start_date=start_date,
-                           end_date=end_date,
-                           nb_rounds=nb_rounds,
-                           nb_players=nb_players)
-        print(tournament)
-        return tournament
+        new_tournament = Model(name=name,
+                               place=place,
+                               start_date=start_date,
+                               end_date=end_date,
+                               nb_rounds=nb_rounds,
+                               nb_players=nb_players)
+        View.confirmation_of_tournament_creation(name, place, start_date,
+                                                 end_date, nb_players,
+                                                 nb_rounds)
+        return new_tournament
 
     @staticmethod
     def append_player(tournament):

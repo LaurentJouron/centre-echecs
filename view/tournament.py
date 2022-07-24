@@ -43,6 +43,15 @@ class TournamentView:
     def create_tournament_before_add_players():
         print("You need to create tournament before to add players.")
 
+    @staticmethod
+    def confirmation_of_tournament_creation(name, place, start_date,
+                                            end_date, nb_players, nb_rounds):
+        """Confirmation phrase of the tournament class."""
+        print(f"\nThe {name} chess tournament starts on"
+              f" {start_date} at 9:00 am, and end on {end_date} at 6:00 pm.\n"
+              f"He takes place in {place}.\n It will be played with"
+              f" {nb_players} players in {nb_rounds} rounds.")
+
 # Title decoration text
     @staticmethod
     def title_decoration_tournament_reception():
